@@ -23,7 +23,7 @@ function Home() {
           </button>
         </div>
       </div>
-      <div className="bg-[url('./src/assets/images/map-flou.jpg')] contrast-75 bg-no-repeat bg-cover blur-[2.5px] grayscale h-screen w-screen"></div>
+      <div className="bg-[url('./src/assets/images/blurred-map.jpg')] contrast-75 bg-no-repeat bg-cover blur-[2.5px] grayscale h-screen w-screen"></div>
     </div>
   );
 }
