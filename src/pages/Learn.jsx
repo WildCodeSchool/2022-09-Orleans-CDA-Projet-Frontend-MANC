@@ -5,7 +5,7 @@ const Learn = () => {
   const [clickedCountry, setClickedCountry] = useState("");
 
   return (
-    <div>
+    <div className="h-screen">
       <Map actionOnClick={setClickedCountry} />
     </div>
   );

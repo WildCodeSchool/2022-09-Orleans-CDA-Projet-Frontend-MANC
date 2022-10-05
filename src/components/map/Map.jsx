@@ -7,8 +7,17 @@ import {
 
 const MapChart = ({ actionOnClick }) => {
   return (
-    <div>
-      <ComposableMap className="bg-sky-200">
+    <>
+      <ComposableMap
+        className="bg-sky-200"
+        projectionConfig={{
+          scale: 155,
+          rotation: [-11, 0, 0],
+        }}
+        width={800}
+        height={200}
+        style={{ width: "100%", height: "100%" }}
+      >
         <ZoomableGroup>
           <Geographies geography="/mapGeometry.json">
             {({ geographies }) =>
@@ -28,7 +37,7 @@ const MapChart = ({ actionOnClick }) => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
-    </div>
+    </>
   );
 };
 
