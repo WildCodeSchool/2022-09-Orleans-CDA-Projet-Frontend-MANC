@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
 
 const Navbar = () => {
   return (
     <header className="bg-greyblue text-white shadow-lg">
-      <div className="flex justify-around h-24 w-full px-4">
+      <div className="flex justify-around h-20 w-full px-4">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -27,15 +28,17 @@ const Navbar = () => {
               to="/play"
               className={({ isActive }) => (isActive ? "" : "opacity-40")}
             >
-              <li className="p-5 xl:p-8">
+              <li className="p-5 xl:p-8 flex items-center gap-2">
                 <span className="text-2xl">Play</span>
+                <MdNotStarted className="text-2xl" />
               </li>
             </NavLink>
             <NavLink
               to="/learn"
               className={({ isActive }) => (isActive ? "" : "opacity-40")}
             >
-              <li className="p-5 xl:p-8">
+              <li className="p-5 xl:p-8 flex items-center gap-2">
+                <MdBook className="text-2xl" />
                 <span className="text-2xl">Learn</span>
               </li>
             </NavLink>
@@ -44,10 +47,13 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? "p-5 xl:p-8" : "p-5 xl:p-8 opacity-40"
+                isActive
+                  ? "p-5 xl:p-8 flex items-center gap-2"
+                  : "p-5 xl:p-8 opacity-40 flex items-center gap-2"
               }
             >
-              About
+              <span className="text-md">About</span>
+              <MdQuiz className="text-2xl" />
             </NavLink>
           </div>
         </nav>
