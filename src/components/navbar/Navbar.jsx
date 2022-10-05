@@ -21,9 +21,9 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-        <div className="flex items-center">
-          <a className="p-5 xl:p-8">About</a>
-        </div>
+          <div className="flex items-center">
+            <a className="p-5 xl:p-8">About</a>
+          </div>
         </nav>
       </div>
     </header>
