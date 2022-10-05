@@ -7,7 +7,12 @@ const Navbar = () => {
       <div className="flex justify-around h-24 w-full px-4">
         <Link to="/" className="flex items-center justify-center">
           <img className="h-16" src="../../icon.png" alt="" />
-          <span className="ml-4 font-semibold text-3xl">Map Quest</span>
+          <span className="ml-4 font-semibold text-3xl text-lightgreen">
+            Map
+          </span>
+          <span className="ml-2 font-semibold text-3xl text-lightblue">
+            Quest
+          </span>
         </Link>
         <nav className="contents font-semibold justify-between text-base lg:text-lg">
           <ul className="mx-auto flex items-center">
