@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
 
