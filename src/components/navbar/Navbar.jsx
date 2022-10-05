@@ -1,11 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="bg-greyblue text-white shadow-lg hidden md:block">
+    <header className="bg-greyblue text-white shadow-lg">
       <div className="flex justify-around h-24 w-full px-4">
-        <Link to="/" className="flex items-center justify-center">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center justify-center"
+              : " opacity-40 flex items-center justify-center"
+          }
+        >
           <img className="h-16" src="../../icon.png" alt="" />
           <span className="ml-4 font-semibold text-3xl text-lightgreen">
             Map
@@ -13,24 +20,35 @@ const Navbar = () => {
           <span className="ml-2 font-semibold text-3xl text-lightblue">
             Quest
           </span>
-        </Link>
+        </NavLink>
         <nav className="contents font-semibold justify-between text-base lg:text-lg">
-          <ul className="mx-auto flex items-center">
-            <li className="p-5 xl:p-8">
-              <Link to="/play">
+          <ul className="mx-auto flex items-center gap-8">
+            <NavLink
+              to="/play"
+              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+            >
+              <li className="p-5 xl:p-8">
                 <span className="text-2xl">Play</span>
-              </Link>
-            </li>
-            <li className="p-5 xl:p-8">
-              <Link to="/learn">
+              </li>
+            </NavLink>
+            <NavLink
+              to="/learn"
+              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+            >
+              <li className="p-5 xl:p-8">
                 <span className="text-2xl">Learn</span>
-              </Link>
-            </li>
+              </li>
+            </NavLink>
           </ul>
           <div className="flex items-center">
-            <Link to="/about" className="p-5 xl:p-8">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "p-5 xl:p-8" : "p-5 xl:p-8 opacity-40"
+              }
+            >
               About
-            </Link>
+            </NavLink>
           </div>
         </nav>
       </div>
