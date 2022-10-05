@@ -1,4 +1,3 @@
-import { memo } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -33,4 +32,4 @@ const MapChart = ({ actionOnClick }) => {
   );
 };
 
-export default memo(MapChart);
+export default MapChart;
