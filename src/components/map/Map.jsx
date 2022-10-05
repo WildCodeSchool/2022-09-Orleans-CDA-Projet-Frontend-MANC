@@ -9,14 +9,13 @@ const MapChart = ({ actionOnClick }) => {
   return (
     <>
       <ComposableMap
-        className="bg-sky-200"
+        className="bg-sky-200 h-full w-full"
         projectionConfig={{
           scale: 155,
           rotation: [-11, 0, 0],
         }}
         width={800}
         height={200}
-        style={{ width: "100%", height: "100%" }}
       >
         <ZoomableGroup>
           <Geographies geography="/mapGeometry.json">
