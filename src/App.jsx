@@ -1,12 +1,8 @@
 import "./App.css";
+import Home from "./components/home/Home";
 
 function App() {
-  return (
-    <div className="absolute-center-container">
-      {"Hey!"}
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+  return <div className="absolute-center-container"></div>;
 }
 
 export default App;
