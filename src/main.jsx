@@ -7,7 +7,7 @@ import "./main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/2022-09-Orleans-CDA-Projet-Frontend-MANC">
       <App />
     </BrowserRouter>
   </React.StrictMode>
