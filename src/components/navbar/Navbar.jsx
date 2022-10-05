@@ -2,36 +2,28 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <header class="bg-greyblue text-white shadow-lg hidden md:block">
-      <div class="flex justify-between h-24 w-full">
-        <a href="" class="flex items-center justify-center">
-          <img
-            class="h-16"
-            src="../../icon.png"
-            alt=""
-          />
-          <span class="ml-4 font-black text-2xl">
-            Map Quest
-          </span>
+    <header className="bg-greyblue text-white shadow-lg hidden md:block">
+      <div className="flex justify-around h-24 w-full px-4">
+        <a href="" className="flex items-center justify-center">
+          <img className="h-16" src="../../icon.png" alt="" />
+          <span className="ml-4 font-semibold text-3xl">Map Quest</span>
         </a>
-        <nav class="contents font-semibold text-base lg:text-lg">
-          <ul class="mx-auto flex items-center">
-            <li class="p-5 xl:p-8 active">
+        <nav className="contents font-semibold justify-between text-base lg:text-lg">
+          <ul className="mx-auto flex items-center">
+            <li className="p-5 xl:p-8">
               <a href="">
-                <span>Home</span>
+                <span className="text-2xl">Play</span>
               </a>
             </li>
-            <li class="p-5 xl:p-8">
+            <li className="p-5 xl:p-8">
               <a href="">
-                <span>About</span>
-              </a>
-            </li>
-            <li class="p-5 xl:p-8">
-              <a href="">
-                <span>Projects</span>
+                <span className="text-2xl">Learn</span>
               </a>
             </li>
           </ul>
+        <div className="flex items-center">
+          <a className="p-5 xl:p-8">About</a>
+        </div>
         </nav>
       </div>
     </header>
