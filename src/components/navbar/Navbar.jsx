@@ -25,7 +25,7 @@ const Navbar = () => {
           <ul className="mx-auto flex items-center gap-8">
             <NavLink
               to="/play"
-              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+              className={({ isActive }) => !isActive && "opacity-40"}
             >
               <li className="p-5 xl:p-8 flex items-center gap-2">
                 <span className="text-2xl">Play</span>
@@ -34,7 +34,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/learn"
-              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+              className={({ isActive }) => !isActive && "opacity-40"}
             >
               <li className="p-5 xl:p-8 flex items-center gap-2">
                 <MdBook className="text-2xl" />
