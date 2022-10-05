@@ -6,6 +6,11 @@ module.exports = {
       strokeWidth: {
         0.5: "0.5px",
       },
+      colors: {
+        greyblue: "#506F79",
+        lightgreen: "#C7F6C3",
+        lightblue: "#A1EDF2",
+      },
     },
   },
   plugins: [],
