@@ -1,4 +1,4 @@
-const HowToPlay = () => {
+const Rules = () => {
   return (
     <div className="border border-black rounded-lg p-10">
       <h1 className="text-3xl font-bold my-10">How To Play ?</h1>
@@ -53,4 +53,4 @@ const HowToPlay = () => {
   );
 };
 
-export default HowToPlay;
+export default Rules;
