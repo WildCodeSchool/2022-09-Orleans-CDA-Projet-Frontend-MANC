@@ -1,11 +1,11 @@
-import Rules from '../components/rules/Rules';
+import Rules from "../components/rules/Rules";
 
 const HowToPlay = () => {
   return (
     <div>
-        <Rules />
+      <Rules />
     </div>
-  )
-}
+  );
+};
 
 export default HowToPlay;
