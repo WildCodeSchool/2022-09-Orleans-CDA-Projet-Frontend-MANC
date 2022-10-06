@@ -29,5 +29,10 @@
     "tailwindcss": "^3.1.8",
     "prop-types": "^15.8.1",
     "vite": "^3.1.0"
+  },
+  "resolutions": {
+    "d3-zoom": "^3.0.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-color": "^3.1.0"
   }
 }
