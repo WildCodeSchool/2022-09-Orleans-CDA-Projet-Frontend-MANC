@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/home/Home";
 
 function App() {
-  return <div className="absolute-center-container"></div>;
+  return <div></div>;
 }
 
 export default App;
