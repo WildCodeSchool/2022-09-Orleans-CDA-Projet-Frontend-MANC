@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Map from "../components/map/Map";
+import "./learn.css";
 
 const Learn = () => {
   const [clickedCountry, setClickedCountry] = useState("");
 
   return (
-    <div className="h-screen">
+    <div className="height-minus-nav">
       <Map actionOnClick={setClickedCountry} />
     </div>
   );
