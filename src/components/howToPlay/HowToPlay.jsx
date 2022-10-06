@@ -1,5 +1,3 @@
-import React from "react";
-
 const HowToPlay = () => {
   return (
     <div className="border border-black rounded-lg p-10">
