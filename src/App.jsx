@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
+import Learn from "./pages/Learn";
 
 function App() {
   return (
-    <div>
+    <div className="h-screen">
+      <Navbar />
       <Routes>
         <Route path="/" />
         <Route path="/play" />
-        <Route path="/learn" />
+        <Route path="/learn" element={<Learn />} />
         <Route path="/about" />
       </Routes>
-      <Navbar />
     </div>
   );
 }

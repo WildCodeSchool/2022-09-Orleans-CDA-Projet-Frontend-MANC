@@ -1,0 +1,3 @@
+.height-minus-nav {
+  height: calc(100vh - 80px);
+}
