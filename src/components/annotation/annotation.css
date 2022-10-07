@@ -1,0 +1,11 @@
+.pointer {
+  height: 40px;
+  width: 40px;
+  background: blue;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-radius: 0 0 12px 0;
+  margin-top: -22px;
+  position: relative;
+  left: calc(0.5vw - 50px);
+}
