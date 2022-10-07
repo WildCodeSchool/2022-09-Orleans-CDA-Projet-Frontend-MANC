@@ -1,6 +1,6 @@
-const HowToPlay = () => {
+const Rules = () => {
   return (
-    <div className="border border-black rounded-lg p-10">
+    <div className="border border-black rounded-lg p-10 w-2/4">
       <h1 className="text-3xl font-bold my-10">How To Play ?</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -44,7 +44,7 @@ const HowToPlay = () => {
         </div>
       </fieldset>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
           Play
         </button>
@@ -53,4 +53,4 @@ const HowToPlay = () => {
   );
 };
 
-export default HowToPlay;
+export default Rules;

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
+import HowToPlay from "./pages/HowToPlay";
 import Learn from "./pages/Learn";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" />
-        <Route path="/play" />
+        <Route path="/play" element={<HowToPlay />} />
         <Route path="/learn" element={<Learn />} />
         <Route path="/about" />
       </Routes>
