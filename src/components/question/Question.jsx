@@ -7,12 +7,10 @@ function Question() {
   const codes = [];
   useEffect(() => {
     countries.objects.world.geometries.map((country) => codes.push(country.id));
-    console.log(codes);
   }, []);
 
   useEffect(() => {
     const randomCode = codes[Math.floor(Math.random() * codes.length)];
-    console.log(randomCode);
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
       .then((data) => setQuestion(data));
