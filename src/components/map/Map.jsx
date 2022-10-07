@@ -23,12 +23,12 @@ const MapChart = ({ actionOnClick }) => {
               geographies.map((geo) => (
                 <Geography
                   className={
-                    "stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
+                    "stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0 "
                   }
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
-                    actionOnClick(`${geo.properties.name}`);
+                    actionOnClick(`${geo.id}`);
                   }}
                 />
               ))
