@@ -4,11 +4,7 @@ import countries from "../../../public/mapGeometry.json";
 function Question() {
   const [question, setQuestion] = useState("");
 
-  const codes = [];
-  useEffect(() => {
-    countries.objects.world.geometries.map((country) => codes.push(country.id));
-  }, []);
-
+  const codes = countries.objects.world.geometries.map((country) => country.id);
   useEffect(() => {
     const randomCode = codes[Math.floor(Math.random() * codes.length)];
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
