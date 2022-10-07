@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Rules = () => {
   return (
     <div className="border border-black rounded-lg p-10 w-2/4">
@@ -45,9 +47,11 @@ const Rules = () => {
       </fieldset>
 
       <div className="flex justify-center ">
-        <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
-          Play
-        </button>
+        <Link to="/play/quiz">
+          <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
+            Play
+          </button>
+        </Link>
       </div>
     </div>
   );
