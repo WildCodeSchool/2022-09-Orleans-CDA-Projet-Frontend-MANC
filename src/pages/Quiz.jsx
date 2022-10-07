@@ -1,6 +1,6 @@
 import Map from "../components/map/Map";
 
-const Quizz = () => {
+const Quiz = () => {
   return (
     <div className="height-minus-nav">
       <Map />
@@ -8,4 +8,4 @@ const Quizz = () => {
   );
 };
 
-export default Quizz;
+export default Quiz;
