@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
 } from "react-simple-maps";
+import SearchLearn from "../searchLearn/SearchLearn";
 
-const MapChart = ({ actionOnClick }) => {
+const MapChart = ({ actionOnClick, searchCountry }) => {
   return (
     <>
       <ComposableMap
@@ -23,7 +25,10 @@ const MapChart = ({ actionOnClick }) => {
               geographies.map((geo) => (
                 <Geography
                   className={
-                    "stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
+                    geo.properties.name.toLowerCase() ==
+                    searchCountry.toLowerCase()
+                      ? "fill-slate-700 stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
+                      : " stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
                   }
                   key={geo.rsmKey}
                   geography={geo}
