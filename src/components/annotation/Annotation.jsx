@@ -1,4 +1,3 @@
-import "./annotation.css";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
