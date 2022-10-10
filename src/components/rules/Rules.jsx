@@ -16,7 +16,7 @@ const Rules = () => {
       <fieldset className=" my-10">
         <legend>Choose your game mode :</legend>
         <div className="flex justify-between my-4">
-          <div className="">
+          <div>
             <input
               type="checkbox"
               id="capital"
