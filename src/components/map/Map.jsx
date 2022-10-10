@@ -1,13 +1,12 @@
-import { useEffect } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
 } from "react-simple-maps";
-import SearchLearn from "../searchLearn/SearchLearn";
 
-const MapChart = ({ actionOnClick, searchCountry }) => {
+const Map = ({ actionOnClick, searchCountry }) => {
+  const searchLower = searchCountry ? searchCountry.toLowerCase() : "";
   return (
     <>
       <ComposableMap
@@ -24,12 +23,11 @@ const MapChart = ({ actionOnClick, searchCountry }) => {
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
-                  className={
-                    geo.properties.name.toLowerCase() ==
-                    searchCountry.toLowerCase()
-                      ? "fill-slate-700 stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
-                      : " stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0"
-                  }
+                  className={`${
+                    geo.properties.name.toLowerCase() === searchLower
+                      ? "fill-green-500"
+                      : ""
+                  } stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
@@ -45,4 +43,4 @@ const MapChart = ({ actionOnClick, searchCountry }) => {
   );
 };
 
-export default MapChart;
+export default Map;
