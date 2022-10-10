@@ -12,11 +12,11 @@ const Map = ({ actionOnClick, searchCountry }) => {
       <ComposableMap
         className="bg-sky-200 h-full w-full"
         projectionConfig={{
-          scale: 155,
-          rotation: [-11, 0, 0],
+          scale: 120,
+          center: [0, 0],
         }}
-        width={800}
-        height={200}
+        width={500}
+        height={350}
       >
         <ZoomableGroup>
           <Geographies geography="/mapGeometry.json">
