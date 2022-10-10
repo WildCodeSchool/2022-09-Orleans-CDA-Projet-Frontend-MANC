@@ -30,8 +30,9 @@ const Annotation = (country) => {
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
-          Currency:{" "}
-          {countryData && Object.values(countryData.currencies)[0].name}
+          {`Currency: ${
+            countryData && Object.values(countryData.currencies)[0].name
+          }`}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
