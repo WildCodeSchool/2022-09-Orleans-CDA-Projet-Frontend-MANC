@@ -1,6 +1,8 @@
-const HowToPlay = () => {
+import { Link } from "react-router-dom";
+
+const Rules = () => {
   return (
-    <div className="border border-black rounded-lg p-10">
+    <div className="border border-black rounded-lg p-10 w-2/4">
       <h1 className="text-3xl font-bold my-10">How To Play ?</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -21,7 +23,7 @@ const HowToPlay = () => {
               name="capital"
               className="rounded-full mx-2"
             />
-            <label htmFor="capital">Capitals</label>
+            <label htmlFor="capital">Capitals</label>
           </div>
           <div>
             <input
@@ -30,7 +32,7 @@ const HowToPlay = () => {
               name="currency"
               className="rounded-full mx-2"
             />
-            <label>Currencies</label>
+            <label htmlFor="currency">Currencies</label>
           </div>
           <div>
             <input
@@ -39,18 +41,20 @@ const HowToPlay = () => {
               name="language"
               className="rounded-full mx-2"
             />
-            <label>Languages</label>
+            <label htmlFor="language">Languages</label>
           </div>
         </div>
       </fieldset>
 
-      <div className="flex justify-center">
-        <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
-          Play
-        </button>
+      <div className="flex justify-center ">
+        <Link to="/play/quiz">
+          <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
+            Play
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default HowToPlay;
+export default Rules;
