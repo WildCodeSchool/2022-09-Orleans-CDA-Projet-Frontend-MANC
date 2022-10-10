@@ -23,7 +23,7 @@ const Rules = () => {
               name="capital"
               className="rounded-full mx-2"
             />
-            <label htmFor="capital">Capitals</label>
+            <label htmlFor="capital">Capitals</label>
           </div>
           <div>
             <input
@@ -32,7 +32,7 @@ const Rules = () => {
               name="currency"
               className="rounded-full mx-2"
             />
-            <label>Currencies</label>
+            <label htmlFor="currency">Currencies</label>
           </div>
           <div>
             <input
@@ -41,7 +41,7 @@ const Rules = () => {
               name="language"
               className="rounded-full mx-2"
             />
-            <label>Languages</label>
+            <label htmlFor="language">Languages</label>
           </div>
         </div>
       </fieldset>
