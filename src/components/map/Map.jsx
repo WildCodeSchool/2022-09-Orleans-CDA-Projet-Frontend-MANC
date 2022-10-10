@@ -27,7 +27,7 @@ const Map = ({ actionOnClick, searchCountry }) => {
                     geo.properties.name.toLowerCase() === searchLower
                       ? "fill-green-500"
                       : ""
-                  } stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0 stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0`}
+                  } stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
