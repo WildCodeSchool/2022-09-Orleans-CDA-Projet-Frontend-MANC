@@ -26,12 +26,12 @@ const Map = ({ actionOnClick, searchCountry }) => {
                   className={`${
                     geo.properties.name.toLowerCase() === searchLower
                       ? "fill-green-500"
-                      : ""
-                  } stroke-0.5 stroke-slate-500 fill-white hover:fill-slate-700 hover:stroke-0`}
+                      : "fill-white"
+                  } stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
-                    actionOnClick(`${geo.properties.name}`);
+                    actionOnClick(`${geo.id}`);
                   }}
                 />
               ))
