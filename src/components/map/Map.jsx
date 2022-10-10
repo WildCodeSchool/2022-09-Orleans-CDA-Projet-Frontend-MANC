@@ -3,6 +3,7 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  Marker,
 } from "react-simple-maps";
 
 const Map = ({ actionOnClick, searchCountry }) => {
@@ -37,6 +38,28 @@ const Map = ({ actionOnClick, searchCountry }) => {
               ))
             }
           </Geographies>
+          <Marker coordinates={[19.9981227, 7.0323598]}>
+            <g
+              fill="green"
+              stroke="green"
+              strokeWidth="1"
+              strokeLinejoin="round"
+              transform="translate(-8, -30) scale(1.5)"
+            >
+              <path d="M24 1h-24v16.981h4v5.019l7-5.019h13z" />
+            </g>
+            <text
+              onClick={() => {
+                console.log("Je confirme");
+              }}
+              textAnchor="middle"
+              y={-13}
+              x={10}
+              style={{ fill: "white", fontSize: "6px", cursor: "pointer" }}
+            >
+              Confirm ?
+            </text>
+          </Marker>
         </ZoomableGroup>
       </ComposableMap>
     </>
