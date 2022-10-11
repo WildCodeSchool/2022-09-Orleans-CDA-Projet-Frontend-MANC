@@ -8,11 +8,11 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
 
   useEffect(() => {
-    const clickedCountryData = countryData.filter((data) => {
+    const clickedCountryData = countryData.find((data) => {
       return data.id === clickedCountryCode;
     });
-    if (clickedCountryData[0]) {
-      setMarkerCoordinates(clickedCountryData[0].coord);
+    if (clickedCountryData) {
+      setMarkerCoordinates(clickedCountryData.coord);
     }
   }, [clickedCountryCode]);
 
