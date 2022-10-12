@@ -40,7 +40,7 @@ function Question() {
     <div className="flex justify-center absolute w-full bottom-8">
       <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid mt-20 shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
         <h2 className="text-center w-full text-3xl">
-          {questionType && questionType[0].phrase}
+          {questionType && questionType[2].phrase}
           <b> {questionType && questionType[2].request} ?</b>
         </h2>
       </div>
