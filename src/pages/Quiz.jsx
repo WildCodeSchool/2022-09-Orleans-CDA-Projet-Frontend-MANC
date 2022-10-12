@@ -6,7 +6,7 @@ import Question from "../components/question/Question";
 const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState(false);
+  const [isCorrect, setCorrect] = useState(false);
   const [isAnswered, setAnswered] = useState(false);
 
   useEffect(() => {
@@ -14,11 +14,12 @@ const Quiz = () => {
   }, [clickedCountry]);
 
   useEffect(() => {
-    question[0] && setAnswer(clickedCountry === question[0].cca3);
+    question[0] && setCorrect(clickedCountry === question[0].cca3);
+    setClickedCountry("");
   }, [isAnswered]);
 
   return (
-    <div className="height-minus-nav">
+    <div className="height-minus-nav flex">
       <Map clickedCountry={clickedCountry} actionOnClick={setClickedCountry} />
       <Question
         question={question}
@@ -26,7 +27,7 @@ const Quiz = () => {
         isAnswered={isAnswered}
         setAnswered={setAnswered}
       />
-      {isAnswered === true && <Answer answer={answer} />}
+      <Answer isCorrect={isCorrect} />
     </div>
   );
 };

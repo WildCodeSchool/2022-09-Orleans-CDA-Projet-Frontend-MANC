@@ -1,7 +1,8 @@
-const Answer = ({ answer }) => {
+const Answer = ({ isCorrect }) => {
+  console.log(isCorrect);
   return (
-    <div>
-      <h1>{answer === true ? "✔️ Good answer!" : "❌ Wrong answer!"}</h1>
+    <div className="absolute bg-white border-2 border-solid border-black p-6 m-10 rounded-xl">
+      <h1>{isCorrect === true ? "✔️ Good answer!" : "❌ Wrong answer!"}</h1>
     </div>
   );
 };
