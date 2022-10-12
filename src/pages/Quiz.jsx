@@ -8,6 +8,7 @@ const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
+  const [markerCoordinates, setMarkerCoordinates] = useState("");
 
   useEffect(() => {
     clickedCountry !== "" &&
@@ -15,6 +16,15 @@ const Quiz = () => {
         isAnswered: true,
         isCorrect: clickedCountry === question[0].cca3,
       });
+  }, [clickedCountry]);
+
+  useEffect(() => {
+    const clickedCountryData = countryData.find((data) => {
+      return data.id === clickedCountry;
+    });
+    if (clickedCountryData) {
+      setMarkerCoordinates(clickedCountryData.coord);
+    }
   }, [clickedCountry]);
 
   useEffect(() => {
@@ -27,7 +37,11 @@ const Quiz = () => {
 
   return (
     <div className="height-minus-nav flex">
-      <Map clickedCountry={clickedCountry} actionOnClick={setClickedCountry} />
+      <Map
+        clickedCountry={clickedCountry}
+        actionOnClick={setClickedCountry}
+        markerCoordinates={markerCoordinates}
+      />
       <Question
         question={question}
         setQuestion={setQuestion}
