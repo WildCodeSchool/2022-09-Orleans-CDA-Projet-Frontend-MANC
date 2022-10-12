@@ -7,7 +7,6 @@ function Question(gameModes) {
 
   const codes = countries.objects.world.geometries.map((country) => country.id);
   useEffect(() => {
-    console.log(gameModes);
     const randomCode = codes[Math.floor(Math.random() * codes.length)];
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
@@ -48,9 +47,7 @@ function Question(gameModes) {
           modes.push(index);
         }
       });
-      console.log(modes);
       setnumber(modes[Math.floor(Math.random() * modes.length)]);
-      console.log(modes);
     }
   }, [setQuestionType]);
 
