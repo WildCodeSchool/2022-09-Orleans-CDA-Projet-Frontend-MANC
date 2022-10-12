@@ -1,28 +1,41 @@
 import { useEffect, useState } from "react";
+import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
 import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
-  const [clickedCountryCode, setClickedCountryCode] = useState("");
-  const [markerCoordinates, setMarkerCoordinates] = useState("");
+  const [clickedCountry, setClickedCountry] = useState("");
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
 
   useEffect(() => {
-    const clickedCountryData = countryData.find((data) => {
-      return data.id === clickedCountryCode;
-    });
-    if (clickedCountryData) {
-      setMarkerCoordinates(clickedCountryData.coord);
-    }
-  }, [clickedCountryCode]);
+    clickedCountry !== "" &&
+      setAnswer({
+        isAnswered: true,
+        isCorrect: clickedCountry === question[0].cca3,
+      });
+  }, [clickedCountry]);
+
+  useEffect(() => {
+    setAnswer({ isAnswered: false, isCorrect: false });
+  }, [question]);
+
+  useEffect(() => {
+    !answer.isAnswered && setClickedCountry("");
+  }, [answer]);
 
   return (
-    <div className="height-minus-nav">
-      <Map
-        actionOnClick={setClickedCountryCode}
-        markerCoordinates={markerCoordinates}
+    <div className="height-minus-nav flex">
+      <Map clickedCountry={clickedCountry} actionOnClick={setClickedCountry} />
+      <Question
+        question={question}
+        setQuestion={setQuestion}
+        isAnswered={answer.isAnswered}
       />
-      <Question />
+      {answer.isAnswered && clickedCountry !== "" && (
+        <Answer answer={answer.isCorrect} />
+      )}
     </div>
   );
 };
