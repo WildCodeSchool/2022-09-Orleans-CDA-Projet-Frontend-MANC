@@ -7,15 +7,15 @@ const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState(false);
-  const [isAnswered, setAnswered] = useState();
+  const [isAnswered, setAnswered] = useState(false);
 
   useEffect(() => {
-    setAnswer(question[0] && clickedCountry === question[0].cca3);
+    clickedCountry !== "" && setAnswered(true);
   }, [clickedCountry]);
 
   useEffect(() => {
-    setAnswered(true);
-  }, [answer]);
+    question[0] && setAnswer(clickedCountry === question[0].cca3);
+  }, [isAnswered]);
 
   return (
     <div className="height-minus-nav">
@@ -24,6 +24,7 @@ const Quiz = () => {
         question={question}
         setQuestion={setQuestion}
         isAnswered={isAnswered}
+        setAnswered={setAnswered}
       />
       {isAnswered === true && <Answer answer={answer} />}
     </div>
