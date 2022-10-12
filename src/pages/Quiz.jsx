@@ -6,17 +6,23 @@ import Question from "../components/question/Question";
 const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
-  const [isCorrect, setCorrect] = useState(false);
-  const [isAnswered, setAnswered] = useState(false);
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
 
   useEffect(() => {
-    clickedCountry !== "" && setAnswered(true);
+    clickedCountry !== "" &&
+      setAnswer({
+        isAnswered: true,
+        isCorrect: clickedCountry === question[0].cca3,
+      });
   }, [clickedCountry]);
 
   useEffect(() => {
-    question[0] && setCorrect(clickedCountry === question[0].cca3);
-    setClickedCountry("");
-  }, [isAnswered]);
+    setAnswer({ isAnswered: false, isCorrect: false });
+  }, [question]);
+
+  useEffect(() => {
+    !answer.isAnswered && setClickedCountry("");
+  }, [answer]);
 
   return (
     <div className="height-minus-nav flex">
@@ -24,10 +30,11 @@ const Quiz = () => {
       <Question
         question={question}
         setQuestion={setQuestion}
-        isAnswered={isAnswered}
-        setAnswered={setAnswered}
+        isAnswered={answer.isAnswered}
       />
-      <Answer isCorrect={isCorrect} />
+      {answer.isAnswered && clickedCountry !== "" && (
+        <Answer answer={answer.isCorrect} />
+      )}
     </div>
   );
 };

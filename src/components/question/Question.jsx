@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react";
 import countries from "../../../public/mapGeometry.json";
 
-function Question({ question, setQuestion, isAnswered, setAnswered }) {
+function Question({ question, setQuestion, isAnswered }) {
   const codes = countries.objects.world.geometries.map((country) => country.id);
   const randomCode = codes[Math.floor(Math.random() * codes.length)];
-  const getQuestion = () => {
+  const getQuestion = (timeout = false) => {
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
-      .then((data) => setQuestion(data));
+      .then((data) =>
+        timeout
+          ? setTimeout(() => {
+              setQuestion(data);
+            }, 2000)
+          : setQuestion(data)
+      );
   };
 
   useEffect(() => {
     getQuestion();
-    setAnswered(false);
   }, []);
 
   useEffect(() => {
-    if (isAnswered) {
-      getQuestion();
-    }
-    setAnswered(false);
+    isAnswered && getQuestion(true);
   }, [isAnswered]);
 
   return (
