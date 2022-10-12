@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
+import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
