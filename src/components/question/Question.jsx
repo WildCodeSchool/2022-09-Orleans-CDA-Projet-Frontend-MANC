@@ -1,11 +1,13 @@
+import { element } from "prop-types";
 import { useEffect, useState } from "react";
 import countries from "../../../public/mapGeometry.json";
 
-function Question() {
+function Question(gameModes) {
   const [question, setQuestion] = useState(null);
 
   const codes = countries.objects.world.geometries.map((country) => country.id);
   useEffect(() => {
+    console.log(gameModes);
     const randomCode = codes[Math.floor(Math.random() * codes.length)];
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
@@ -36,12 +38,28 @@ function Question() {
     }
   }, [question]);
 
+  const [number, setnumber] = useState(null);
+
+  useEffect(() => {
+    let modes = [];
+    if (setQuestionType) {
+      gameModes.gameModes.forEach((mode, index) => {
+        if (mode == true) {
+          modes.push(index);
+        }
+      });
+      console.log(modes);
+      setnumber(modes[Math.floor(Math.random() * modes.length)]);
+      console.log(modes);
+    }
+  }, [setQuestionType]);
+
   return (
     <div className="flex justify-center absolute w-full bottom-8">
       <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid mt-20 shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
         <h2 className="text-center w-full text-3xl">
-          {questionType && questionType[2].phrase}
-          <b> {questionType && questionType[2].request} ?</b>
+          {questionType && questionType[number].phrase}
+          <b> {questionType && questionType[number].request} ?</b>
         </h2>
       </div>
     </div>

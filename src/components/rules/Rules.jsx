@@ -70,11 +70,11 @@ const Rules = () => {
       </fieldset>
 
       <div className="flex justify-center ">
-        {/* <Link to="/play/quiz"> */}
-        <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
-          Play
-        </button>
-        {/* </Link> */}
+        <Link to="/play/quiz" state={checkedState}>
+          <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
+            Play
+          </button>
+        </Link>
       </div>
     </div>
   );
