@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Rules = () => {
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
 
   const handleOnChange = (position) => {
+    console.log(checkedState);
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
     );
@@ -12,6 +13,10 @@ const Rules = () => {
 
     console.log(checkedState);
   };
+
+  useEffect(() => {
+    console.log(checkedState ? checkedState : "");
+  }, [checkedState]);
 
   return (
     <div className="border border-black rounded-lg p-10 w-2/4">
