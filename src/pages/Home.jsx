@@ -13,7 +13,7 @@ function Home() {
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
-          className="text-8xl w-fit bg-white bg-opacity-80 rounded-xl p-10 m-20 border-solid border-2 border-greyblue shadow-2xl"
+          className="text-8xl w-fit bg-white bg-opacity-80 rounded-xl p-8 m-20 border-solid border-2 border-greyblue shadow-2xl"
         >
           <span className="text-green-400">Map</span>
           <span className="text-greyblue">Quest</span>{" "}
