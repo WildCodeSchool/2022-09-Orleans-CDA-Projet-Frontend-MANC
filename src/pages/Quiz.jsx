@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
+import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
+  const [clickedCountryCode, setClickedCountryCode] = useState("");
+  const [markerCoordinates, setMarkerCoordinates] = useState("");
+
+  useEffect(() => {
+    const clickedCountryData = countryData.find((data) => {
+      return data.id === clickedCountryCode;
+    });
+    if (clickedCountryData) {
+      setMarkerCoordinates(clickedCountryData.coord);
+    }
+  }, [clickedCountryCode]);
+
   return (
     <div className="height-minus-nav">
-      <Map />
+      <Map
+        actionOnClick={setClickedCountryCode}
+        markerCoordinates={markerCoordinates}
+      />
       <Question />
     </div>
   );
