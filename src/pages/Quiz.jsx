@@ -9,14 +9,15 @@ const Quiz = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
   const [markerCoordinates, setMarkerCoordinates] = useState("");
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {
-    clickedCountry !== "" &&
+    isConfirmed &&
       setAnswer({
         isAnswered: true,
         isCorrect: clickedCountry === question[0].cca3,
       });
-  }, [clickedCountry]);
+  }, [isConfirmed]);
 
   useEffect(() => {
     const clickedCountryData = countryData.find((data) => {
@@ -28,7 +29,15 @@ const Quiz = () => {
   }, [clickedCountry]);
 
   useEffect(() => {
+    isConfirmed && setMarkerCoordinates("");
+  }, [isConfirmed]);
+
+  useEffect(() => {
     setAnswer({ isAnswered: false, isCorrect: false });
+  }, [question]);
+
+  useEffect(() => {
+    setIsConfirmed(false);
   }, [question]);
 
   useEffect(() => {
@@ -41,6 +50,7 @@ const Quiz = () => {
         clickedCountry={clickedCountry}
         actionOnClick={setClickedCountry}
         markerCoordinates={markerCoordinates}
+        setIsConfirmed={setIsConfirmed}
       />
       <Question
         question={question}
