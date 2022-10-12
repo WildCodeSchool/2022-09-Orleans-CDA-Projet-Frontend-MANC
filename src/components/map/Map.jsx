@@ -13,6 +13,8 @@ const Map = ({
   clickedCountry,
   markerCoordinates,
   setIsConfirmed,
+  correctAnswer,
+  isConfirmed,
 }) => {
   const searchLower = searchCountry ? searchCountry.toLowerCase() : "";
 
@@ -37,6 +39,10 @@ const Map = ({
                     "fill-green-500"
                   } ${
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
+                      ? geo.id !== correctAnswer && isConfirmed
+                        ? "fill-red-500"
+                        : "fill-green-500"
+                      : geo.id === correctAnswer && isConfirmed
                       ? "fill-green-500"
                       : "fill-white"
                   } 
