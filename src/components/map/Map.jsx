@@ -12,6 +12,7 @@ const Map = ({
   setCountryFound,
   clickedCountry,
   markerCoordinates,
+  setIsConfirmed,
 }) => {
   const searchLower = searchCountry ? searchCountry.toLowerCase() : "";
 
@@ -64,7 +65,7 @@ const Map = ({
               </g>
               <text
                 onClick={() => {
-                  console.log("Je confirme(WIP prochaine HNC)");
+                  setIsConfirmed(true);
                 }}
                 textAnchor="middle"
                 y={-18}

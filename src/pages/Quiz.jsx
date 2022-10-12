@@ -8,17 +8,36 @@ const Quiz = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
+  const [markerCoordinates, setMarkerCoordinates] = useState("");
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {
-    clickedCountry !== "" &&
+    isConfirmed &&
       setAnswer({
         isAnswered: true,
         isCorrect: clickedCountry === question[0].cca3,
       });
+  }, [isConfirmed]);
+
+  useEffect(() => {
+    const clickedCountryData = countryData.find((data) => {
+      return data.id === clickedCountry;
+    });
+    if (clickedCountryData) {
+      setMarkerCoordinates(clickedCountryData.coord);
+    }
   }, [clickedCountry]);
 
   useEffect(() => {
+    isConfirmed && setMarkerCoordinates("");
+  }, [isConfirmed]);
+
+  useEffect(() => {
     setAnswer({ isAnswered: false, isCorrect: false });
+  }, [question]);
+
+  useEffect(() => {
+    setIsConfirmed(false);
   }, [question]);
 
   useEffect(() => {
@@ -27,7 +46,12 @@ const Quiz = () => {
 
   return (
     <div className="height-minus-nav flex">
-      <Map clickedCountry={clickedCountry} actionOnClick={setClickedCountry} />
+      <Map
+        clickedCountry={clickedCountry}
+        actionOnClick={setClickedCountry}
+        markerCoordinates={markerCoordinates}
+        setIsConfirmed={setIsConfirmed}
+      />
       <Question
         question={question}
         setQuestion={setQuestion}
