@@ -28,17 +28,17 @@ function Question({ question, setQuestion, isAnswered, gameModes }) {
       setQuestionType([
         {
           type: "capital",
-          phrase: "Which country as for capital :",
+          phrase: "Which country has for capital :",
           request: question[0].capital[0],
         },
         {
           type: "currencies",
-          phrase: "Which country as for monney :",
+          phrase: "Which country has for money :",
           request: Object.values(question[0].currencies)[0].name,
         },
         {
           type: "languages",
-          phrase: "Which country as for primary language :",
+          phrase: "Which country has for primary language :",
           request: Object.values(question[0].languages)[0],
         },
       ]);
