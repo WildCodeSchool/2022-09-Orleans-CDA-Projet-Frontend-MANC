@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import countries from "../../assets/countriesData.json";
 
-function Question({ question, setQuestion, isAnswered, gameModes }) {
+function Question({
+  question,
+  setQuestion,
+  isAnswered,
+  questionType,
+  gameModes,
+  number,
+  setQuestionType,
+  setNumber,
+}) {
   const codes = countries.map((country) => country.id);
   const randomCode = codes[Math.floor(Math.random() * codes.length)];
   const getQuestion = (timeout = false) => {
@@ -15,13 +24,6 @@ function Question({ question, setQuestion, isAnswered, gameModes }) {
           : setQuestion(data)
       );
   };
-
-  useEffect(() => {
-    console.log(gameModes);
-    getQuestion();
-  }, []);
-
-  const [questionType, setQuestionType] = useState(null);
 
   useEffect(() => {
     if (question) {
@@ -45,8 +47,6 @@ function Question({ question, setQuestion, isAnswered, gameModes }) {
     }
   }, [question]);
 
-  const [number, setNumber] = useState(null);
-
   useEffect(() => {
     let modes = [];
     if (setQuestionType) {
@@ -57,11 +57,16 @@ function Question({ question, setQuestion, isAnswered, gameModes }) {
       });
       setNumber(modes[Math.floor(Math.random() * modes.length)]);
     }
-  }, [setQuestionType]);
+  }, [questionType]);
 
   useEffect(() => {
     isAnswered && getQuestion(true);
   }, [isAnswered]);
+
+  useEffect(() => {
+    console.log(gameModes);
+    getQuestion();
+  }, []);
 
   return (
     <div className="flex justify-center absolute w-full bottom-8">
