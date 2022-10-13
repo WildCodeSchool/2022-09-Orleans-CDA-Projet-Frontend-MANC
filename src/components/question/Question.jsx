@@ -37,7 +37,7 @@ function Question(gameModes) {
     }
   }, [question]);
 
-  const [number, setnumber] = useState(null);
+  const [number, setNumber] = useState(null);
 
   useEffect(() => {
     let modes = [];
@@ -47,7 +47,7 @@ function Question(gameModes) {
           modes.push(index);
         }
       });
-      setnumber(modes[Math.floor(Math.random() * modes.length)]);
+      setNumber(modes[Math.floor(Math.random() * modes.length)]);
     }
   }, [setQuestionType]);
 
