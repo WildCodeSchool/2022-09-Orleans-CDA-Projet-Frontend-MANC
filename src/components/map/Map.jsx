@@ -13,6 +13,7 @@ const Map = ({
   clickedCountry,
   markerCoordinates,
   setIsConfirmed,
+  preventClickCountry,
 }) => {
   const searchLower = searchCountry ? searchCountry.toLowerCase() : "";
 
@@ -46,7 +47,7 @@ const Map = ({
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
-                    actionOnClick(`${geo.id}`);
+                    !preventClickCountry && actionOnClick(geo.id);
                   }}
                 />
               ))
