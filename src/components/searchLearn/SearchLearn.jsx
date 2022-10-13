@@ -1,42 +1,34 @@
 import { useState, useEffect } from "react";
+import useDebounce from "../../hooks/useDebounce";
 
 const SearchLearn = ({ countryFound, setCountryFound }) => {
   const [searchLearn, setSearchLearn] = useState("");
-  const [countrySearch, setCountrySearch] = useState("");
-  const [capitalSearch, setCapitalSearch] = useState("");
-  // const [currenCySearch, setCurrencySearch] = useState("");
-  // const [languageSearch, setLanguageSearchSearch] = useState("");
+  const debouncedValue = useDebounce(searchLearn, 500);
 
-  async function getResponseCountry() {
-    const res = await fetch(
-      "https://restcountries.com/v3.1/name/" + searchLearn
-    );
-    const data = await res.json();
-    setCountrySearch(data[0]);
-    setCountryFound(data[0]);
-    //setSearchLearn(capital.name.common);
-    console.log(data[0]);
-  }
-  useEffect(() => {
-    getResponseCountry();
-  }, [searchLearn]);
-
-  async function getResponseCapital() {
-    const res = await fetch(
-      "https://restcountries.com/v3.1/capital/" + searchLearn
-    );
-    const data = await res.json();
-    setCapitalSearch(data[0]);
-    setCountryFound(data[0]);
-    //setSearchLearn(capital.name.common);
-    console.log(data[0]);
-  }
-
-  useEffect(() => {
-    {
-      !countryFound && getResponseCapital();
+  async function getResponse(url) {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      setCountryFound(data[0]);
+      return data[0];
+    } catch (error) {
+      console.error("The promise is rejected !", error);
     }
-  }, [searchLearn]);
+  }
+
+  useEffect(() => {
+    const run = async () => {
+      const res = await getResponse(
+        "https://restcountries.com/v3.1/name/" + searchLearn
+      );
+      if (!res) {
+        await getResponse(
+          "https://restcountries.com/v3.1/capital/" + searchLearn
+        );
+      }
+    };
+    run();
+  }, [debouncedValue]);
 
   return (
     <div className="flex justify-center absolute w-full bottom-8">
@@ -49,20 +41,7 @@ const SearchLearn = ({ countryFound, setCountryFound }) => {
           value={searchLearn}
           onChange={(event) => setSearchLearn(event.target.value)}
         />
-        {/* <button onClick={getResponse}>Search</button> */}
       </div>
-      {countrySearch &&
-        "1 Country : " +
-          countrySearch.name.common +
-          ", search : " +
-          searchLearn}
-      {capitalSearch &&
-        "2 Country : " +
-          capitalSearch.name.common +
-          ", capital : " +
-          capitalSearch.capital +
-          ", search : " +
-          searchLearn}
     </div>
   );
 };
