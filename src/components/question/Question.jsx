@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import countries from "../../../public/mapGeometry.json";
+import countries from "../../assets/countriesData.json";
 
 function Question({ question, setQuestion, isAnswered }) {
-  const codes = countries.objects.world.geometries.map((country) => country.id);
+  const codes = countries.map((country) => country.id);
   const randomCode = codes[Math.floor(Math.random() * codes.length)];
   const getQuestion = (timeout = false) => {
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
