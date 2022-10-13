@@ -5,23 +5,21 @@ import SearchLearn from "../components/searchLearn/SearchLearn";
 
 const Learn = () => {
   const [clickedCountry, setClickedCountry] = useState("");
-  const [searchLearn, setSearchLearn] = useState("");
-  const [countrySearch, setCountrySearch] = useState("");
+  const [countryFound, setCountryFound] = useState("");
+
   return (
     <div className="height-minus-nav flex">
       <SearchLearn
-        searchLearn={searchLearn}
-        setSearchLearn={setSearchLearn}
-        countrySearch={countrySearch}
-        setCountrySearch={setCountrySearch}
+        countryFound={countryFound}
+        setCountryFound={setCountryFound}
       />
-      {countrySearch ? (
+      {countryFound ? (
         <Map
           actionOnClick={setClickedCountry}
-          searchCountry={countrySearch.name.common}
+          searchCountry={countryFound.name.common}
         />
       ) : (
-        <Map actionOnClick={setClickedCountry} searchCountry={searchLearn} />
+        <Map actionOnClick={setClickedCountry} />
       )}
 
       {clickedCountry && <Annotation country={clickedCountry} />}

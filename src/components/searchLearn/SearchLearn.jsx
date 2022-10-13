@@ -1,23 +1,41 @@
 import { useState, useEffect } from "react";
 
-const SearchLearn = ({
-  searchLearn,
-  setSearchLearn,
-  countrySearch,
-  setCountrySearch,
-}) => {
+const SearchLearn = ({ countryFound, setCountryFound }) => {
+  const [searchLearn, setSearchLearn] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
+  const [capitalSearch, setCapitalSearch] = useState("");
+  // const [currenCySearch, setCurrencySearch] = useState("");
+  // const [languageSearch, setLanguageSearchSearch] = useState("");
+
+  async function getResponseCountry() {
+    const res = await fetch(
+      "https://restcountries.com/v3.1/name/" + searchLearn
+    );
+    const data = await res.json();
+    setCountrySearch(data[0]);
+    setCountryFound(data[0]);
+    //setSearchLearn(capital.name.common);
+    console.log(data[0]);
+  }
+  useEffect(() => {
+    getResponseCountry();
+  }, [searchLearn]);
+
   async function getResponseCapital() {
     const res = await fetch(
       "https://restcountries.com/v3.1/capital/" + searchLearn
     );
     const data = await res.json();
-    setCountrySearch(data[0]);
+    setCapitalSearch(data[0]);
+    setCountryFound(data[0]);
     //setSearchLearn(capital.name.common);
     console.log(data[0]);
   }
 
   useEffect(() => {
-    getResponseCapital();
+    {
+      !countryFound && getResponseCapital();
+    }
   }, [searchLearn]);
 
   return (
@@ -34,10 +52,16 @@ const SearchLearn = ({
         {/* <button onClick={getResponse}>Search</button> */}
       </div>
       {countrySearch &&
-        countrySearch.name.common +
-          " " +
-          countrySearch.capital +
-          " " +
+        "1 Country : " +
+          countrySearch.name.common +
+          ", search : " +
+          searchLearn}
+      {capitalSearch &&
+        "2 Country : " +
+          capitalSearch.name.common +
+          ", capital : " +
+          capitalSearch.capital +
+          ", search : " +
           searchLearn}
     </div>
   );
