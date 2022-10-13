@@ -1,0 +1,889 @@
+[
+  {
+    "id": "AFG",
+    "name": "Afghanistan",
+    "coord": [65, 33],
+    "difficulty": "medium"
+  },
+  {
+    "id": "AGO",
+    "name": "Angola",
+    "coord": [18.5, -12.5],
+    "difficulty": "medium"
+  },
+  { "id": "ALB", "name": "Albania", "coord": [20, 41], "difficulty": "medium" },
+  {
+    "id": "ARE",
+    "name": "United Arab Emirates",
+    "coord": [54, 24],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ARG",
+    "name": "Argentina",
+    "coord": [-64, -34],
+    "difficulty": "medium"
+  },
+  { "id": "ARM", "name": "Armenia", "coord": [45, 40], "difficulty": "medium" },
+  {
+    "id": "ATF",
+    "name": "French Southern Territories",
+    "coord": [67, -43],
+    "difficulty": "medium"
+  },
+  {
+    "id": "AUS",
+    "name": "Australia",
+    "coord": [133, -27],
+    "difficulty": "medium"
+  },
+  {
+    "id": "AUT",
+    "name": "Austria",
+    "coord": [13.3333, 47.3333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "AZE",
+    "name": "Azerbaijan",
+    "coord": [47.5, 40.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BDI",
+    "name": "Burundi",
+    "coord": [30, -3.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BEL",
+    "name": "Belgium",
+    "coord": [4, 50.8333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BEN",
+    "name": "Benin",
+    "coord": [2.25, 9.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BFA",
+    "name": "Burkina Faso",
+    "coord": [-2, 13],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BGD",
+    "name": "Bangladesh",
+    "coord": [90, 24],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BGR",
+    "name": "Bulgaria",
+    "coord": [25, 43],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BHS",
+    "name": "Bahamas",
+    "coord": [-76, 24.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "coord": [18, 44],
+    "difficulty": "medium"
+  },
+  { "id": "BLR", "name": "Belarus", "coord": [28, 53], "difficulty": "medium" },
+  {
+    "id": "BLZ",
+    "name": "Belize",
+    "coord": [-88.75, 17.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BOL",
+    "name": "Bolivia",
+    "coord": [-65, -17],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BRA",
+    "name": "Brazil",
+    "coord": [-55, -10],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BRN",
+    "name": "Brunei",
+    "coord": [114.6667, 4.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BTN",
+    "name": "Bhutan",
+    "coord": [90.5, 27.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BWA",
+    "name": "Botswana",
+    "coord": [24, -22],
+    "difficulty": "medium"
+  },
+  {
+    "id": "CAF",
+    "name": "Central African Republic",
+    "coord": [21, 7],
+    "difficulty": "medium"
+  },
+  { "id": "CAN", "name": "Canada", "coord": [-95, 60], "difficulty": "medium" },
+  {
+    "id": "CHE",
+    "name": "Switzerland",
+    "coord": [8, 47],
+    "difficulty": "medium"
+  },
+  { "id": "CHL", "name": "Chile", "coord": [-71, -30], "difficulty": "medium" },
+  { "id": "CHN", "name": "China", "coord": [105, 35], "difficulty": "medium" },
+  {
+    "id": "CIV",
+    "name": "Cote d'Ivoire",
+    "coord": [-5, 8],
+    "difficulty": "medium"
+  },
+  { "id": "CMR", "name": "Cameroon", "coord": [12, 6], "difficulty": "medium" },
+  {
+    "id": "COD",
+    "name": "Democratic Republic of Congo",
+    "coord": [25, 0],
+    "difficulty": "medium"
+  },
+  { "id": "COG", "name": "Congo", "coord": [15, -1], "difficulty": "medium" },
+  {
+    "id": "COL",
+    "name": "Colombia",
+    "coord": [-72, 4],
+    "difficulty": "medium"
+  },
+  {
+    "id": "CRI",
+    "name": "Costa Rica",
+    "coord": [-84, 10],
+    "difficulty": "medium"
+  },
+  { "id": "CUB", "name": "Cuba", "coord": [-80, 21.5], "difficulty": "medium" },
+  { "id": "CYP", "name": "Cyprus", "coord": [33, 35], "difficulty": "medium" },
+  {
+    "id": "CZE",
+    "name": "Czechia",
+    "coord": [15.5, 49.75],
+    "difficulty": "medium"
+  },
+  { "id": "DEU", "name": "Germany", "coord": [9, 51], "difficulty": "medium" },
+  {
+    "id": "DJI",
+    "name": "Djibouti",
+    "coord": [43, 11.5],
+    "difficulty": "medium"
+  },
+  { "id": "DNK", "name": "Denmark", "coord": [10, 56], "difficulty": "medium" },
+  {
+    "id": "GRL",
+    "name": "Greenland",
+    "coord": [-40, 72],
+    "difficulty": "medium"
+  },
+  {
+    "id": "DOM",
+    "name": "Dominican Republic",
+    "coord": [-70.6667, 19],
+    "difficulty": "medium"
+  },
+  { "id": "DZA", "name": "Algeria", "coord": [3, 28], "difficulty": "medium" },
+  {
+    "id": "ECU",
+    "name": "Ecuador",
+    "coord": [-77.5, -2],
+    "difficulty": "medium"
+  },
+  { "id": "EGY", "name": "Egypt", "coord": [30, 27], "difficulty": "medium" },
+  { "id": "ERI", "name": "Eritrea", "coord": [39, 15], "difficulty": "medium" },
+  { "id": "ESP", "name": "Spain", "coord": [-4, 40], "difficulty": "medium" },
+  { "id": "EST", "name": "Estonia", "coord": [26, 59], "difficulty": "medium" },
+  { "id": "ETH", "name": "Ethiopia", "coord": [38, 8], "difficulty": "medium" },
+  { "id": "FIN", "name": "Finland", "coord": [26, 64], "difficulty": "medium" },
+  { "id": "FJI", "name": "Fiji", "coord": [175, -18], "difficulty": "medium" },
+  { "id": "FRA", "name": "France", "coord": [2, 46], "difficulty": "medium" },
+  {
+    "id": "GUF",
+    "name": "French Guiana",
+    "coord": [-53, 4],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GAB",
+    "name": "Gabon",
+    "coord": [11.75, -1],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GBR",
+    "name": "United Kingdom",
+    "coord": [-2, 54],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GEO",
+    "name": "Georgia",
+    "coord": [43.5, 42],
+    "difficulty": "medium"
+  },
+  { "id": "GHA", "name": "Ghana", "coord": [-2, 8], "difficulty": "medium" },
+  { "id": "GIN", "name": "Guinea", "coord": [-10, 11], "difficulty": "medium" },
+  {
+    "id": "GMB",
+    "name": "Gambia",
+    "coord": [-16.5667, 13.4667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GNB",
+    "name": "Guinea-Bissau",
+    "coord": [-15, 12],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GNQ",
+    "name": "Equatorial Guinea",
+    "coord": [10, 2],
+    "difficulty": "medium"
+  },
+  { "id": "GRC", "name": "Greece", "coord": [22, 39], "difficulty": "medium" },
+  {
+    "id": "GTM",
+    "name": "Guatemala",
+    "coord": [-90.25, 15.5],
+    "difficulty": "medium"
+  },
+  { "id": "GUY", "name": "Guyana", "coord": [-59, 5], "difficulty": "medium" },
+  {
+    "id": "HND",
+    "name": "Honduras",
+    "coord": [-86.5, 15],
+    "difficulty": "medium"
+  },
+  {
+    "id": "HRV",
+    "name": "Croatia",
+    "coord": [15.5, 45.1667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "HTI",
+    "name": "Haiti",
+    "coord": [-72.4167, 19],
+    "difficulty": "medium"
+  },
+  { "id": "HUN", "name": "Hungary", "coord": [20, 47], "difficulty": "medium" },
+  {
+    "id": "IDN",
+    "name": "Indonesia",
+    "coord": [120, -5],
+    "difficulty": "medium"
+  },
+  { "id": "IND", "name": "India", "coord": [77, 20], "difficulty": "medium" },
+  { "id": "IRL", "name": "Ireland", "coord": [-8, 53], "difficulty": "medium" },
+  { "id": "IRN", "name": "Iran", "coord": [53, 32], "difficulty": "medium" },
+  { "id": "IRQ", "name": "Iraq", "coord": [44, 33], "difficulty": "medium" },
+  {
+    "id": "ISL",
+    "name": "Iceland",
+    "coord": [-18, 65],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ISR",
+    "name": "Israel",
+    "coord": [34.75, 31.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ITA",
+    "name": "Italy",
+    "coord": [12.8333, 42.8333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "JAM",
+    "name": "Jamaica",
+    "coord": [-77.5, 18.25],
+    "difficulty": "medium"
+  },
+  { "id": "JOR", "name": "Jordan", "coord": [36, 31], "difficulty": "medium" },
+  { "id": "JPN", "name": "Japan", "coord": [138, 36], "difficulty": "medium" },
+  {
+    "id": "KAZ",
+    "name": "Kazakhstan",
+    "coord": [68, 48],
+    "difficulty": "medium"
+  },
+  { "id": "KEN", "name": "Kenya", "coord": [38, 1], "difficulty": "medium" },
+  {
+    "id": "KGZ",
+    "name": "Kyrgyzstan",
+    "coord": [75, 41],
+    "difficulty": "medium"
+  },
+  {
+    "id": "KHM",
+    "name": "Cambodia",
+    "coord": [105, 13],
+    "difficulty": "medium"
+  },
+  {
+    "id": "KOR",
+    "name": "South Korea",
+    "coord": [127.5, 37],
+    "difficulty": "medium"
+  },
+  {
+    "id": "XXK",
+    "name": "Kosovo",
+    "coord": [20.9021231, 42.5869578],
+    "difficulty": "medium"
+  },
+  {
+    "id": "KWT",
+    "name": "Kuwait",
+    "coord": [47.6581, 29.3375],
+    "difficulty": "medium"
+  },
+  { "id": "LAO", "name": "Laos", "coord": [105, 18], "difficulty": "medium" },
+  {
+    "id": "LBN",
+    "name": "Lebanon",
+    "coord": [35.8333, 33.8333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LBR",
+    "name": "Liberia",
+    "coord": [-9.5, 6.5],
+    "difficulty": "medium"
+  },
+  { "id": "LBY", "name": "Libya", "coord": [17, 25], "difficulty": "medium" },
+  {
+    "id": "LKA",
+    "name": "Sri Lanka",
+    "coord": [81, 7],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LSO",
+    "name": "Lesotho",
+    "coord": [28.5, -29.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LTU",
+    "name": "Lithuania",
+    "coord": [24, 56],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LUX",
+    "name": "Luxembourg",
+    "coord": [6.1667, 49.75],
+    "difficulty": "medium"
+  },
+  { "id": "LVA", "name": "Latvia", "coord": [25, 57], "difficulty": "medium" },
+  { "id": "MAR", "name": "Morocco", "coord": [-5, 32], "difficulty": "medium" },
+  { "id": "MDA", "name": "Moldova", "coord": [29, 47], "difficulty": "medium" },
+  {
+    "id": "MDG",
+    "name": "Madagascar",
+    "coord": [47, -20],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MEX",
+    "name": "Mexico",
+    "coord": [-102, 23],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MKD",
+    "name": "North Macedonia",
+    "coord": [22, 41.8333],
+    "difficulty": "medium"
+  },
+  { "id": "MLI", "name": "Mali", "coord": [-4, 17], "difficulty": "medium" },
+  { "id": "MMR", "name": "Myanmar", "coord": [98, 22], "difficulty": "medium" },
+  {
+    "id": "MNE",
+    "name": "Montenegro",
+    "coord": [19, 42],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MNG",
+    "name": "Mongolia",
+    "coord": [105, 46],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MOZ",
+    "name": "Mozambique",
+    "coord": [35, -18.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MRT",
+    "name": "Mauritania",
+    "coord": [-12, 20],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MWI",
+    "name": "Malawi",
+    "coord": [34, -13.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MYS",
+    "name": "Malaysia",
+    "coord": [112.5, 2.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "NAM",
+    "name": "Namibia",
+    "coord": [17, -22],
+    "difficulty": "medium"
+  },
+  {
+    "id": "NCL",
+    "name": "New Caledonia",
+    "coord": [165.5, -21.5],
+    "difficulty": "medium"
+  },
+  { "id": "NER", "name": "Niger", "coord": [8, 16], "difficulty": "medium" },
+  { "id": "NGA", "name": "Nigeria", "coord": [8, 10], "difficulty": "medium" },
+  {
+    "id": "NIC",
+    "name": "Nicaragua",
+    "coord": [-85, 13],
+    "difficulty": "medium"
+  },
+  {
+    "id": "NLD",
+    "name": "Netherlands",
+    "coord": [5.75, 52.5],
+    "difficulty": "medium"
+  },
+  { "id": "NOR", "name": "Norway", "coord": [10, 62], "difficulty": "medium" },
+  { "id": "NPL", "name": "Nepal", "coord": [84, 28], "difficulty": "medium" },
+  {
+    "id": "NZL",
+    "name": "New Zealand",
+    "coord": [174, -41],
+    "difficulty": "medium"
+  },
+  { "id": "OMN", "name": "Oman", "coord": [57, 21], "difficulty": "medium" },
+  {
+    "id": "PAK",
+    "name": "Pakistan",
+    "coord": [70, 30],
+    "difficulty": "medium"
+  },
+  { "id": "PAN", "name": "Panama", "coord": [-80, 9], "difficulty": "medium" },
+  { "id": "PER", "name": "Peru", "coord": [-76, -10], "difficulty": "medium" },
+  {
+    "id": "PHL",
+    "name": "Philippines",
+    "coord": [122, 13],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PNG",
+    "name": "Papua New Guinea",
+    "coord": [147, -6],
+    "difficulty": "medium"
+  },
+  { "id": "POL", "name": "Poland", "coord": [20, 52], "difficulty": "medium" },
+  {
+    "id": "PRI",
+    "name": "Puerto Rico",
+    "coord": [-66.5, 18.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PRK",
+    "name": "North Korea",
+    "coord": [127, 40],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PRT",
+    "name": "Portugal",
+    "coord": [-8, 39.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PRY",
+    "name": "Paraguay",
+    "coord": [-58, -23],
+    "difficulty": "medium"
+  },
+  {
+    "id": "QAT",
+    "name": "Qatar",
+    "coord": [51.25, 25.5],
+    "difficulty": "medium"
+  },
+  { "id": "ROU", "name": "Romania", "coord": [25, 46], "difficulty": "medium" },
+  { "id": "RUS", "name": "Russia", "coord": [100, 60], "difficulty": "medium" },
+  { "id": "RWA", "name": "Rwanda", "coord": [30, -2], "difficulty": "medium" },
+  {
+    "id": "ESH",
+    "name": "Western Sahara",
+    "coord": [-13, 24.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SAU",
+    "name": "Saudi Arabia",
+    "coord": [45, 25],
+    "difficulty": "medium"
+  },
+  { "id": "SDN", "name": "Sudan", "coord": [30, 15], "difficulty": "medium" },
+  {
+    "id": "SSD",
+    "name": "South Sudan",
+    "coord": [29.6667897, 7.8699431],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SEN",
+    "name": "Senegal",
+    "coord": [-14, 14],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SLB",
+    "name": "Solomon Islands",
+    "coord": [159, -8],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SLE",
+    "name": "Sierra Leone",
+    "coord": [-11.5, 8.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SLV",
+    "name": "El Salvador",
+    "coord": [-88.9167, 13.8333],
+    "difficulty": "medium"
+  },
+  { "id": "SOM", "name": "Somalia", "coord": [49, 10], "difficulty": "medium" },
+  { "id": "SRB", "name": "Serbia", "coord": [21, 44], "difficulty": "medium" },
+  {
+    "id": "SUR",
+    "name": "Suriname",
+    "coord": [-56, 4],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SVK",
+    "name": "Slovakia",
+    "coord": [19.5, 48.6667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SVN",
+    "name": "Slovenia",
+    "coord": [15, 46],
+    "difficulty": "medium"
+  },
+  { "id": "SWE", "name": "Sweden", "coord": [15, 62], "difficulty": "medium" },
+  {
+    "id": "SWZ",
+    "name": "Eswatini",
+    "coord": [31.5, -26.5],
+    "difficulty": "medium"
+  },
+  { "id": "SYR", "name": "Syria", "coord": [38, 35], "difficulty": "medium" },
+  { "id": "TCD", "name": "Chad", "coord": [19, 15], "difficulty": "medium" },
+  { "id": "TGO", "name": "Togo", "coord": [1.1667, 8], "difficulty": "medium" },
+  {
+    "id": "THA",
+    "name": "Thailand",
+    "coord": [100, 15],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TJK",
+    "name": "Tajikistan",
+    "coord": [71, 39],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TKM",
+    "name": "Turkmenistan",
+    "coord": [60, 40],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TLS",
+    "name": "Timor",
+    "coord": [125.5167, -8.55],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TTO",
+    "name": "Trinidad and Tobago",
+    "coord": [-61, 11],
+    "difficulty": "medium"
+  },
+  { "id": "TUN", "name": "Tunisia", "coord": [9, 34], "difficulty": "medium" },
+  { "id": "TUR", "name": "Turkey", "coord": [35, 39], "difficulty": "medium" },
+  {
+    "id": "TWN",
+    "name": "Taiwan",
+    "coord": [121, 23.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TZA",
+    "name": "Tanzania",
+    "coord": [35, -6],
+    "difficulty": "medium"
+  },
+  { "id": "UGA", "name": "Uganda", "coord": [32, 1], "difficulty": "medium" },
+  { "id": "UKR", "name": "Ukraine", "coord": [32, 49], "difficulty": "medium" },
+  {
+    "id": "URY",
+    "name": "Uruguay",
+    "coord": [-56, -33],
+    "difficulty": "medium"
+  },
+  {
+    "id": "USA",
+    "name": "United States",
+    "coord": [-97, 38],
+    "difficulty": "medium"
+  },
+  {
+    "id": "UZB",
+    "name": "Uzbekistan",
+    "coord": [64, 41],
+    "difficulty": "medium"
+  },
+  {
+    "id": "VEN",
+    "name": "Venezuela",
+    "coord": [-66, 8],
+    "difficulty": "medium"
+  },
+  {
+    "id": "VNM",
+    "name": "Vietnam",
+    "coord": [106, 16],
+    "difficulty": "medium"
+  },
+  {
+    "id": "VUT",
+    "name": "Vanuatu",
+    "coord": [167, -16],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PSX",
+    "name": "West Bank",
+    "coord": [35.2888075, 32.0254688],
+    "difficulty": "medium"
+  },
+  { "id": "YEM", "name": "Yemen", "coord": [48, 15], "difficulty": "medium" },
+  {
+    "id": "ZAF",
+    "name": "South Africa",
+    "coord": [24, -29],
+    "difficulty": "medium"
+  },
+  { "id": "ZMB", "name": "Zambia", "coord": [30, -15], "difficulty": "medium" },
+  {
+    "id": "ZWE",
+    "name": "Zimbabwe",
+    "coord": [30, -20],
+    "difficulty": "medium"
+  },
+  {
+    "id": "CPV",
+    "name": "Cape Verde",
+    "coord": [-24, 16],
+    "difficulty": "medium"
+  },
+  {
+    "id": "COM",
+    "name": "Comoros",
+    "coord": [44.25, -12.1667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MUS",
+    "name": "Mauritius",
+    "coord": [57.55, -20.2833],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SYC",
+    "name": "Seychelles",
+    "coord": [55.6667, -4.5833],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BHR",
+    "name": "Bahrain",
+    "coord": [50.55, 26],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MDV",
+    "name": "Maldives",
+    "coord": [73, 3.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MHL",
+    "name": "Marshall Islands",
+    "coord": [168, 9],
+    "difficulty": "medium"
+  },
+  {
+    "id": "FSM",
+    "name": "Micronesia (country)",
+    "coord": [158.25, 6.9167],
+    "difficulty": "medium"
+  },
+  {
+    "id": "NRU",
+    "name": "Nauru",
+    "coord": [166.9167, -0.5333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "PLW",
+    "name": "Palau",
+    "coord": [134.5, 7.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "WSM",
+    "name": "Samoa",
+    "coord": [-172.3333, -13.5833],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SGP",
+    "name": "Singapore",
+    "coord": [103.8, 1.3667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "TON",
+    "name": "Tonga",
+    "coord": [-175, -20],
+    "difficulty": "medium"
+  },
+  { "id": "TUV", "name": "Tuvalu", "coord": [178, -8], "difficulty": "medium" },
+  {
+    "id": "ATG",
+    "name": "Antigua and Barbuda",
+    "coord": [-61.8, 17.05],
+    "difficulty": "medium"
+  },
+  {
+    "id": "BRB",
+    "name": "Barbados",
+    "coord": [-59.5333, 13.1667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "DMA",
+    "name": "Dominica",
+    "coord": [-61.3333, 15.4167],
+    "difficulty": "medium"
+  },
+  {
+    "id": "GRD",
+    "name": "Grenada",
+    "coord": [-61.6667, 12.1167],
+    "difficulty": "medium"
+  },
+  {
+    "id": "KNA",
+    "name": "Saint Kitts and Nevis",
+    "coord": [-62.75, 17.3333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LCA",
+    "name": "Saint Lucia",
+    "coord": [-61.1333, 13.8833],
+    "difficulty": "medium"
+  },
+  {
+    "id": "VCT",
+    "name": "Saint Vincent and the Grenadines",
+    "coord": [-61.2, 13.25],
+    "difficulty": "medium"
+  },
+  {
+    "id": "AND",
+    "name": "Andorra",
+    "coord": [1.6, 42.5],
+    "difficulty": "medium"
+  },
+  {
+    "id": "LIE",
+    "name": "Liechtenstein",
+    "coord": [9.5333, 47.1667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MLT",
+    "name": "Malta",
+    "coord": [14.5833, 35.8333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "MCO",
+    "name": "Monaco",
+    "coord": [7.4, 43.7333],
+    "difficulty": "medium"
+  },
+  {
+    "id": "SMR",
+    "name": "San Marino",
+    "coord": [12.4167, 43.7667],
+    "difficulty": "medium"
+  },
+  {
+    "id": "KIR",
+    "name": "Kiribati",
+    "coord": [173, 1.4167],
+    "difficulty": "medium"
+  },
+  {
+    "id": "STP",
+    "name": "Sao Tome and Principe",
+    "coord": [7, 1],
+    "difficulty": "medium"
+  }
+]

@@ -1,16 +1,24 @@
-import { element } from "prop-types";
 import { useEffect, useState } from "react";
-import countries from "../../../public/mapGeometry.json";
+import countries from "../../assets/countriesData.json";
 
-function Question(gameModes) {
-  const [question, setQuestion] = useState(null);
-
-  const codes = countries.objects.world.geometries.map((country) => country.id);
-  useEffect(() => {
-    const randomCode = codes[Math.floor(Math.random() * codes.length)];
+function Question({ question, setQuestion, isAnswered, gameModes }) {
+  const codes = countries.map((country) => country.id);
+  const randomCode = codes[Math.floor(Math.random() * codes.length)];
+  const getQuestion = (timeout = false) => {
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
-      .then((data) => setQuestion(data));
+      .then((data) =>
+        timeout
+          ? setTimeout(() => {
+              setQuestion(data);
+            }, 2000)
+          : setQuestion(data)
+      );
+  };
+
+  useEffect(() => {
+    console.log(gameModes);
+    getQuestion();
   }, []);
 
   const [questionType, setQuestionType] = useState(null);
@@ -42,7 +50,7 @@ function Question(gameModes) {
   useEffect(() => {
     let modes = [];
     if (setQuestionType) {
-      gameModes.gameModes.forEach((mode, index) => {
+      gameModes.forEach((mode, index) => {
         if (mode == true) {
           modes.push(index);
         }
@@ -51,9 +59,13 @@ function Question(gameModes) {
     }
   }, [setQuestionType]);
 
+  useEffect(() => {
+    isAnswered && getQuestion(true);
+  }, [isAnswered]);
+
   return (
     <div className="flex justify-center absolute w-full bottom-8">
-      <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid mt-20 shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
+      <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
         <h2 className="text-center w-full text-3xl">
           {questionType && questionType[number].phrase}
           <b> {questionType && questionType[number].request} ?</b>
