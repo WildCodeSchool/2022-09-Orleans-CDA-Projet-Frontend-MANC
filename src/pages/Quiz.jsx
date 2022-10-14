@@ -13,6 +13,7 @@ const Quiz = () => {
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [preventClickCountry, setPreventClickCountry] = useState(false);
 
   useEffect(() => {
     isConfirmed &&
@@ -44,22 +45,30 @@ const Quiz = () => {
   }, [question]);
 
   useEffect(() => {
+    setPreventClickCountry(false);
+  }, [question]);
+
+  useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
   }, [answer]);
 
   return (
     <div className="height-minus-nav flex">
       <Map
+        preventClickCountry={preventClickCountry}
         clickedCountry={clickedCountry}
         actionOnClick={setClickedCountry}
         markerCoordinates={markerCoordinates}
         setIsConfirmed={setIsConfirmed}
+        correctAnswer={answer.isCorrect}
+        isConfirmed={isConfirmed}
       />
       <Question
         question={question}
         setQuestion={setQuestion}
         isAnswered={answer.isAnswered}
         gameModes={gameModes}
+        setPreventClickCountry={setPreventClickCountry}
       />
       {answer.isAnswered && clickedCountry !== "" && (
         <Answer answer={answer.isCorrect} />
