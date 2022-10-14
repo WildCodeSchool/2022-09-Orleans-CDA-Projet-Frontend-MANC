@@ -12,16 +12,18 @@ const Quiz = () => {
   const [countryAnswer, setCountryAnswer] = useState(null);
 
   const getAnswer = (clickedCountry) => {
-    fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (number === 1) {
-          setCountryAnswer(data[0].currencies);
-        }
-        if (number === 2) {
-          setCountryAnswer(data[0].languages);
-        }
-      });
+    if (clickedCountry !== "") {
+      fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          if (number === 1) {
+            setCountryAnswer(data[0].currencies);
+          }
+          if (number === 2) {
+            setCountryAnswer(data[0].languages);
+          }
+        });
+    }
   };
 
   const [clickedCountry, setClickedCountry] = useState("");

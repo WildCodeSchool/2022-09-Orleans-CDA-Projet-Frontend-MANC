@@ -49,14 +49,12 @@ function Question({
 
   useEffect(() => {
     let modes = [];
-    if (setQuestionType) {
-      gameModes.forEach((mode, index) => {
-        if (mode == true) {
-          modes.push(index);
-        }
-      });
-      setNumber(modes[Math.floor(Math.random() * modes.length)]);
-    }
+    gameModes.forEach((mode, index) => {
+      if (mode === true) {
+        modes.push(index);
+      }
+    });
+    setNumber(modes[Math.floor(Math.random() * modes.length)]);
   }, [questionType]);
 
   useEffect(() => {
@@ -64,7 +62,6 @@ function Question({
   }, [isAnswered]);
 
   useEffect(() => {
-    console.log(gameModes);
     getQuestion();
   }, []);
 
