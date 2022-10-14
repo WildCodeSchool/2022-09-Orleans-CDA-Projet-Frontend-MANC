@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
@@ -5,6 +6,8 @@ import Question from "../components/question/Question";
 import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
+  const location = useLocation();
+  const gameModes = location.state;
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
@@ -64,6 +67,7 @@ const Quiz = () => {
         question={question}
         setQuestion={setQuestion}
         isAnswered={answer.isAnswered}
+        gameModes={gameModes}
         setPreventClickCountry={setPreventClickCountry}
       />
       {answer.isAnswered && clickedCountry !== "" && (
