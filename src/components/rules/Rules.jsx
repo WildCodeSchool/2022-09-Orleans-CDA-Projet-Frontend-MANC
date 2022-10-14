@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Rules = () => {
   return (
     <div className="border border-black rounded-lg p-10 w-2/4">
-      <h1 className="text-3xl font-bold my-10">How To Play ?</h1>
+      <h1 className="text-6xl font-bold my-10">How To Play ?</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
