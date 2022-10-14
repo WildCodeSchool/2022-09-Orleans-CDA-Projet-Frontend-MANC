@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
-import countries from "../../../public/mapGeometry.json";
+import countries from "../../assets/countriesData.json";
 
-function Question() {
-  const [question, setQuestion] = useState("");
-
-  const codes = countries.objects.world.geometries.map((country) => country.id);
-  useEffect(() => {
-    const randomCode = codes[Math.floor(Math.random() * codes.length)];
+function Question({ question, setQuestion, isAnswered }) {
+  const codes = countries.map((country) => country.id);
+  const randomCode = codes[Math.floor(Math.random() * codes.length)];
+  const getQuestion = (timeout = false) => {
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
-      .then((data) => setQuestion(data));
+      .then((data) =>
+        timeout
+          ? setTimeout(() => {
+              setQuestion(data);
+            }, 2000)
+          : setQuestion(data)
+      );
+  };
+
+  useEffect(() => {
+    getQuestion();
   }, []);
+
+  useEffect(() => {
+    isAnswered && getQuestion(true);
+  }, [isAnswered]);
 
   return (
     <div className="flex justify-center absolute w-full bottom-8">
-      <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid mt-20 shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
+      <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
         <h2 className="text-center w-full text-3xl">
-          Quel pays a pour capital :
+          Quel pays a pour capitale :
           <b> {question ? question[0].capital[0] : ""} ?</b>
         </h2>
       </div>

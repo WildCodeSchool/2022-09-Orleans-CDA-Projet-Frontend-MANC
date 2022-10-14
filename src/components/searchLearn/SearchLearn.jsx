@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useDebounce from "../../hooks/useDebounce";
 
-const SearchLearn = ({ countryFound, setCountryFound }) => {
+const SearchLearn = ({ setCountrySearchFound }) => {
   const [searchLearn, setSearchLearn] = useState("");
   const debouncedValue = useDebounce(searchLearn, 500);
 
@@ -9,7 +9,7 @@ const SearchLearn = ({ countryFound, setCountryFound }) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      setCountryFound(data[0]);
+      setCountrySearchFound(data[0]);
       return data[0];
     } catch (error) {
       console.error("The promise is rejected !", error);
