@@ -6,7 +6,7 @@ function Question({
   setQuestion,
   isAnswered,
   setPreventClickCountry,
-  gameModes
+  gameModes,
 }) {
   const codes = countries.map((country) => country.id);
   const randomCode = codes[Math.floor(Math.random() * codes.length)];
