@@ -55,7 +55,7 @@ function Question({ question, setQuestion, isAnswered, gameModes }) {
       }
     });
     setNumber(modes[Math.floor(Math.random() * modes.length)]);
-  }, [setQuestionType]);
+  }, [questionType]);
 
   useEffect(() => {
     isAnswered && getQuestion(true);
