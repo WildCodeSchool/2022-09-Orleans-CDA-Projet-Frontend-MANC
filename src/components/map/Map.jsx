@@ -13,6 +13,7 @@ const Map = ({
   clickedCountry,
   markerCoordinates,
   setIsConfirmed,
+  preventClickCountry,
   correctAnswer,
   isConfirmed,
 }) => {
@@ -50,7 +51,7 @@ const Map = ({
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
-                    actionOnClick(`${geo.id}`);
+                    !preventClickCountry && actionOnClick(geo.id);
                   }}
                 />
               ))
