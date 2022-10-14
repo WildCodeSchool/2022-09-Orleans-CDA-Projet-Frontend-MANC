@@ -51,6 +51,8 @@ const Quiz = () => {
         actionOnClick={setClickedCountry}
         markerCoordinates={markerCoordinates}
         setIsConfirmed={setIsConfirmed}
+        correctAnswer={answer.isCorrect}
+        isConfirmed={isConfirmed}
       />
       <Question
         question={question}
