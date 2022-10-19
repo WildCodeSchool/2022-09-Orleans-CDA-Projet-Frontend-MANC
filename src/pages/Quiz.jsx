@@ -7,7 +7,7 @@ import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
   const location = useLocation();
-  const gameModes = location.state;
+  const { checkedState: gameModes, questionNumber } = location.state;
   const [clickedCountry, setClickedCountry] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
@@ -15,6 +15,10 @@ const Quiz = () => {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [preventClickCountry, setPreventClickCountry] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
+
+  useEffect(() => {
+    console.log(questionNumber);
+  }, []);
 
   useEffect(() => {
     isConfirmed &&

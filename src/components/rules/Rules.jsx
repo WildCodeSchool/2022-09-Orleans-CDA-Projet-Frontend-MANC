@@ -108,7 +108,7 @@ const Rules = () => {
       </fieldset>
 
       <div className="flex justify-center ">
-        <Link to="/play/quiz" state={checkedState}>
+        <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
           <button className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-4">
             Play
           </button>
