@@ -72,13 +72,13 @@ const Rules = () => {
         <div className="flex justify-between my-4">
           <div>
             <input
-              checked={questionNumber === 10 ? true : false}
+              checked={questionNumber == 10 ? true : false}
               value="10"
               type="radio"
               id="10"
               name="number"
               className="rounded-full mx-2"
-              onChange={() => setQuestionNumber(10)}
+              onChange={(e) => setQuestionNumber(e.target.value)}
             />
             <label htmlFor="10">10</label>
           </div>
@@ -89,7 +89,7 @@ const Rules = () => {
               id="20"
               name="number"
               className="rounded-full mx-2"
-              onChange={() => setQuestionNumber(20)}
+              onChange={(e) => setQuestionNumber(e.target.value)}
             />
             <label htmlFor="20">20</label>
           </div>
@@ -100,7 +100,7 @@ const Rules = () => {
               id="30"
               name="number"
               className="rounded-full mx-2"
-              onChange={() => setQuestionNumber(30)}
+              onChange={(e) => setQuestionNumber(e.target.value)}
             />
             <label htmlFor="30">30</label>
           </div>
