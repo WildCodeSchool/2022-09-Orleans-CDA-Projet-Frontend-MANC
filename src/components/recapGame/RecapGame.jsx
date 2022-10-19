@@ -13,7 +13,7 @@ const RecapGame = ({
         </p>
         <p>Score : {counterCorrect}</p>
         <p>
-          {response != "" && "Previous correct answer :"} {response}
+          {response !== "" && "Previous correct answer :"} {response}
         </p>
       </div>
     </div>
