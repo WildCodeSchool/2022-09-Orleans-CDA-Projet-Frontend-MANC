@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import countries from "../../assets/countriesData.json";
 
 function Question({
@@ -7,22 +7,25 @@ function Question({
   isAnswered,
   questionType,
   gameModes,
-  number,
   setQuestionType,
   setNumber,
+  setPreventClickCountry,
 }) {
   const codes = countries.map((country) => country.id);
   const randomCode = codes[Math.floor(Math.random() * codes.length)];
   const getQuestion = (timeout = false) => {
     fetch(`https://restcountries.com/v3.1/alpha/${randomCode}`)
       .then((resp) => resp.json())
-      .then((data) =>
-        timeout
-          ? setTimeout(() => {
-              setQuestion(data);
-            }, 2000)
-          : setQuestion(data)
-      );
+      .then((data) => {
+        if (timeout) {
+          setPreventClickCountry(true);
+          setTimeout(() => {
+            setQuestion(data);
+          }, 2000);
+        } else {
+          setQuestion(data);
+        }
+      });
   };
 
   useEffect(() => {
@@ -57,7 +60,9 @@ function Question({
     }
   }, [question]);
 
-  useEffect(() => {}, [questionType]);
+  useEffect(() => {
+    getQuestion();
+  }, []);
 
   useEffect(() => {
     isAnswered && getQuestion(true);
