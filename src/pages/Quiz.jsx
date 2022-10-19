@@ -52,8 +52,9 @@ const Quiz = () => {
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
     if (answer.isCorrect === true) {
-      setCounterCorrect(counterCorrect + 1);
+      setCounterCorrect((prevCounter) => prevCounter + 1);
     }
+    console.log(counterCorrect);
   }, [answer]);
 
   return (
