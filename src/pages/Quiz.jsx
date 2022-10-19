@@ -11,6 +11,7 @@ const Quiz = () => {
   const gameModes = location.state;
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
+  const [response, setResponse] = useState("");
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -79,6 +80,7 @@ const Quiz = () => {
           isAnswered: true,
           isCorrect: clickedCountry === question[0].cca3,
         });
+        setResponse(question[0].name.common);
       }
       if (number === 1) {
         setAnswer({
@@ -87,6 +89,7 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
+        setResponse(question[0].name.common);
       }
       if (number === 2) {
         setAnswer({
@@ -95,6 +98,7 @@ const Quiz = () => {
             Object.values(question[0].languages)[0]
           ),
         });
+        setResponse(question[0].name.common);
       }
     }
   }, [isConfirmed]);
@@ -144,7 +148,11 @@ const Quiz = () => {
       {answer.isAnswered && clickedCountry !== "" && (
         <Answer answer={answer.isCorrect} />
       )}
-      <RecapGame counterCorrect={counterCorrect} />
+      {answer.isAnswered && clickedCountry !== "" && !answer.isCorrect ? (
+        <RecapGame counterCorrect={counterCorrect} response={response} />
+      ) : (
+        <RecapGame counterCorrect={counterCorrect} />
+      )}
     </div>
   );
 };
