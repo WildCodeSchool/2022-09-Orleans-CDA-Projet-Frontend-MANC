@@ -4,6 +4,7 @@ import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
 import countryData from "../assets/countriesData.json";
+import RecapGame from "../components/recapGame/RecapGame";
 
 const Quiz = () => {
   const location = useLocation();
@@ -77,6 +78,7 @@ const Quiz = () => {
       {answer.isAnswered && clickedCountry !== "" && (
         <Answer answer={answer.isCorrect} />
       )}
+      <RecapGame />
     </div>
   );
 };
