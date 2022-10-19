@@ -144,7 +144,7 @@ const Quiz = () => {
       {answer.isAnswered && clickedCountry !== "" && (
         <Answer answer={answer.isCorrect} />
       )}
-      <RecapGame />
+      <RecapGame counterCorrect={counterCorrect} />
     </div>
   );
 };
