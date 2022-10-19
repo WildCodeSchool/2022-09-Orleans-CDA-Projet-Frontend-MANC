@@ -8,8 +8,6 @@ import {
 
 const Map = ({
   actionOnClick,
-  searchCountry,
-  setCountryFound,
   clickedCountry,
   markerCoordinates,
   setIsConfirmed,
@@ -17,8 +15,6 @@ const Map = ({
   correctAnswer,
   isConfirmed,
 }) => {
-  const searchLower = searchCountry ? searchCountry.toLowerCase() : "";
-
   return (
     <>
       <ComposableMap
@@ -36,9 +32,6 @@ const Map = ({
               geographies.map((geo) => (
                 <Geography
                   className={`${
-                    geo.properties.name.toLowerCase() === searchLower &&
-                    "fill-green-500"
-                  } ${
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
                       ? !correctAnswer && isConfirmed
                         ? "fill-red-500"
@@ -46,8 +39,6 @@ const Map = ({
                       : "fill-white"
                   } 
                   stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
-                  {...(geo.properties.name.toLowerCase() === searchLower &&
-                    setCountryFound(geo.id))}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
