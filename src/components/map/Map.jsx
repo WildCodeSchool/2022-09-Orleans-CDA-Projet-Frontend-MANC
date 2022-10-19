@@ -22,7 +22,7 @@ const Map = ({
   return (
     <>
       <ComposableMap
-        className="bg-sky-200 h-full w-full"
+        className="bg-cyan-900 h-full w-full"
         projectionConfig={{
           scale: 120,
           center: [0, 0],
