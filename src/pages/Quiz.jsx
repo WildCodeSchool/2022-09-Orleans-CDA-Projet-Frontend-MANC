@@ -57,8 +57,8 @@ const Quiz = () => {
   }, [answer]);
 
   return (
-    <div className="height-minus-nav flex justify-center items-center bg-map">
-      <div className="h-4/5 w-4/5 p-1 relative flex rounded-lg border-solid border-2 border-greyblue shadow-2xl bg-sky-200">
+    <div className="height-minus-nav flex justify-center items-center bg-quiz">
+      <div className="h-4/5 w-4/5 p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
         <Map
           preventClickCountry={preventClickCountry}
           clickedCountry={clickedCountry}
