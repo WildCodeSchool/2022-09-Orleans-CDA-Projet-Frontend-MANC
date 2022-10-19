@@ -7,12 +7,15 @@ import countries from "../assets/countriesData.json";
 const Learn = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [countrySearchFound, setCountrySearchFound] = useState("");
-  const [countryFound, setCountryFound] = useState("");
   const [markerFoundCoordinate, setMarkerFoundCoordinate] = useState("");
 
   useEffect(() => {
-    setClickedCountry(countryFound);
-  }, [countryFound]);
+    setClickedCountry(countrySearchFound);
+  }, [countrySearchFound]);
+
+  useEffect(() => {
+    setCountrySearchFound(clickedCountry);
+  }, [clickedCountry]);
 
   useEffect(() => {
     if (countrySearchFound) {
@@ -30,18 +33,11 @@ const Learn = () => {
   return (
     <div className="height-minus-nav flex">
       <SearchLearn setCountrySearchFound={setCountrySearchFound} />
-      {countrySearchFound ? (
-        <Map
-          actionOnClick={setClickedCountry}
-          searchCountry={countrySearchFound.name.common}
-          setCountryFound={setCountryFound}
-          clickedCountry={clickedCountry}
-          markerFoundCoordinate={markerFoundCoordinate}
-        />
-      ) : (
-        <Map actionOnClick={setClickedCountry} />
-      )}
-
+      <Map
+        actionOnClick={setClickedCountry}
+        clickedCountry={clickedCountry ? clickedCountry : countrySearchFound}
+        markerFoundCoordinate={markerFoundCoordinate}
+      />
       {clickedCountry && <Annotation country={clickedCountry} />}
     </div>
   );

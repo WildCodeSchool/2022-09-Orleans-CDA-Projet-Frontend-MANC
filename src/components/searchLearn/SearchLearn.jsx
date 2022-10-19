@@ -9,7 +9,11 @@ const SearchLearn = ({ setCountrySearchFound }) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      setCountrySearchFound(data[0]);
+      if (!data.status && data[0]) {
+        setCountrySearchFound(data[0].cca3);
+      } else {
+        setCountrySearchFound("");
+      }
       return data[0];
     } catch (error) {
       console.error("The promise is rejected !", error);
