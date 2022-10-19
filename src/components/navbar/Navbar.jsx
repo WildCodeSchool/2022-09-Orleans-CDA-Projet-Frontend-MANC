@@ -14,7 +14,7 @@ const Navbar = () => {
           }
         >
           <img className="h-16" src="../../icon.png" alt="" />
-          <span className="ml-4 font-semibold text-3xl text-lightgreen">
+          <span className="ml-4 font-semibold text-3xl text-green-400">
             Map
           </span>
           <span className="ml-2 font-semibold text-3xl text-lightblue">
