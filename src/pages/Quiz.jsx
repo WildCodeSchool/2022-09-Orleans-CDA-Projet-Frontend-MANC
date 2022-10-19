@@ -54,7 +54,6 @@ const Quiz = () => {
     if (answer.isCorrect === true) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
-    console.log(counterCorrect);
   }, [answer]);
 
   return (
