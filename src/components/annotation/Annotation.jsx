@@ -26,8 +26,9 @@ const Annotation = (country) => {
         </h2>
         <p className="flex items-center gap-2 text-lg">
           <TbBuilding />
-          Capital:{" "}
-          {countryData && countryData.capital && countryData.capital[0]}
+          {countryData && countryData.capital
+            ? `Capital: ${countryData.capital[0]}`
+            : "Capital: n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
