@@ -14,6 +14,8 @@ body {
   height: calc(100vh - 80px);
 }
 
-.bg-map {
-  background-image: url("./assets/images/blurred-map.jpg");
+.bg-quiz {
+  background-image: url("/blurry-white-blue.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
