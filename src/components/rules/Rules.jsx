@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Rules = () => {
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
-  const [questionNumber, setQuestionNumber] = useState(10);
+  const [questionNumber, setQuestionNumber] = useState("10");
 
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -68,7 +68,7 @@ const Rules = () => {
         <div className="flex justify-between my-4">
           <div>
             <input
-              checked={questionNumber == 10 ? true : false}
+              checked={questionNumber === "10" ? true : false}
               value="10"
               type="radio"
               id="10"

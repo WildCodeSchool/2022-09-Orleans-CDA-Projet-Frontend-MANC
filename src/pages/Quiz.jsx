@@ -56,7 +56,7 @@ const Quiz = () => {
     if (answer.isCorrect === true) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
-    if (answer.isAnswered === true) {
+    if (answer.isAnswered) {
       setCounterQuestion((prevCounter) => prevCounter + 1);
     }
   }, [answer]);
