@@ -13,3 +13,7 @@ body {
 .height-minus-nav {
   height: calc(100vh - 80px);
 }
+
+.bg-map {
+  background-image: url("./assets/images/blurred-map.jpg");
+}

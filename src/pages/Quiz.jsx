@@ -57,26 +57,28 @@ const Quiz = () => {
   }, [answer]);
 
   return (
-    <div className="height-minus-nav flex">
-      <Map
-        preventClickCountry={preventClickCountry}
-        clickedCountry={clickedCountry}
-        actionOnClick={setClickedCountry}
-        markerCoordinates={markerCoordinates}
-        setIsConfirmed={setIsConfirmed}
-        correctAnswer={answer.isCorrect}
-        isConfirmed={isConfirmed}
-      />
-      <Question
-        question={question}
-        setQuestion={setQuestion}
-        isAnswered={answer.isAnswered}
-        gameModes={gameModes}
-        setPreventClickCountry={setPreventClickCountry}
-      />
-      {answer.isAnswered && clickedCountry !== "" && (
-        <Answer answer={answer.isCorrect} />
-      )}
+    <div className="height-minus-nav flex justify-center items-center bg-map">
+      <div className="h-4/5 w-4/5 p-1 relative flex rounded-lg border-solid border-2 border-greyblue shadow-2xl bg-sky-200">
+        <Map
+          preventClickCountry={preventClickCountry}
+          clickedCountry={clickedCountry}
+          actionOnClick={setClickedCountry}
+          markerCoordinates={markerCoordinates}
+          setIsConfirmed={setIsConfirmed}
+          correctAnswer={answer.isCorrect}
+          isConfirmed={isConfirmed}
+        />
+        <Question
+          question={question}
+          setQuestion={setQuestion}
+          isAnswered={answer.isAnswered}
+          gameModes={gameModes}
+          setPreventClickCountry={setPreventClickCountry}
+        />
+        {answer.isAnswered && clickedCountry !== "" && (
+          <Answer answer={answer.isCorrect} />
+        )}
+      </div>
     </div>
   );
 };
