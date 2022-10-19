@@ -30,9 +30,9 @@ function Question({
 
   useEffect(() => {
     if (question) {
-      let modes = [];
+      const modes = [];
       gameModes.forEach((mode, index) => {
-        if (mode === true) {
+        if (mode) {
           modes.push(index);
         }
       });

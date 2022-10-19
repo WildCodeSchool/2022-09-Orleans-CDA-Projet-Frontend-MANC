@@ -8,7 +8,7 @@ import countryData from "../assets/countriesData.json";
 const Quiz = () => {
   const location = useLocation();
   const gameModes = location.state;
-
+  const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
 
   const getAnswer = (clickedCountry) => {
@@ -101,8 +101,6 @@ const Quiz = () => {
   useEffect(() => {
     isConfirmed && setMarkerCoordinates("");
   }, [isConfirmed]);
-
-  const [questionType, setQuestionType] = useState(null);
 
   const [number, setNumber] = useState(null);
   useEffect(() => {
