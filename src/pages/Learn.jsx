@@ -23,6 +23,8 @@ const Learn = () => {
       if (foundCountryData) {
         setMarkerFoundCoordinate(foundCountryData.coord);
       }
+    } else {
+      setMarkerFoundCoordinate("");
     }
   }, [countrySearchFound]);
 
