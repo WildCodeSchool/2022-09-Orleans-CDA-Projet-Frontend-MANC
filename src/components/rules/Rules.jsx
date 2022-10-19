@@ -12,10 +12,6 @@ const Rules = () => {
     setCheckedState(updatedCheckedState);
   };
 
-  useEffect(() => {
-    console.log(questionNumber);
-  });
-
   return (
     <div className="border border-black rounded-lg p-10 w-2/4">
       <h1 className="text-6xl font-bold my-10">How To Play ?</h1>
