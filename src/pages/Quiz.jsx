@@ -14,6 +14,7 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [preventClickCountry, setPreventClickCountry] = useState(false);
+  const [counterCorrect, setCounterCorrect] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -50,6 +51,9 @@ const Quiz = () => {
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
+    if (answer.isCorrect === true) {
+      setCounterCorrect(counterCorrect + 1);
+    }
   }, [answer]);
 
   return (
