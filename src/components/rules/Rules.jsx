@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Rules = () => {
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
+  const [questionNumber, setQuestionNumber] = useState(10);
 
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -10,6 +11,10 @@ const Rules = () => {
     );
     setCheckedState(updatedCheckedState);
   };
+
+  useEffect(() => {
+    console.log(questionNumber);
+  });
 
   return (
     <div className="border border-black rounded-lg p-10 w-2/4">
@@ -58,6 +63,46 @@ const Rules = () => {
               onChange={() => handleOnChange(2)}
             />
             <label htmlFor="language">Languages</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset className=" my-10">
+        <legend>How many questions ? :</legend>
+        <div className="flex justify-between my-4">
+          <div>
+            <input
+              checked={questionNumber === 10 ? true : false}
+              value="10"
+              type="radio"
+              id="10"
+              name="number"
+              className="rounded-full mx-2"
+              onChange={() => setQuestionNumber(10)}
+            />
+            <label htmlFor="10">10</label>
+          </div>
+          <div>
+            <input
+              value={20}
+              type="radio"
+              id="20"
+              name="number"
+              className="rounded-full mx-2"
+              onChange={() => setQuestionNumber(20)}
+            />
+            <label htmlFor="20">20</label>
+          </div>
+          <div>
+            <input
+              value={30}
+              type="radio"
+              id="30"
+              name="number"
+              className="rounded-full mx-2"
+              onChange={() => setQuestionNumber(30)}
+            />
+            <label htmlFor="30">30</label>
           </div>
         </div>
       </fieldset>
