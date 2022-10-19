@@ -157,20 +157,12 @@ const Quiz = () => {
       {answer.isAnswered && clickedCountry !== "" && (
         <Answer answer={answer.isCorrect} />
       )}
-      {!answer.isCorrect ? (
-        <RecapGame
-          counterCorrect={counterCorrect}
-          counterQuestion={counterQuestion}
-          questionNumber={questionNumber}
-          response={response}
-        />
-      ) : (
-        <RecapGame
-          counterCorrect={counterCorrect}
-          counterQuestion={counterQuestion}
-          questionNumber={questionNumber}
-        />
-      )}
+      <RecapGame
+        counterCorrect={counterCorrect}
+        counterQuestion={counterQuestion}
+        questionNumber={questionNumber}
+        response={response}
+      />
     </div>
   );
 };
