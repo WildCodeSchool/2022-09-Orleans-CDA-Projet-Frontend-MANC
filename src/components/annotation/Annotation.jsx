@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 
 const Annotation = (country) => {
   const [countryData, setCountryData] = useState();
+
   async function getResponse() {
     const res = await fetch(
       "https://restcountries.com/v3.1/alpha/" + country.country
     );
     const data = await res.json();
     setCountryData(data[0]);
-    console.log(data[0]);
   }
 
   useEffect(() => {
@@ -26,7 +26,8 @@ const Annotation = (country) => {
         </h2>
         <p className="flex items-center gap-2 text-lg">
           <TbBuilding />
-          Capital: {countryData && countryData.capital[0]}
+          Capital:{" "}
+          {countryData && countryData.capital && countryData.capital[0]}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
