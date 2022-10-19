@@ -16,10 +16,10 @@ const Quiz = () => {
       fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
         .then((resp) => resp.json())
         .then((data) => {
-          if (number === 1) {
+          if (questionType.type === "currencies") {
             setCountryAnswer(data[0].currencies);
           }
-          if (number === 2) {
+          if (questionType.type === "languages") {
             setCountryAnswer(data[0].languages);
           }
         });
