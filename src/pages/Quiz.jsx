@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
+import Recap from "../components/recap/Recap";
 import countryData from "../assets/countriesData.json";
 import RecapGame from "../components/recapGame/RecapGame";
 
 const Quiz = () => {
   const location = useLocation();
-  const gameModes = location.state;
+  const { checkedState: gameModes, questionNumber } = location.state;
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
@@ -64,6 +65,7 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
+  const [counterQuestion, setCounterQuestion] = useState(1);
 
   useEffect(() => {
     isConfirmed &&
@@ -121,7 +123,14 @@ const Quiz = () => {
     if (answer.isCorrect === true) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
+    if (answer.isAnswered) {
+      setCounterQuestion((prevCounter) => prevCounter + 1);
+    }
   }, [answer]);
+
+  if (counterQuestion > questionNumber) {
+    return <Recap />;
+  }
 
   return (
     <div className="height-minus-nav flex">
