@@ -45,7 +45,7 @@ const Map = ({
                         : "fill-green-500"
                       : "fill-white"
                   } 
-                  stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
+                  stroke-0.5 stroke-slate-500  hover:fill-slate-400 hover:stroke-0`}
                   {...(geo.properties.name.toLowerCase() === searchLower &&
                     setCountryFound(geo.id))}
                   key={geo.rsmKey}
