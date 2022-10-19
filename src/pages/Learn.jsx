@@ -16,7 +16,6 @@ const Learn = () => {
 
   useEffect(() => {
     if (countrySearchFound) {
-      console.log(countrySearchFound);
       const foundCountryData = countries.find((data) => {
         return data.id === countrySearchFound.cca3;
       });
