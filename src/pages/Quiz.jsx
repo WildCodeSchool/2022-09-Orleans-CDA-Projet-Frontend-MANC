@@ -158,9 +158,18 @@ const Quiz = () => {
         <Answer answer={answer.isCorrect} />
       )}
       {!answer.isCorrect ? (
-        <RecapGame counterCorrect={counterCorrect} response={response} />
+        <RecapGame
+          counterCorrect={counterCorrect}
+          counterQuestion={counterQuestion}
+          questionNumber={questionNumber}
+          response={response}
+        />
       ) : (
-        <RecapGame counterCorrect={counterCorrect} />
+        <RecapGame
+          counterCorrect={counterCorrect}
+          counterQuestion={counterQuestion}
+          questionNumber={questionNumber}
+        />
       )}
     </div>
   );
