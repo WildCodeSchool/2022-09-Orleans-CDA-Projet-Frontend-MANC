@@ -25,7 +25,7 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           data-aos-duration="600"
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue drop-shadow-2xl"
         >
-          Congratulations you scored {counterCorrect} good answers out of
+          Congratulations, you scored {counterCorrect} good answers out of
           {questionNumber} questions!
         </p>
         <div className="flex justify-evenly w-full mt-14">
