@@ -43,25 +43,6 @@ const Quiz = () => {
   }, [clickedCountry]);
 
   const [question, setQuestion] = useState("");
-
-  useEffect(() => {
-    setAnswer({ isAnswered: false, isCorrect: false });
-  }, [question]);
-
-  useEffect(() => {
-    setIsConfirmed(false);
-  }, [question]);
-
-  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
-
-  useEffect(() => {
-    setPreventClickCountry(false);
-  }, [question]);
-
-  useEffect(() => {
-    !answer.isAnswered && setClickedCountry("");
-  }, [answer]);
-
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
@@ -91,6 +72,7 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
+
         setResponse(question[0].name.common);
       }
       if (number === 2) {
@@ -103,20 +85,18 @@ const Quiz = () => {
         setResponse(question[0].name.common);
       }
     }
-  }, [isConfirmed]);
-
-  useEffect(() => {
     isConfirmed && setMarkerCoordinates("");
   }, [isConfirmed]);
 
   const [number, setNumber] = useState(null);
-  useEffect(() => {
-    setIsConfirmed(false);
-  }, [question]);
 
   useEffect(() => {
+    setIsConfirmed(false);
     setPreventClickCountry(false);
+    setAnswer({ isAnswered: false, isCorrect: false });
   }, [question]);
+
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
@@ -161,7 +141,11 @@ const Quiz = () => {
         setPreventClickCountry={setPreventClickCountry}
       />
       {answer.isAnswered && clickedCountry !== "" && (
-        <Answer answer={answer.isCorrect} />
+        <Answer
+          answer={answer.isCorrect}
+          questionType={questionType}
+          response={response}
+        />
       )}
       <RecapGame
         counterCorrect={counterCorrect}
