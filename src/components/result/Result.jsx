@@ -17,16 +17,16 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           data-aos-duration="600"
           className="text-8xl w-fit bg-white bg-opacity-80 rounded-xl p-8 m-20 border-solid border-2 border-greyblue shadow-2xl"
         >
-          <span className="text-green-400">Quizz </span>
-          <span className="text-greyblue">done !</span>
+          <span className="text-green-400">Quiz </span>
+          <span className="text-greyblue">done!</span>
         </h1>
         <p
           data-aos="fade-up"
           data-aos-duration="600"
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue drop-shadow-2xl"
         >
-          Congratultions you score {counterCorrect} good answer on
-          {questionNumber} question !
+          Congratulations you scored {counterCorrect} good answers out of
+          {questionNumber} questions!
         </p>
         <div className="flex justify-evenly w-full mt-14">
           <NavLink
