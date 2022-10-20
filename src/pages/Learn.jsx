@@ -18,17 +18,17 @@ const Learn = () => {
   }, [clickedCountry]);
 
   useEffect(() => {
-    if (countrySearchFound) {
-      const foundCountryData = countries.find((data) => {
-        return data.id === countrySearchFound.cca3;
-      });
+    if (clickedCountry) {
+      const foundCountryData = countries.find(
+        (data) => data.id == clickedCountry
+      );
       if (foundCountryData) {
         setMarkerFoundCoordinate(foundCountryData.coord);
       }
     } else {
       setMarkerFoundCoordinate("");
     }
-  }, [countrySearchFound]);
+  }, [clickedCountry]);
 
   return (
     <div className="height-minus-nav flex">
