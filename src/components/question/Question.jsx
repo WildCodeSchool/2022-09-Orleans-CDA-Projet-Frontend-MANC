@@ -68,10 +68,6 @@ function Question({
     isAnswered && getQuestion(true);
   }, [isAnswered]);
 
-  useEffect(() => {
-    getQuestion();
-  }, []);
-
   return (
     <div className="flex justify-center absolute w-full bottom-8">
       <div className="flex items-center opacity-90 border-2 w-9/12 h-32 border-solid shadow-2xl p-4 rounded-3xl border-black bg-slate-100">
