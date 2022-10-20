@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       strokeWidth: {
-        0.5: "0.5px",
+        0.5: "0.3px",
       },
       colors: {
         greyblue: "#506F79",
