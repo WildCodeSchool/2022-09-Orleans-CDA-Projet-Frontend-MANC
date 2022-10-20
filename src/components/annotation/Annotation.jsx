@@ -2,16 +2,22 @@ import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Annotation = (country) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [countryData, setCountryData] = useState();
+
   async function getResponse() {
     const res = await fetch(
       "https://restcountries.com/v3.1/alpha/" + country.country
     );
     const data = await res.json();
     setCountryData(data[0]);
-    console.log(data[0]);
   }
 
   useEffect(() => {
@@ -20,13 +26,19 @@ const Annotation = (country) => {
 
   return (
     <>
-      <div className="absolute bg-white flex w-fit flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="400"
+        className="absolute left-0 right-0 mx-auto w-fit bg-white flex w-fit flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5"
+      >
         <h2 className="text-2xl text-center font-semibold mb-4">
           {countryData && countryData.name.common + " " + countryData.flag}
         </h2>
         <p className="flex items-center gap-2 text-lg">
           <TbBuilding />
-          Capital: {countryData && countryData.capital[0]}
+          {countryData && countryData.capital
+            ? `Capital: ${countryData.capital[0]}`
+            : "Capital: n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
