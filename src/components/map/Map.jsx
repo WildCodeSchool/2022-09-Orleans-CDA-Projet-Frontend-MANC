@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
+import countries from "../../assets/countriesData.json";
+import "./map.css";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -31,6 +33,16 @@ const Map = ({
     }
   };
 
+  const findDefaultCountryColor = (id) => {
+    const foundCountryData = countries.find((data) => {
+      return data.id === id;
+    });
+    if (foundCountryData) {
+      return `svg-fill-${foundCountryData.color}`;
+    }
+    return "fill-white";
+  };
+
   return (
     <>
       <ComposableMap
@@ -53,10 +65,10 @@ const Map = ({
                         ? "fill-red-500"
                         : isConfirmed && correctAnswer
                         ? "fill-green-500"
-                        : "fill-yellow-500"
-                      : "fill-white"
+                        : "fill-yellow-200"
+                      : findDefaultCountryColor(geo.id)
                   } 
-                  stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
+                  stroke-0.5 stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
