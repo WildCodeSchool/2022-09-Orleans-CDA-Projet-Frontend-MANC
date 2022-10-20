@@ -51,7 +51,9 @@ const Map = ({
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
                       ? !correctAnswer && isConfirmed
                         ? "fill-red-500"
-                        : "fill-green-500"
+                        : isConfirmed && correctAnswer
+                        ? "fill-green-500"
+                        : "fill-yellow-500"
                       : "fill-white"
                   } 
                   stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
