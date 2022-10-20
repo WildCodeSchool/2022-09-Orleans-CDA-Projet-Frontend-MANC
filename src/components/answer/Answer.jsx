@@ -11,9 +11,9 @@ const Answer = ({ answer, questionType, response }) => {
     <div
       className={`${
         answer ? "bg-green-500" : "bg-red-500"
-      } left-0 right-0 mx-auto w-fit mt-4 absolute flex flex-col border-1 shadow-xl border-top border-solid border-black p-6 rounded-xl`}
+      } left-0 right-0 mx-auto w-fit -top-14 absolute flex flex-col border-1 shadow-xl border-top border-solid border-black p-6 rounded-xl`}
       data-aos="zoom-in"
-      data-aos-duration="400"
+      data-aos-duration="200"
     >
       <h1 className="text-white text-2xl text-center mb-4 font-semibold">
         {answer ? "Good!" : "Wrong!"}
