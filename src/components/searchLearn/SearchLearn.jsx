@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import useDebounce from "../../hooks/useDebounce";
+import { MdSearch } from "react-icons/md";
 
 const SearchLearn = ({ setCountrySearchFound }) => {
   const [searchLearn, setSearchLearn] = useState("");
@@ -35,13 +36,13 @@ const SearchLearn = ({ setCountrySearchFound }) => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex justify-center absolute w-full bottom-8">
-      <div className="flex items-center opacity-90 border-2 w-fit h-fit border-solid  shadow-2xl p-4 rounded-xl border-black bg-slate-100">
-        <label>Search :</label>
+    <div className="flex justify-center absolute w-full bottom-8 text-2xl">
+      <div className="flex items-center opacity-80 border w-fit h-fit border-solid  shadow-2xl  rounded-md border-greyblue bg-greyblue">
+        <MdSearch className="ml-2 mr-2 text-2xl" />
         <input
-          className="border-2 border-solid border-black rounded-md ml-4 opacity-90"
+          className="border border-solid border-grey-800 rounded-r-md  opacity-90"
           type="name"
-          placeholder="Canada"
+          placeholder="Canada, Paris, etc."
           value={searchLearn}
           onChange={(event) => setSearchLearn(event.target.value)}
         />
