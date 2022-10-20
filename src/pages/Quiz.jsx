@@ -117,34 +117,36 @@ const Quiz = () => {
   }
 
   return (
-    <div className="height-minus-nav flex">
-      <Map
-        preventClickCountry={preventClickCountry}
-        clickedCountry={clickedCountry}
-        actionOnClick={setClickedCountry}
-        markerCoordinates={markerCoordinates}
-        setIsConfirmed={setIsConfirmed}
-        correctAnswer={answer.isCorrect}
-        isConfirmed={isConfirmed}
-      />
-      <Question
-        question={question}
-        setQuestion={setQuestion}
-        isAnswered={answer.isAnswered}
-        questionType={questionType}
-        gameModes={gameModes}
-        number={number}
-        setQuestionType={setQuestionType}
-        setNumber={setNumber}
-        setPreventClickCountry={setPreventClickCountry}
-      />
-      {answer.isAnswered && clickedCountry !== "" && (
-        <Answer
-          answer={answer.isCorrect}
-          questionType={questionType}
-          response={response}
+    <div className="height-minus-nav flex justify-center items-center bg-quiz">
+      <div className="h-4/5 w-4/5 p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+        <Map
+          preventClickCountry={preventClickCountry}
+          clickedCountry={clickedCountry}
+          actionOnClick={setClickedCountry}
+          markerCoordinates={markerCoordinates}
+          setIsConfirmed={setIsConfirmed}
+          correctAnswer={answer.isCorrect}
+          isConfirmed={isConfirmed}
         />
-      )}
+        <Question
+          question={question}
+          setQuestion={setQuestion}
+          isAnswered={answer.isAnswered}
+          questionType={questionType}
+          gameModes={gameModes}
+          number={number}
+          setQuestionType={setQuestionType}
+          setNumber={setNumber}
+          setPreventClickCountry={setPreventClickCountry}
+        />
+        {answer.isAnswered && clickedCountry !== "" && (
+          <Answer
+            answer={answer.isCorrect}
+            questionType={questionType}
+            response={response}
+          />
+        )}
+      </div>
     </div>
   );
 };
