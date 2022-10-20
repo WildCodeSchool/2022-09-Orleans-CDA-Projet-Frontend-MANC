@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { MdReplayCircleFilled } from "react-icons/md";
+import { MdReplayCircleFilled, MdHome } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 function Result({ counterCorrect, questionNumber, gameModes }) {
@@ -28,16 +28,28 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           Congratultions you score {counterCorrect} good answer on
           {questionNumber} question !
         </p>
-        <NavLink to="/play" className="text-2xl flex items-center">
-          <button
-            className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
-            data-aos="fade-up"
-            data-aos-duration="600"
-          >
-            Replay
-            <MdReplayCircleFilled className="text-4xl ml-2" />
-          </button>
-        </NavLink>
+        <div className="flex justify-evenly w-full mt-14">
+          <NavLink to="/play" className="text-2xl flex items-center">
+            <button
+              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              Replay
+              <MdReplayCircleFilled className="text-4xl ml-2" />
+            </button>
+          </NavLink>
+          <NavLink to="/" className="text-2xl flex items-center">
+            <button
+              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              Home !
+              <MdHome className="text-4xl ml-2" />
+            </button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );
