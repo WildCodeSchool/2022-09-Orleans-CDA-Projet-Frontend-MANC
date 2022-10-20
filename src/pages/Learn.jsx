@@ -20,7 +20,7 @@ const Learn = () => {
   useEffect(() => {
     if (clickedCountry) {
       const foundCountryData = countries.find(
-        (data) => data.id == clickedCountry
+        (data) => data.id === clickedCountry
       );
       if (foundCountryData) {
         setMarkerFoundCoordinate(foundCountryData.coord);
