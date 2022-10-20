@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
-import Recap from "../components/recap/Recap";
+import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
@@ -124,7 +124,13 @@ const Quiz = () => {
   }, [answer]);
 
   if (counterQuestion > questionNumber) {
-    return <Recap />;
+    return (
+      <Result
+        counterCorrect={counterCorrect}
+        questionNumber={questionNumber}
+        gameModes={gameModes}
+      />
+    );
   }
 
   return (
