@@ -63,7 +63,7 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
-  const [counterQuestion, setCounterQuestion] = useState(9);
+  const [counterQuestion, setCounterQuestion] = useState(1);
 
   useEffect(() => {
     isConfirmed &&

@@ -7,20 +7,6 @@ import { NavLink } from "react-router-dom";
 function Result({ counterCorrect, questionNumber, gameModes }) {
   useEffect(() => {
     AOS.init();
-    console.log(modePlay);
-  }, []);
-
-  const modePlay = [];
-  useEffect(() => {
-    if (gameModes[0]) {
-      modePlay.push("capital");
-    }
-    if (gameModes[1]) {
-      modePlay.push("currency");
-    }
-    if (gameModes[2]) {
-      modePlay.push("language");
-    }
   }, []);
 
   return (
@@ -39,7 +25,6 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           data-aos-duration="600"
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue"
         >
-          You played using modes : {modePlay.join(" ")}
           Congratultions you score {counterCorrect} good answer on
           {questionNumber} question !
         </p>
