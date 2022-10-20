@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { MdReplayCircleFilled } from "react-icons/md";
+import { MdReplayCircleFilled, MdHome } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 function Result({ counterCorrect, questionNumber, gameModes }) {
@@ -23,22 +23,41 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
         <p
           data-aos="fade-up"
           data-aos-duration="600"
-          className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue"
+          className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue drop-shadow-2xl"
         >
           Congratultions you score {counterCorrect} good answer on
           {questionNumber} question !
         </p>
-        <NavLink to="/play" className="text-2xl flex items-center">
-          <button
-            className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
-            data-aos="fade-up"
-            data-aos-duration="600"
+        <div className="flex justify-evenly w-full mt-14">
+          <NavLink
+            to="/play"
+            className="text-2xl flex items-center drop-shadow-2xl"
           >
-            Replay
-            <MdReplayCircleFilled className="text-4xl ml-2" />
-          </button>
-        </NavLink>
+            <button
+              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              Replay
+              <MdReplayCircleFilled className="text-4xl ml-2" />
+            </button>
+          </NavLink>
+          <NavLink
+            to="/"
+            className="text-2xl flex items-center drop-shadow-2xl"
+          >
+            <button
+              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              Home
+              <MdHome className="text-4xl ml-2" />
+            </button>
+          </NavLink>
+        </div>
       </div>
+      <div className="bg-[url('./assets/images/blurred-map.jpg')] contrast-75 bg-no-repeat bg-cover height-minus-nav w-screen blur-sm"></div>
     </div>
   );
 }
