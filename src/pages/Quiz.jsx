@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
+import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
 
 const Quiz = () => {
   const location = useLocation();
-  const gameModes = location.state;
+  const { checkedState: gameModes, questionNumber } = location.state;
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
 
@@ -44,6 +45,15 @@ const Quiz = () => {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [response, setReponse] = useState("");
+  const [counterQuestion, setCounterQuestion] = useState(1);
+
+  useEffect(() => {
+    isConfirmed &&
+      setAnswer({
+        isAnswered: true,
+        isCorrect: clickedCountry === question[0].cca3,
+      });
+  }, [isConfirmed]);
 
   useEffect(() => {
     if (isConfirmed) {
@@ -87,11 +97,24 @@ const Quiz = () => {
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
 
   useEffect(() => {
-    if (answer.isCorrect === true) {
+    !answer.isAnswered && setClickedCountry("");
+    if (answer.isCorrect === true || answer.isAnswered) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
-    !answer.isAnswered && setClickedCountry("");
+    if (answer.isAnswered) {
+      setCounterQuestion((prevCounter) => prevCounter + 1);
+    }
   }, [answer]);
+
+  if (counterQuestion > questionNumber) {
+    return (
+      <Result
+        counterCorrect={counterCorrect}
+        questionNumber={questionNumber}
+        gameModes={gameModes}
+      />
+    );
+  }
 
   return (
     <div className="height-minus-nav flex">
