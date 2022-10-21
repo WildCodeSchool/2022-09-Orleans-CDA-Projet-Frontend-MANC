@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { GiCheckMark } from "react-icons/gi";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
@@ -147,6 +148,13 @@ const Quiz = () => {
             questionType={questionType}
             response={response}
           />
+        )}
+        {markerCoordinates && !isConfirmed && (
+          <div className="absolute left-0 right-0 mx-auto w-fit -top-9">
+            <button className="flex gap-2 items-center text-white text-[25px] p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border-1 shadow-xl border-top border-solid border-black rounded-xl">
+              <GiCheckMark /> Confirm
+            </button>
+          </div>
         )}
       </div>
       <RecapGame
