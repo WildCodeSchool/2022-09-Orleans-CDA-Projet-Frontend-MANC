@@ -351,7 +351,7 @@
     "difficulty": "medium"
   },
   {
-    "id": "XXK",
+    "id": "UNK",
     "name": "Kosovo",
     "coord": [20.9021231, 42.5869578],
     "difficulty": "medium"
@@ -704,8 +704,8 @@
     "difficulty": "medium"
   },
   {
-    "id": "PSX",
-    "name": "West Bank",
+    "id": "PSA",
+    "name": "Palestine",
     "coord": [35.2888075, 32.0254688],
     "difficulty": "medium"
   },
