@@ -1,5 +1,6 @@
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { HiOutlineUsers } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import AOS from "aos";
@@ -53,6 +54,14 @@ const Annotation = (country) => {
             Object.values(countryData.languages).map((language, index) => (
               <span key={index}>{language}</span>
             ))}
+        </p>
+        <p className="flex items-center gap-2 text-lg">
+          <HiOutlineUsers />
+          {` Population: 
+            ${
+              countryData &&
+              Math.round((countryData.population / 1000000) * 10) / 10
+            } millions`}
         </p>
       </div>
     </>
