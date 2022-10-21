@@ -11,6 +11,8 @@ const Quiz = () => {
   const { checkedState: gameModes, questionNumber } = location.state;
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
+  const [response, setResponse] = useState("");
+  const [allResponses, setAllResponses] = useState([]);
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -63,7 +65,7 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
-  const [counterQuestion, setCounterQuestion] = useState(1);
+  const [counterQuestion, setCounterQuestion] = useState(9);
 
   useEffect(() => {
     isConfirmed &&
@@ -80,6 +82,11 @@ const Quiz = () => {
           isAnswered: true,
           isCorrect: clickedCountry === question[0].cca3,
         });
+        setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          console.log("1 : " + question[0].name.common);
+          return [...previous, question[0].name.common];
+        });
       }
       if (number === 1) {
         setAnswer({
@@ -88,6 +95,10 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
+        setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [...previous, question[0].name.common];
+        });
       }
       if (number === 2) {
         setAnswer({
@@ -95,6 +106,10 @@ const Quiz = () => {
           isCorrect: Object.values(countryAnswer).includes(
             Object.values(question[0].languages)[0]
           ),
+        });
+        setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [...previous, question[0].name.common];
         });
       }
     }
@@ -129,6 +144,7 @@ const Quiz = () => {
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
         gameModes={gameModes}
+        allResponses={allResponses}
       />
     );
   }
