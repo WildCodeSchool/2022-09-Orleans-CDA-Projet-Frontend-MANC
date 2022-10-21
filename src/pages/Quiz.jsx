@@ -7,6 +7,8 @@ import Question from "../components/question/Question";
 import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
 import RecapGame from "../components/recapGame/RecapGame";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Quiz = () => {
   const location = useLocation();
@@ -14,6 +16,10 @@ const Quiz = () => {
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -150,8 +156,13 @@ const Quiz = () => {
           />
         )}
         {markerCoordinates && !isConfirmed && (
-          <div className="absolute left-0 right-0 mx-auto w-fit -top-9">
-            <button className="flex gap-2 items-center text-white text-[25px] p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border-1 shadow-xl border-top border-solid border-black rounded-xl">
+          <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
+            <button
+              className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
+              data-aos="zoom-in"
+              data-aos-duration="200"
+              onClick={() => setIsConfirmed(true)}
+            >
               <GiCheckMark /> Confirm
             </button>
           </div>
