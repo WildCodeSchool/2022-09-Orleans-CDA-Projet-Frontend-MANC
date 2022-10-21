@@ -100,7 +100,7 @@ const Quiz = () => {
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
-    if (answer.isCorrect === true) {
+    if (answer.isCorrect) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
     if (answer.isAnswered) {
