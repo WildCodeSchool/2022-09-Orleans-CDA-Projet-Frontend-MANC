@@ -29,7 +29,7 @@ const Annotation = (country) => {
       <div
         data-aos="zoom-in"
         data-aos-duration="400"
-        className="absolute left-0 right-0 mx-auto w-fit bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5"
+        className="absolute -left-16 right-0 -top-16 w-fit bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5"
       >
         <h2 className="text-2xl text-center font-semibold mb-4">
           {countryData && countryData.name.common + " " + countryData.flag}
