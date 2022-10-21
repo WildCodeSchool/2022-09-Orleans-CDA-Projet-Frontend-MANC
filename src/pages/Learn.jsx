@@ -37,7 +37,7 @@ const Learn = () => {
         <Map
           actionOnClick={setClickedCountry}
           clickedCountry={clickedCountry ? clickedCountry : countrySearchFound}
-          markerFoundCoordinate={markerFoundCoordinate}
+          markerCoordinates={markerFoundCoordinate}
         />
         {clickedCountry && <Annotation country={clickedCountry} />}
       </div>
