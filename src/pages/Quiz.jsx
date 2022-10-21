@@ -5,12 +5,14 @@ import Map from "../components/map/Map";
 import Question from "../components/question/Question";
 import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
+import RecapGame from "../components/recapGame/RecapGame";
 
 const Quiz = () => {
   const location = useLocation();
   const { checkedState: gameModes, questionNumber } = location.state;
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
+  const [response, setResponse] = useState("");
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -44,7 +46,6 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
-  const [response, setReponse] = useState("");
   const [counterQuestion, setCounterQuestion] = useState(1);
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const Quiz = () => {
           isAnswered: true,
           isCorrect: clickedCountry === question[0].cca3,
         });
-        setReponse(question[0].name.common);
+        setResponse(question[0].name.common);
       }
       if (number === 1) {
         setAnswer({
@@ -71,7 +72,8 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
-        setReponse(question[0].name.common);
+
+        setResponse(question[0].name.common);
       }
       if (number === 2) {
         setAnswer({
@@ -80,7 +82,7 @@ const Quiz = () => {
             Object.values(question[0].languages)[0]
           ),
         });
-        setReponse(question[0].name.common);
+        setResponse(question[0].name.common);
       }
     }
     isConfirmed && setMarkerCoordinates("");
@@ -98,7 +100,7 @@ const Quiz = () => {
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
-    if (answer.isCorrect === true || answer.isAnswered) {
+    if (answer.isCorrect) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
     if (answer.isAnswered) {
@@ -147,6 +149,12 @@ const Quiz = () => {
           />
         )}
       </div>
+      <RecapGame
+        counterCorrect={counterCorrect}
+        counterQuestion={counterQuestion}
+        questionNumber={questionNumber}
+        response={response}
+      />
     </div>
   );
 };
