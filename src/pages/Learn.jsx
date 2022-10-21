@@ -18,27 +18,29 @@ const Learn = () => {
   }, [clickedCountry]);
 
   useEffect(() => {
-    if (countrySearchFound) {
-      const foundCountryData = countries.find((data) => {
-        return data.id === countrySearchFound.cca3;
-      });
+    if (clickedCountry) {
+      const foundCountryData = countries.find(
+        (data) => data.id === clickedCountry
+      );
       if (foundCountryData) {
         setMarkerFoundCoordinate(foundCountryData.coord);
       }
     } else {
       setMarkerFoundCoordinate("");
     }
-  }, [countrySearchFound]);
+  }, [clickedCountry]);
 
   return (
-    <div className="height-minus-nav flex">
-      <SearchLearn setCountrySearchFound={setCountrySearchFound} />
-      <Map
-        actionOnClick={setClickedCountry}
-        clickedCountry={clickedCountry ? clickedCountry : countrySearchFound}
-        markerFoundCoordinate={markerFoundCoordinate}
-      />
-      {clickedCountry && <Annotation country={clickedCountry} />}
+    <div className="height-minus-nav flex justify-center items-center bg-quiz">
+      <div className="h-4/5 w-4/5 p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+        <SearchLearn setCountrySearchFound={setCountrySearchFound} />
+        <Map
+          actionOnClick={setClickedCountry}
+          clickedCountry={clickedCountry ? clickedCountry : countrySearchFound}
+          markerFoundCoordinate={markerFoundCoordinate}
+        />
+        {clickedCountry && <Annotation country={clickedCountry} />}
+      </div>
     </div>
   );
 };

@@ -589,7 +589,7 @@
         {
           "type": "Polygon",
           "arcs": [[447, 448, 449, 450, 451]],
-          "id": "XXK",
+          "id": "UNK",
           "properties": { "name": "Kosovo" }
         },
         {
@@ -1145,8 +1145,8 @@
         {
           "type": "Polygon",
           "arcs": [[-417, -404]],
-          "id": "PSX",
-          "properties": { "name": "West Bank" }
+          "id": "PSA",
+          "properties": { "name": "Palestine" }
         },
         {
           "type": "Polygon",

@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { GiCheckMark } from "react-icons/gi";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -16,10 +18,23 @@ const Map = ({
   correctAnswer,
   isConfirmed,
 }) => {
+  const [markerConfirmColor, setMarkerConfirmColor] = useState({
+    box: "fill-green-700",
+    text: "fill-white",
+  });
+
+  const markerConfirmHoverHandler = (isHover) => {
+    if (isHover) {
+      setMarkerConfirmColor({ box: "fill-green-800", text: "fill-slate-100" });
+    } else {
+      setMarkerConfirmColor({ box: "fill-green-700", text: "fill-white" });
+    }
+  };
+
   return (
     <>
       <ComposableMap
-        className="bg-sky-200 h-full w-full"
+        className="bg-cyan-900 h-full w-full"
         projectionConfig={{
           scale: 120,
           center: [0, 0],
@@ -32,11 +47,18 @@ const Map = ({
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
+                  style={{
+                    default: { outline: "none" },
+                    hover: { outline: "none" },
+                    pressed: { outline: "none" },
+                  }}
                   className={`${
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
                       ? !correctAnswer && isConfirmed
                         ? "fill-red-500"
-                        : "fill-green-500"
+                        : isConfirmed && correctAnswer
+                        ? "fill-green-500"
+                        : "fill-yellow-500"
                       : "fill-white"
                   } 
                   stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
@@ -52,25 +74,42 @@ const Map = ({
           {markerCoordinates && (
             <Marker coordinates={markerCoordinates}>
               <g
-                fill="green"
-                stroke="green"
-                strokeWidth="1"
+                stroke="black"
+                strokeWidth="0.2"
                 strokeLinejoin="round"
-                transform="translate(-6, -35) scale(1.5)"
+                transform="translate(-7, -21) scale(1.7, 0.9)"
+                className={`${markerConfirmColor.box} cursor-pointer`}
+                onMouseEnter={() => markerConfirmHoverHandler(true)}
+                onMouseLeave={() => markerConfirmHoverHandler(false)}
+                onClick={() => {
+                  setIsConfirmed(true);
+                }}
               >
                 <path d="M24 1h-24v16.981h4v5.019l7-5.019h13z" />
               </g>
               <text
+                onMouseEnter={() => markerConfirmHoverHandler(true)}
+                onMouseLeave={() => markerConfirmHoverHandler(false)}
                 onClick={() => {
                   setIsConfirmed(true);
                 }}
                 textAnchor="middle"
-                y={-18}
-                x={12}
-                style={{ fill: "white", fontSize: "6px", cursor: "pointer" }}
+                y={-10}
+                x={18}
+                className={`${markerConfirmColor.text} text-[6px] cursor-pointer`}
               >
-                Confirm ?
+                Confirm
               </text>
+
+              <GiCheckMark
+                onMouseEnter={() => markerConfirmHoverHandler(true)}
+                onMouseLeave={() => markerConfirmHoverHandler(false)}
+                onClick={() => {
+                  setIsConfirmed(true);
+                }}
+                className={`${markerConfirmColor.text} cursor-pointer`}
+                transform="translate(-2, -18) scale(0.6)"
+              />
             </Marker>
           )}
           {markerFoundCoordinate && (
