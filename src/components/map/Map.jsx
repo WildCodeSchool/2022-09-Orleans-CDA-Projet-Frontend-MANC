@@ -68,7 +68,7 @@ const Map = ({
                         : "fill-yellow-200"
                       : findDefaultCountryColor(geo.id)
                   } 
-                  stroke-0.5 stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
+                  stroke-[0.1px] stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
