@@ -47,6 +47,11 @@ const Map = ({
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
+                  style={{
+                    default: { outline: "none" },
+                    hover: { outline: "none" },
+                    pressed: { outline: "none" },
+                  }}
                   className={`${
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
                       ? !correctAnswer && isConfirmed
