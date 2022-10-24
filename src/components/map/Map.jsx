@@ -30,7 +30,6 @@ const Map = ({
   }, [markerCoordinates]);
 
   const handleMoveEnd = (position) => {
-    console.log(position);
     setPosition(position);
   };
 
