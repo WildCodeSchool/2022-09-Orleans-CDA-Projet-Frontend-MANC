@@ -12,6 +12,7 @@ const Annotation = (country) => {
   }, []);
 
   const [countryData, setCountryData] = useState();
+  const [countryPopulation, setCountryPopulation] = useState();
 
   async function getResponse() {
     const res = await fetch(
@@ -24,6 +25,11 @@ const Annotation = (country) => {
   useEffect(() => {
     getResponse();
   }, [country]);
+
+  useEffect(() => {
+    countryData &&
+      setCountryPopulation((countryData.population / 1000000).toFixed(1));
+  }, [countryData]);
 
   return (
     <>
@@ -58,9 +64,7 @@ const Annotation = (country) => {
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
           {` Population: 
-            ${
-              countryData && (countryData.population / 1000000).toFixed(1)
-            } millions`}
+            ${countryData && countryPopulation} millions`}
         </p>
       </div>
     </>
