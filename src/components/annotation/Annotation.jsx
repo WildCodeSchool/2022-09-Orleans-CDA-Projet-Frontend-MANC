@@ -59,8 +59,7 @@ const Annotation = (country) => {
           <HiOutlineUsers />
           {` Population: 
             ${
-              countryData &&
-              Math.round((countryData.population / 1000000) * 10) / 10
+              countryData && (countryData.population / 1000000).toFixed(1)
             } millions`}
         </p>
       </div>
