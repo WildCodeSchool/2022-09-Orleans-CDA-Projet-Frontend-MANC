@@ -95,12 +95,24 @@ const Quiz = () => {
     isConfirmed && setMarkerCoordinates("");
   }, [isConfirmed]);
 
+  useEffect(() => {
+    if (response !== "") {
+      const responseCountryData = countryData.find((data) => {
+        return data.name === response;
+      });
+      if (responseCountryData) {
+        setMarkerCoordinates(responseCountryData.coord);
+      }
+    }
+  }, [response]);
+
   const [number, setNumber] = useState(null);
 
   useEffect(() => {
     setIsConfirmed(false);
     setPreventClickCountry(false);
     setAnswer({ isAnswered: false, isCorrect: false });
+    setMarkerCoordinates("");
   }, [question]);
 
   const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
