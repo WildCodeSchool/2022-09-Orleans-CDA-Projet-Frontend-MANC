@@ -7,6 +7,7 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import { useEffect, useState } from "react";
 
 const Map = ({
   actionOnClick,
@@ -16,6 +17,22 @@ const Map = ({
   correctAnswer,
   isConfirmed,
 }) => {
+  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+
+  useEffect(() => {
+    if (markerCoordinates !== "") {
+      const defaultZoom = 3.5;
+      setPosition((pos) => ({
+        coordinates: markerCoordinates,
+        zoom: pos.zoom < defaultZoom ? defaultZoom : pos.zoom,
+      }));
+    }
+  }, [markerCoordinates]);
+
+  const handleMoveEnd = (position) => {
+    setPosition(position);
+  };
+
   const findDefaultCountryColor = (id) => {
     const foundCountryData = countries.find((data) => {
       return data.id === id;
@@ -37,7 +54,11 @@ const Map = ({
         width={500}
         height={350}
       >
-        <ZoomableGroup>
+        <ZoomableGroup
+          zoom={position.zoom}
+          center={position.coordinates}
+          onMoveEnd={handleMoveEnd}
+        >
           <Geographies geography="/mapGeometry.json">
             {({ geographies }) =>
               geographies.map((geo) => (
