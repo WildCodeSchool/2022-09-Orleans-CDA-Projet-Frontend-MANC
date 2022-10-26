@@ -44,7 +44,7 @@
   {
     "id": "ATF",
     "name": "French Southern Territories",
-    "coord": [67, -43],
+    "coord": [69.5, -49.5],
     "difficulty": "medium",
     "color": "orange"
   },
@@ -60,7 +60,7 @@
     "name": "Austria",
     "coord": [13.3333, 47.3333],
     "difficulty": "medium",
-    "color": "indigo"
+    "color": "teal"
   },
   {
     "id": "AZE",
@@ -74,21 +74,21 @@
     "name": "Burundi",
     "coord": [30, -3.5],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "teal"
   },
   {
     "id": "BEL",
     "name": "Belgium",
     "coord": [4, 50.8333],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "orange"
   },
   {
     "id": "BEN",
     "name": "Benin",
     "coord": [2.25, 9.5],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "lime"
   },
   {
     "id": "BFA",
@@ -109,7 +109,7 @@
     "name": "Bulgaria",
     "coord": [25, 43],
     "difficulty": "medium",
-    "color": "orange"
+    "color": "lime"
   },
   {
     "id": "BHS",
@@ -165,21 +165,21 @@
     "name": "Bhutan",
     "coord": [90.5, 27.5],
     "difficulty": "medium",
-    "color": "purple"
+    "color": "teal"
   },
   {
     "id": "BWA",
     "name": "Botswana",
     "coord": [24, -22],
     "difficulty": "medium",
-    "color": "indigo"
+    "color": "orange"
   },
   {
     "id": "CAF",
     "name": "Central African Republic",
     "coord": [21, 7],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "CAN",
@@ -214,7 +214,7 @@
     "name": "Cote d'Ivoire",
     "coord": [-5, 8],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "indigo"
   },
   {
     "id": "CMR",
@@ -366,7 +366,7 @@
   {
     "id": "FJI",
     "name": "Fiji",
-    "coord": [175, -18],
+    "coord": [178, -18],
     "difficulty": "medium",
     "color": "teal"
   },
@@ -389,7 +389,7 @@
     "name": "Gabon",
     "coord": [11.75, -1],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "indigo"
   },
   {
     "id": "GBR",
@@ -417,7 +417,7 @@
     "name": "Guinea",
     "coord": [-10, 11],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "orange"
   },
   {
     "id": "GMB",
@@ -438,7 +438,7 @@
     "name": "Equatorial Guinea",
     "coord": [10, 2],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "GRC",
@@ -452,7 +452,7 @@
     "name": "Guatemala",
     "coord": [-90.25, 15.5],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "teal"
   },
   {
     "id": "GUY",
@@ -480,7 +480,7 @@
     "name": "Haiti",
     "coord": [-72.4167, 19],
     "difficulty": "medium",
-    "color": "orange"
+    "color": "teal"
   },
   {
     "id": "HUN",
@@ -557,7 +557,7 @@
     "name": "Jordan",
     "coord": [36, 31],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "indigo"
   },
   {
     "id": "JPN",
@@ -571,21 +571,21 @@
     "name": "Kazakhstan",
     "coord": [68, 48],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "lime"
   },
   {
     "id": "KEN",
     "name": "Kenya",
     "coord": [38, 1],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "KGZ",
     "name": "Kyrgyzstan",
     "coord": [75, 41],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "indigo"
   },
   {
     "id": "KHM",
@@ -606,7 +606,7 @@
     "name": "Kosovo",
     "coord": [20.9021231, 42.5869578],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "teal"
   },
   {
     "id": "KWT",
@@ -620,7 +620,7 @@
     "name": "Laos",
     "coord": [105, 18],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "teal"
   },
   {
     "id": "LBN",
@@ -725,28 +725,28 @@
     "name": "Myanmar",
     "coord": [98, 22],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "orange"
   },
   {
     "id": "MNE",
     "name": "Montenegro",
-    "coord": [19, 42],
+    "coord": [19.3, 42.7],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "pink"
   },
   {
     "id": "MNG",
     "name": "Mongolia",
     "coord": [105, 46],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "orange"
   },
   {
     "id": "MOZ",
     "name": "Mozambique",
     "coord": [35, -18.25],
     "difficulty": "medium",
-    "color": "indigo"
+    "color": "lime"
   },
   {
     "id": "MRT",
@@ -767,14 +767,14 @@
     "name": "Malaysia",
     "coord": [112.5, 2.5],
     "difficulty": "medium",
-    "color": "orange"
+    "color": "teal"
   },
   {
     "id": "NAM",
     "name": "Namibia",
     "coord": [17, -22],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "lime"
   },
   {
     "id": "NCL",
@@ -788,7 +788,7 @@
     "name": "Niger",
     "coord": [8, 16],
     "difficulty": "medium",
-    "color": "orange"
+    "color": "indigo"
   },
   {
     "id": "NGA",
@@ -830,7 +830,7 @@
     "name": "New Zealand",
     "coord": [174, -41],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "OMN",
@@ -844,21 +844,21 @@
     "name": "Pakistan",
     "coord": [70, 30],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "teal"
   },
   {
     "id": "PAN",
     "name": "Panama",
     "coord": [-80, 9],
     "difficulty": "medium",
-    "color": "purple"
+    "color": "orange"
   },
   {
     "id": "PER",
     "name": "Peru",
     "coord": [-76, -10],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "PHL",
@@ -893,7 +893,7 @@
     "name": "North Korea",
     "coord": [127, 40],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "teal"
   },
   {
     "id": "PRT",
@@ -942,7 +942,7 @@
     "name": "Western Sahara",
     "coord": [-13, 24.5],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "orange"
   },
   {
     "id": "SAU",
@@ -1012,7 +1012,7 @@
     "name": "Suriname",
     "coord": [-56, 4],
     "difficulty": "medium",
-    "color": "purple"
+    "color": "lime"
   },
   {
     "id": "SVK",
@@ -1040,21 +1040,21 @@
     "name": "Eswatini",
     "coord": [31.5, -26.5],
     "difficulty": "medium",
-    "color": "indigo"
+    "color": "teal"
   },
   {
     "id": "SYR",
     "name": "Syria",
     "coord": [38, 35],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "orange"
   },
   {
     "id": "TCD",
     "name": "Chad",
     "coord": [19, 15],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "teal"
   },
   {
     "id": "TGO",
@@ -1087,7 +1087,7 @@
   {
     "id": "TLS",
     "name": "Timor",
-    "coord": [125.5167, -8.55],
+    "coord": [125.5167, -8.75],
     "difficulty": "medium",
     "color": "orange"
   },
@@ -1145,7 +1145,7 @@
     "name": "Uruguay",
     "coord": [-56, -33],
     "difficulty": "medium",
-    "color": "lime"
+    "color": "orange"
   },
   {
     "id": "USA",
@@ -1178,16 +1178,16 @@
   {
     "id": "VUT",
     "name": "Vanuatu",
-    "coord": [167, -16],
+    "coord": [167, -15.5],
     "difficulty": "medium",
-    "color": "purple"
+    "color": "orange"
   },
   {
     "id": "PSE",
     "name": "Palestine",
     "coord": [35.2888075, 32.0254688],
     "difficulty": "medium",
-    "color": "pink"
+    "color": "teal"
   },
   {
     "id": "YEM",
@@ -1299,7 +1299,7 @@
     "name": "Singapore",
     "coord": [103.8, 1.3667],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "lime"
   },
   {
     "id": "TON",
@@ -1334,14 +1334,14 @@
     "name": "Dominica",
     "coord": [-61.3333, 15.4167],
     "difficulty": "medium",
-    "color": "purple"
+    "color": "orange"
   },
   {
     "id": "GRD",
     "name": "Grenada",
     "coord": [-61.6667, 12.1167],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "lime"
   },
   {
     "id": "KNA",
@@ -1362,7 +1362,7 @@
     "name": "Saint Vincent and the Grenadines",
     "coord": [-61.2, 13.25],
     "difficulty": "medium",
-    "color": "teal"
+    "color": "orange"
   },
   {
     "id": "AND",
@@ -1409,7 +1409,7 @@
   {
     "id": "STP",
     "name": "Sao Tome and Principe",
-    "coord": [7, 1],
+    "coord": [6.6, 0.3],
     "difficulty": "medium",
     "color": "indigo"
   }
