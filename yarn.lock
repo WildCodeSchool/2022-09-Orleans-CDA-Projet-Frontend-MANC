@@ -329,16 +329,16 @@
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
 "@types/react-dom@^18.0.6":
-  version "18.0.6"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.6.tgz#36652900024842b74607a17786b6662dd1e103a1"
-  integrity sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==
+  version "18.0.7"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.7.tgz#ee7cf8ec4e6977e3f0a7b1d38bd89c75aa2aec28"
+  integrity sha512-HaXc+BbqAZE1RdsK3tC8SbkFy6UL2xF76lT9rQs5JkPrJg3rWA3Ou/Lhw3YJQzEDkBpmJ79nBsfnd05WrBd2QQ==
   dependencies:
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18.0.17":
-  version "18.0.21"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.21.tgz#b8209e9626bb00a34c76f55482697edd2b43cc67"
-  integrity sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==
+  version "18.0.23"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.23.tgz#4190ecd58b99fa79fe2e67832bdcb287e5f893e4"
+  integrity sha512-R1wTULtCiJkudAN2DJGoYYySbGtOdzZyUWAACYinKdiQC8auxso4kLDUhQ7AJ2kh3F6A6z4v69U6tNY39hihVQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -450,9 +450,9 @@ camelcase-css@^2.0.1:
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
 caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001407:
-  version "1.0.30001423"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001423.tgz#57176d460aa8cd85ee1a72016b961eb9aca55d91"
-  integrity sha512-09iwWGOlifvE1XuHokFMP7eR38a0JnajoyL3/i87c8ZjRWRrdKo1fqjNfugfBD0UDBIOz0U+jtNhJ0EPm1VleQ==
+  version "1.0.30001425"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001425.tgz#52917791a453eb3265143d2cd08d80629e82c735"
+  integrity sha512-/pzFv0OmNG6W0ym80P3NtapU0QEiDS3VuYAZMGoLLqiC7f6FJFe1MjpQDREGApeenD9wloeytmVDj+JLXPC6qw==
 
 chalk@^2.0.0:
   version "2.4.2"

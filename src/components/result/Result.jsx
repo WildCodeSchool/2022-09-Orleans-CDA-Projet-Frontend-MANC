@@ -18,7 +18,7 @@ function Result({
   }, []);
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-10 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -77,6 +77,19 @@ function Result({
           </button>
         </NavLink>
       </div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
