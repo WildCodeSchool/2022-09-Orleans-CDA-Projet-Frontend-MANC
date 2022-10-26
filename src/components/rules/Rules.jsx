@@ -14,6 +14,7 @@ const Rules = () => {
 
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
   const [questionNumber, setQuestionNumber] = useState("10");
+  const [canPlay, setCanPlay] = useState(false);
 
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -21,6 +22,11 @@ const Rules = () => {
     );
     setCheckedState(updatedCheckedState);
   };
+
+  useEffect(() => {
+    const oneOrMoreIsChecked = checkedState.indexOf(true) !== -1;
+    setCanPlay(oneOrMoreIsChecked && parseInt(questionNumber) >= 10);
+  }, [checkedState, questionNumber]);
 
   return (
     <div>
@@ -135,18 +141,29 @@ const Rules = () => {
                 </div>
               </div>
             </fieldset>
-          </div>{" "}
-          <div
-            className="flex justify-center"
-            data-aos="fade-up"
-            data-aos-duration="400"
-          >
-            <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
-              <button className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center">
-                Play
-                <FaPlay className="ml-2" />
-              </button>
-            </Link>
+          </div>
+          <div className="flex justify-center">
+            {!canPlay && (
+              <div
+                className="text-red-500 text-xl"
+                data-aos="fade-in"
+                data-aos-duration="700"
+              >
+                Please select a game mode and a number of questions.
+              </div>
+            )}
+            {canPlay && (
+              <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
+                <button
+                  data-aos="fade-in"
+                  data-aos-duration="700"
+                  className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center"
+                >
+                  Play
+                  <FaPlay className="ml-2" />
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
