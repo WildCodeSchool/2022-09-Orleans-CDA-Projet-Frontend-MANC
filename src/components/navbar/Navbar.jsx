@@ -5,7 +5,7 @@ import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
 const Navbar = () => {
   return (
     <header className="bg-black text-white shadow-lg">
-      <div className="flex justify-around h-20 w-full px-4">
+      <div className="flex h-20 w-full px-4">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -20,7 +20,7 @@ const Navbar = () => {
           </span>
           <span className="font-semibold text-3xl text-lightblue">Quest</span>
         </NavLink>
-        <nav className="contents font-semibold justify-between text-base lg:text-lg">
+        <nav className="contents font-semibold text-base lg:text-lg">
           <ul className="mx-auto flex items-center gap-8">
             <NavLink
               to="/play"
@@ -36,7 +36,9 @@ const Navbar = () => {
             <NavLink
               to="/learn"
               className={({ isActive }) =>
-                isActive ? "text-lightblue" : "hover-underline-animation"
+                isActive
+                  ? "text-lightblue  mr-32"
+                  : "hover-underline-animation  mr-32"
               }
             >
               <li className="p-1 flex items-center gap-2">
