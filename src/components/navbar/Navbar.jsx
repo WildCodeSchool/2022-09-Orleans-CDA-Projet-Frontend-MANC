@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import "./navbar.css";
 import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <header className="bg-greyblue text-white shadow-lg">
+    <header className="bg-black text-white shadow-lg">
       <div className="flex justify-around h-20 w-full px-4">
         <NavLink
           to="/"
@@ -17,26 +18,28 @@ const Navbar = () => {
           <span className="ml-4 font-semibold text-3xl text-green-400">
             Map
           </span>
-          <span className="ml-2 font-semibold text-3xl text-lightblue">
-            Quest
-          </span>
+          <span className="font-semibold text-3xl text-lightblue">Quest</span>
         </NavLink>
         <nav className="contents font-semibold justify-between text-base lg:text-lg">
           <ul className="mx-auto flex items-center gap-8">
             <NavLink
               to="/play"
-              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+              className={({ isActive }) =>
+                isActive ? "text-lightblue" : "hover-underline-animation"
+              }
             >
-              <li className="p-5 xl:p-8 flex items-center gap-2">
+              <li className="p-1 flex items-center gap-2">
                 <span className="text-2xl">Play</span>
                 <MdNotStarted className="text-2xl" />
               </li>
             </NavLink>
             <NavLink
               to="/learn"
-              className={({ isActive }) => (isActive ? "" : "opacity-40")}
+              className={({ isActive }) =>
+                isActive ? "text-lightblue" : "hover-underline-animation"
+              }
             >
-              <li className="p-5 xl:p-8 flex items-center gap-2">
+              <li className="p-1 flex items-center gap-2">
                 <MdBook className="text-2xl" />
                 <span className="text-2xl">Learn</span>
               </li>
@@ -47,8 +50,8 @@ const Navbar = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "p-5 xl:p-8 flex items-center gap-2"
-                  : "p-5 xl:p-8 opacity-40 flex items-center gap-2"
+                  ? "p-1 flex items-center gap-2 text-lightblue"
+                  : "p-1 flex items-center gap-2 hover-underline-animation"
               }
             >
               <span className="text-md">About</span>

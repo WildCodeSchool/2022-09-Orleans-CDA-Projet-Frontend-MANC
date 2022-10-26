@@ -32,7 +32,7 @@ const Learn = () => {
 
   return (
     <div className="height-minus-nav flex justify-center items-center bg-quiz">
-      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-slate-300 shadow-2xl bg-slate-300">
         <SearchLearn setCountrySearchFound={setCountrySearchFound} />
         <Map
           actionOnClick={setClickedCountry}
