@@ -40,7 +40,7 @@ const Rules = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div className="flex gap-5 justify-around">
+          <div className="flex justify-around">
             <fieldset className="w-1/3 my-10 flex flex-col">
               <div className="card hover:shadow-2xl shadow-xl rounded-md flex flex-col bg-slate-100">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./city.jpg')] bg-no-repeat bg-cover"></div>
