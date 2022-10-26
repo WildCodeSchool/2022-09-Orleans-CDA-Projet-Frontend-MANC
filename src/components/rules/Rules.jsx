@@ -25,7 +25,7 @@ const Rules = () => {
 
   useEffect(() => {
     const oneOrMoreIsChecked = checkedState.indexOf(true) !== -1;
-    setCanPlay(oneOrMoreIsChecked && parseInt(questionNumber) >= 10);
+    setCanPlay(oneOrMoreIsChecked && parseInt(questionNumber, 10) >= 10);
   }, [checkedState, questionNumber]);
 
   return (
