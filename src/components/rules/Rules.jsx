@@ -26,8 +26,8 @@ const Rules = () => {
     <div>
       <div className="absolute z-10 flex flex-col gap-4 justify-center items-center height-minus-nav">
         <div
-          data-aos="fade-down"
-          data-aos-duration="600"
+          data-aos="fade-in"
+          data-aos-duration="400"
           className="rounded-lg p-6 w-2/4 shadow-2xl bg-white bg-opacity-90"
         >
           <h1 className="text-center text-6xl px-3 mb-6">How to Play?</h1>
@@ -135,7 +135,11 @@ const Rules = () => {
             </fieldset>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div
+          className="flex justify-center"
+          data-aos="fade-up"
+          data-aos-duration="400"
+        >
           <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
             <button className="w-40 justify-center text-2xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded flex items-center">
               Play
