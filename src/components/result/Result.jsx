@@ -81,7 +81,7 @@ function Result({
         autoPlay
         loop
         muted
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        className="fixed z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
         poster="/img_video2.png"
       >
         <source

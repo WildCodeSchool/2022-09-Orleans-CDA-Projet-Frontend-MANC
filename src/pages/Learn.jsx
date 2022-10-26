@@ -47,19 +47,21 @@ const Learn = () => {
           </div>
         </div>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge object-scale-down"
-        poster="/img_video4.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/home4new.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      <div className="z-10 h-full absolute w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute object-fill w-full h-full"
+          poster="/img_video4.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/home4new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
 };
