@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const QuizTimer = () => {
+const QuizTimer = ({ getReadableTimer }) => {
   const [timer, setTimer] = useState(0);
   const [readableTimer, setReadableTimer] = useState("");
 
@@ -29,11 +29,12 @@ const QuizTimer = () => {
 
     seconde = timeLeftAfterOperation;
 
-    setReadableTimer(
-      `${hour >= 10 ? hour : "0" + hour}:${
-        minute >= 10 ? minute : "0" + minute
-      }:${seconde >= 10 ? seconde : "0" + seconde}`
-    );
+    const readableTimerString = `${hour >= 10 ? hour : "0" + hour}:${
+      minute >= 10 ? minute : "0" + minute
+    }:${seconde >= 10 ? seconde : "0" + seconde}`;
+
+    getReadableTimer(readableTimerString);
+    setReadableTimer(readableTimerString);
   }, [timer]);
 
   return (

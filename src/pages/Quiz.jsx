@@ -128,6 +128,8 @@ const Quiz = () => {
     }
   }, [answer]);
 
+  const [readableTimer, setReadableTimer] = useState("");
+
   if (counterQuestion > questionNumber) {
     return (
       <Result
@@ -187,7 +189,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer />
+      <QuizTimer getReadableTimer={setReadableTimer} />
     </div>
   );
 };
