@@ -1,3 +1,5 @@
+import countries from "../../assets/countriesData.json";
+import "./map.css";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -5,21 +7,46 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import { useEffect, useState } from "react";
 
 const Map = ({
   actionOnClick,
   clickedCountry,
   markerCoordinates,
-  markerFoundCoordinate,
-  setIsConfirmed,
   preventClickCountry,
   correctAnswer,
   isConfirmed,
 }) => {
+  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+
+  useEffect(() => {
+    if (markerCoordinates !== "") {
+      const defaultZoom = 2;
+      setPosition((pos) => ({
+        coordinates: markerCoordinates,
+        zoom: pos.zoom < defaultZoom ? defaultZoom : pos.zoom,
+      }));
+    }
+  }, [markerCoordinates]);
+
+  const handleMoveEnd = (position) => {
+    setPosition(position);
+  };
+
+  const findDefaultCountryColor = (id) => {
+    const foundCountryData = countries.find((data) => {
+      return data.id === id;
+    });
+    if (foundCountryData) {
+      return `svg-fill-${foundCountryData.color}`;
+    }
+    return "fill-white";
+  };
+
   return (
     <>
       <ComposableMap
-        className="bg-sky-200 h-full w-full"
+        className="bg-cyan-900 h-full w-full"
         projectionConfig={{
           scale: 120,
           center: [0, 0],
@@ -27,19 +54,30 @@ const Map = ({
         width={500}
         height={350}
       >
-        <ZoomableGroup>
+        <ZoomableGroup
+          zoom={position.zoom}
+          center={position.coordinates}
+          onMoveEnd={handleMoveEnd}
+        >
           <Geographies geography="/mapGeometry.json">
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
+                  style={{
+                    default: { outline: "none" },
+                    hover: { outline: "none" },
+                    pressed: { outline: "none" },
+                  }}
                   className={`${
                     geo.id.includes(clickedCountry) && clickedCountry !== ""
                       ? !correctAnswer && isConfirmed
                         ? "fill-red-500"
-                        : "fill-green-500"
-                      : "fill-white"
+                        : isConfirmed && correctAnswer
+                        ? "fill-green-500"
+                        : "fill-yellow-200"
+                      : findDefaultCountryColor(geo.id)
                   } 
-                  stroke-0.5 stroke-slate-500  hover:fill-slate-700 hover:stroke-0`}
+                  stroke-[0.1px] stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
@@ -53,34 +91,12 @@ const Map = ({
             <Marker coordinates={markerCoordinates}>
               <g
                 fill="green"
-                stroke="green"
-                strokeWidth="1"
-                strokeLinejoin="round"
-                transform="translate(-6, -35) scale(1.5)"
-              >
-                <path d="M24 1h-24v16.981h4v5.019l7-5.019h13z" />
-              </g>
-              <text
-                onClick={() => {
-                  setIsConfirmed(true);
-                }}
-                textAnchor="middle"
-                y={-18}
-                x={12}
-                style={{ fill: "white", fontSize: "6px", cursor: "pointer" }}
-              >
-                Confirm ?
-              </text>
-            </Marker>
-          )}
-          {markerFoundCoordinate && (
-            <Marker coordinates={markerFoundCoordinate}>
-              <g
-                fill="green"
                 stroke="black"
                 strokeWidth="1"
                 strokeLinejoin="round"
-                transform="translate(-12, -24)"
+                transform={`translate(${-12 / position.zoom}, ${
+                  -24 / position.zoom
+                }) scale(${1 / position.zoom})`}
               >
                 <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 6.243 6.377 6.903 8 16.398 1.623-9.495 8-10.155 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.342-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
               </g>

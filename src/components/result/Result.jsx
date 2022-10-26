@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { MdReplayCircleFilled } from "react-icons/md";
+import { MdReplayCircleFilled, MdHome } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
@@ -22,15 +22,15 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
           data-aos-duration="600"
           className="text-8xl w-fit bg-white bg-opacity-80 rounded-xl p-8 m-20 border-solid border-2 border-greyblue shadow-2xl"
         >
-          <span className="text-green-400">Quizz </span>
-          <span className="text-greyblue">done !</span>
+          <span className="text-green-400">Quiz </span>
+          <span className="text-greyblue">done!</span>
         </h1>
         <div
           data-aos="fade-up"
           data-aos-duration="600"
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-lg p-10 text-center border-solid border-2 border-greyblue"
         >
-          {`Congratulations ! Your have ${counterCorrect} good answer on ${questionNumber} questions !`}
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
 
           {allResponses.map((response) => (
             <div

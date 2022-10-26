@@ -1,13 +1,14 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { GiCheckMark } from "react-icons/gi";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
 import Question from "../components/question/Question";
 import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
-import { TbBuilding } from "react-icons/tb";
-import { HiOutlineCurrencyDollar } from "react-icons/hi";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import RecapGame from "../components/recapGame/RecapGame";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Quiz = () => {
   const location = useLocation();
@@ -15,6 +16,10 @@ const Quiz = () => {
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -45,25 +50,6 @@ const Quiz = () => {
   }, [clickedCountry]);
 
   const [question, setQuestion] = useState("");
-
-  useEffect(() => {
-    setAnswer({ isAnswered: false, isCorrect: false });
-  }, [question]);
-
-  useEffect(() => {
-    setIsConfirmed(false);
-  }, [question]);
-
-  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
-
-  useEffect(() => {
-    setPreventClickCountry(false);
-  }, [question]);
-
-  useEffect(() => {
-    !answer.isAnswered && setClickedCountry("");
-  }, [answer]);
-
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
@@ -148,26 +134,35 @@ const Quiz = () => {
           ];
         });
       }
-      console.log(allResponses);
     }
-  }, [isConfirmed]);
-
-  useEffect(() => {
     isConfirmed && setMarkerCoordinates("");
   }, [isConfirmed]);
 
-  const [number, setNumber] = useState(null);
   useEffect(() => {
-    setIsConfirmed(false);
-  }, [question]);
+    if (response !== "") {
+      const responseCountryData = countryData.find((data) => {
+        return data.name === response;
+      });
+      if (responseCountryData) {
+        setMarkerCoordinates(responseCountryData.coord);
+      }
+    }
+  }, [response]);
+
+  const [number, setNumber] = useState(null);
 
   useEffect(() => {
+    setIsConfirmed(false);
     setPreventClickCountry(false);
+    setAnswer({ isAnswered: false, isCorrect: false });
+    setMarkerCoordinates("");
   }, [question]);
+
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
-    if (answer.isCorrect === true) {
+    if (answer.isCorrect) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
     if (answer.isAnswered) {
@@ -186,16 +181,7 @@ const Quiz = () => {
   }
 
   return (
-    <div className="height-minus-nav flex">
-      <Map
-        preventClickCountry={preventClickCountry}
-        clickedCountry={clickedCountry}
-        actionOnClick={setClickedCountry}
-        markerCoordinates={markerCoordinates}
-        setIsConfirmed={setIsConfirmed}
-        correctAnswer={answer.isCorrect}
-        isConfirmed={isConfirmed}
-      />
+    <div className="height-minus-nav flex justify-center items-center bg-quiz">
       <Question
         question={question}
         setQuestion={setQuestion}
@@ -207,9 +193,42 @@ const Quiz = () => {
         setNumber={setNumber}
         setPreventClickCountry={setPreventClickCountry}
       />
-      {answer.isAnswered && clickedCountry !== "" && (
-        <Answer answer={answer.isCorrect} />
-      )}
+      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+        <Map
+          preventClickCountry={preventClickCountry}
+          clickedCountry={clickedCountry}
+          actionOnClick={setClickedCountry}
+          markerCoordinates={markerCoordinates}
+          setIsConfirmed={setIsConfirmed}
+          correctAnswer={answer.isCorrect}
+          isConfirmed={isConfirmed}
+        />
+        {answer.isAnswered && clickedCountry !== "" && (
+          <Answer
+            answer={answer.isCorrect}
+            questionType={questionType}
+            response={response}
+          />
+        )}
+        {markerCoordinates && !isConfirmed && (
+          <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
+            <button
+              className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
+              data-aos="zoom-in"
+              data-aos-duration="200"
+              onClick={() => setIsConfirmed(true)}
+            >
+              <GiCheckMark /> Confirm
+            </button>
+          </div>
+        )}
+      </div>
+      <RecapGame
+        counterCorrect={counterCorrect}
+        counterQuestion={counterQuestion}
+        questionNumber={questionNumber}
+        response={response}
+      />
     </div>
   );
 };

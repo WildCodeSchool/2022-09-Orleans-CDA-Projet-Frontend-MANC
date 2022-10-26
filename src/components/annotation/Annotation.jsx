@@ -1,5 +1,6 @@
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { HiOutlineUsers } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import AOS from "aos";
@@ -11,6 +12,7 @@ const Annotation = (country) => {
   }, []);
 
   const [countryData, setCountryData] = useState();
+  const [countryPopulation, setCountryPopulation] = useState();
 
   async function getResponse() {
     const res = await fetch(
@@ -24,12 +26,17 @@ const Annotation = (country) => {
     getResponse();
   }, [country]);
 
+  useEffect(() => {
+    countryData &&
+      setCountryPopulation((countryData.population / 1000000).toFixed(1));
+  }, [countryData]);
+
   return (
     <>
       <div
         data-aos="zoom-in"
         data-aos-duration="400"
-        className="absolute left-0 right-0 mx-auto w-fit bg-white flex w-fit flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5"
+        className="absolute -left-16 right-0 -top-16 w-fit bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-5"
       >
         <h2 className="text-2xl text-center font-semibold mb-4">
           {countryData && countryData.name.common + " " + countryData.flag}
@@ -53,6 +60,11 @@ const Annotation = (country) => {
             Object.values(countryData.languages).map((language, index) => (
               <span key={index}>{language}</span>
             ))}
+        </p>
+        <p className="flex items-center gap-2 text-lg">
+          <HiOutlineUsers />
+          {` Population: 
+            ${countryData && countryPopulation} millions`}
         </p>
       </div>
     </>
