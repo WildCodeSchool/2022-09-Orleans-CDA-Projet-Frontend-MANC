@@ -54,11 +54,7 @@ const Navbar = () => {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            <div
-              className={
-                isNavOpen ? "showMenuNav transition-transform" : "hideMenuNav"
-              }
-            >
+            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
               <NavbarLink isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
             </div>
           </section>
