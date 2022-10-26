@@ -11,9 +11,6 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
   useEffect(() => {
     AOS.init();
   }, []);
-  useEffect(() => {
-    console.log(allResponses);
-  }, [allResponses]);
   return (
     <div className="flex justify-items-center">
       <div className="absolute z-10 flex flex-col items-center height-minus-nav w-full">

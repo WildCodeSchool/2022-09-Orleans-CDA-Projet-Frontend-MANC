@@ -72,7 +72,6 @@ const Quiz = () => {
           isCorrect: clickedCountry === question[0].cca3,
         });
         setResponse(question[0].name.common);
-        console.log(answer.isCorrect);
         setAllResponses((previous) => {
           return [
             ...previous,
@@ -106,7 +105,6 @@ const Quiz = () => {
               ).includes(
                 Object.values(Object.values(question[0].currencies)[0])[0]
               ),
-              // response: clickedCountry[0],
               goodAnswer: question[0].name.common + " " + question[0].flag,
             },
           ];
