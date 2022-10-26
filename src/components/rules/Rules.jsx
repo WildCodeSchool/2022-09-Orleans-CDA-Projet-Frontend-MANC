@@ -30,7 +30,7 @@ const Rules = () => {
           data-aos-duration="400"
           className="rounded-lg p-6 w-2/4 shadow-2xl bg-white bg-opacity-90"
         >
-          <h1 className="text-center text-6xl px-3 mb-6">How to Play?</h1>
+          <h1 className="text-center text-6xl px-3 mb-6 mt-2">How to Play?</h1>
           <p className="px-3 m-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -43,7 +43,7 @@ const Rules = () => {
           <div className="flex justify-around">
             <fieldset className="w-1/3 my-10 flex flex-col">
               <div className="card hover:shadow-2xl shadow-xl rounded-md flex flex-col bg-slate-100">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('./city.jpg')] bg-no-repeat bg-cover"></div>
+                <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg text-center p-2">
                   Choose your game mode
                 </legend>
@@ -90,7 +90,7 @@ const Rules = () => {
             </fieldset>
             <fieldset className="w-1/3 my-10 flex flex-col">
               <div className="card hover:shadow-2xl shadow-xl rounded-md flex flex-col bg-slate-100">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('./city.jpg')] bg-no-repeat bg-cover"></div>
+                <div className="image h-36 object-cover rounded-t-md bg-[url('./question.png')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg text-center p-2">
                   Number of questions
                 </legend>
