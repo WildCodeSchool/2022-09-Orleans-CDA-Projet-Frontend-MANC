@@ -1,3 +1,4 @@
+import { AiOutlineFieldTime } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
 const QuizTimer = ({ getReadableTimer }) => {
@@ -40,7 +41,10 @@ const QuizTimer = ({ getReadableTimer }) => {
   return (
     <div className="z-50 absolute top-32 left-0 m-10">
       <div className="my-10 border-2 w-auto border-solid shadow-2xl p-4 rounded-2xl border-black bg-slate-100">
-        <h2 className="text-center w-full text-3xl mb-4">Elapsed time:</h2>
+        <h2 className="text-center w-full text-3xl mb-1 flex gap-1 items-center">
+          <AiOutlineFieldTime />
+          Elapsed time:
+        </h2>
         <p className="w-fit m-auto text-xl">{readableTimer}</p>
       </div>
     </div>
