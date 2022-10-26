@@ -136,6 +136,7 @@ const Quiz = () => {
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
         gameModes={gameModes}
+        readableTimer={readableTimer}
       />
     );
   }

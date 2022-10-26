@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { MdReplayCircleFilled, MdHome } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
-function Result({ counterCorrect, questionNumber, gameModes }) {
+function Result({ counterCorrect, questionNumber, gameModes, readableTimer }) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -26,7 +26,7 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue drop-shadow-2xl"
         >
           {`Congratulations, you scored ${counterCorrect} good answers out of 
-          ${questionNumber} questions!`}
+          ${questionNumber} questions in ${readableTimer}!`}
         </p>
         <div className="flex justify-evenly w-full mt-14">
           <NavLink
