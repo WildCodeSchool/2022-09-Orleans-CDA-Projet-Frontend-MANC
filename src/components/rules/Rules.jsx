@@ -42,8 +42,8 @@ const Rules = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div className="flex justify-around ">
-            <fieldset className="w-1/3 my-10 flex flex-col bg-white rounded-md ">
+          <div className="flex justify-evenly ">
+            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md ">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col ">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover "></div>
                 <legend className="text-lg text-center p-2 ">
@@ -90,7 +90,7 @@ const Rules = () => {
                 </div>
               </div>
             </fieldset>
-            <fieldset className="w-1/3 my-10 flex flex-col bg-white rounded-md">
+            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./question.png')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg text-center p-2">
@@ -135,19 +135,19 @@ const Rules = () => {
                 </div>
               </div>
             </fieldset>
+          </div>{" "}
+          <div
+            className="flex justify-center"
+            data-aos="fade-up"
+            data-aos-duration="400"
+          >
+            <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
+              <button className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center">
+                Play
+                <FaPlay className="ml-2" />
+              </button>
+            </Link>
           </div>
-        </div>
-        <div
-          className="flex justify-center"
-          data-aos="fade-up"
-          data-aos-duration="400"
-        >
-          <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
-            <button className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center">
-              Play
-              <FaPlay className="ml-2" />
-            </button>
-          </Link>
         </div>
       </div>
       <video
