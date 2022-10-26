@@ -5,6 +5,9 @@ import Map from "../components/map/Map";
 import Question from "../components/question/Question";
 import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
+import { TbBuilding } from "react-icons/tb";
+import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 const Quiz = () => {
   const location = useLocation();
@@ -12,7 +15,6 @@ const Quiz = () => {
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
-  const [allResponses, setAllResponses] = useState([]);
 
   const getAnswer = (clickedCountry) => {
     if (clickedCountry !== "") {
@@ -65,7 +67,8 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
-  const [counterQuestion, setCounterQuestion] = useState(9);
+  const [counterQuestion, setCounterQuestion] = useState(1);
+  const [allResponses, setAllResponses] = useState([]);
 
   useEffect(() => {
     isConfirmed &&
@@ -83,9 +86,17 @@ const Quiz = () => {
           isCorrect: clickedCountry === question[0].cca3,
         });
         setResponse(question[0].name.common);
+        console.log(answer.isCorrect);
         setAllResponses((previous) => {
-          console.log("1 : " + question[0].name.common);
-          return [...previous, question[0].name.common];
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Capital : ${question[0].capital[0]}`,
+              answerResult: clickedCountry === question[0].cca3,
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
         });
       }
       if (number === 1) {
@@ -97,7 +108,22 @@ const Quiz = () => {
         });
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
-          return [...previous, question[0].name.common];
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Currency : ${
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              }`,
+              answerResult: Object.values(
+                Object.values(countryAnswer)[0]
+              ).includes(
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              ),
+              // response: clickedCountry[0],
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
         });
       }
       if (number === 2) {
@@ -109,9 +135,20 @@ const Quiz = () => {
         });
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
-          return [...previous, question[0].name.common];
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Language : ${Object.values(question[0].languages)[0]}`,
+              answerResult: Object.values(countryAnswer).includes(
+                Object.values(question[0].languages)[0]
+              ),
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
         });
       }
+      console.log(allResponses);
     }
   }, [isConfirmed]);
 
@@ -143,7 +180,6 @@ const Quiz = () => {
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        gameModes={gameModes}
         allResponses={allResponses}
       />
     );
