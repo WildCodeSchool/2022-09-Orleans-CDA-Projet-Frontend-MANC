@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <div className="flex justify-center">
-      <div className="absolute z-30 gap-24 flex flex-col items-center height-minus-nav ">
+      <div className="absolute z-30 top-[80px] gap-24 flex flex-col items-center height-minus-nav ">
         <h1 className="text-7xl w-fit bg-slate-800 bg-opacity-90 rounded-md p-8 m-20 flex flex-col shadow-2xl">
           <div>
             <span className="text-green-400">Map</span>
