@@ -235,7 +235,10 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer getReadableTimer={setReadableTimer} />
+      <QuizTimer
+        readableTimer={readableTimer}
+        setReadableTimer={setReadableTimer}
+      />
       <video
         autoPlay
         loop

@@ -1,9 +1,8 @@
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
-const QuizTimer = ({ getReadableTimer }) => {
+const QuizTimer = ({ readableTimer, setReadableTimer }) => {
   const [timer, setTimer] = useState(0);
-  const [readableTimer, setReadableTimer] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,7 +33,6 @@ const QuizTimer = ({ getReadableTimer }) => {
       minute >= 10 ? minute : "0" + minute
     }:${seconde >= 10 ? seconde : "0" + seconde}`;
 
-    getReadableTimer(readableTimerString);
     setReadableTimer(readableTimerString);
   }, [timer]);
 
