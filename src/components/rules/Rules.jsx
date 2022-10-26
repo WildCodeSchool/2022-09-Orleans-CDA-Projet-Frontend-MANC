@@ -148,7 +148,19 @@ const Rules = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[url('./assets/images/blurred-map.jpg')] contrast-75 bg-no-repeat bg-cover height-minus-nav w-screen"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };

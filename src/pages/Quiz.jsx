@@ -54,6 +54,7 @@ const Quiz = () => {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [counterQuestion, setCounterQuestion] = useState(1);
+  const [allResponses, setAllResponses] = useState([]);
 
   useEffect(() => {
     isConfirmed &&
@@ -71,6 +72,17 @@ const Quiz = () => {
           isCorrect: clickedCountry === question[0].cca3,
         });
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Capital : ${question[0].capital[0]}`,
+              answerResult: clickedCountry === question[0].cca3,
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
       if (number === 1) {
         setAnswer({
@@ -79,8 +91,24 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
-
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Currency : ${
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              }`,
+              answerResult: Object.values(
+                Object.values(countryAnswer)[0]
+              ).includes(
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              ),
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
       if (number === 2) {
         setAnswer({
@@ -90,6 +118,19 @@ const Quiz = () => {
           ),
         });
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Language : ${Object.values(question[0].languages)[0]}`,
+              answerResult: Object.values(countryAnswer).includes(
+                Object.values(question[0].languages)[0]
+              ),
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
     }
     isConfirmed && setMarkerCoordinates("");
@@ -132,60 +173,77 @@ const Quiz = () => {
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        gameModes={gameModes}
+        allResponses={allResponses}
       />
     );
   }
 
   return (
-    <div className="height-minus-nav flex justify-center items-center bg-quiz">
-      <Question
-        question={question}
-        setQuestion={setQuestion}
-        isAnswered={answer.isAnswered}
-        questionType={questionType}
-        gameModes={gameModes}
-        number={number}
-        setQuestionType={setQuestionType}
-        setNumber={setNumber}
-        setPreventClickCountry={setPreventClickCountry}
-      />
-      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-slate-300 shadow-2xl bg-slate-300">
-        <Map
-          preventClickCountry={preventClickCountry}
-          clickedCountry={clickedCountry}
-          actionOnClick={setClickedCountry}
-          markerCoordinates={markerCoordinates}
-          setIsConfirmed={setIsConfirmed}
-          correctAnswer={answer.isCorrect}
-          isConfirmed={isConfirmed}
-        />
-        {answer.isAnswered && clickedCountry !== "" && (
-          <Answer
-            answer={answer.isCorrect}
+    <div>
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+        <div className="height-minus-nav flex justify-center items-center w-full">
+          <Question
+            question={question}
+            setQuestion={setQuestion}
+            isAnswered={answer.isAnswered}
             questionType={questionType}
+            gameModes={gameModes}
+            number={number}
+            setQuestionType={setQuestionType}
+            setNumber={setNumber}
+            setPreventClickCountry={setPreventClickCountry}
+          />
+          <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-slate-300 shadow-2xl bg-slate-300">
+            <Map
+              preventClickCountry={preventClickCountry}
+              clickedCountry={clickedCountry}
+              actionOnClick={setClickedCountry}
+              markerCoordinates={markerCoordinates}
+              setIsConfirmed={setIsConfirmed}
+              correctAnswer={answer.isCorrect}
+              isConfirmed={isConfirmed}
+            />
+            {answer.isAnswered && clickedCountry !== "" && (
+              <Answer
+                answer={answer.isCorrect}
+                questionType={questionType}
+                response={response}
+              />
+            )}
+            {markerCoordinates && !isConfirmed && (
+              <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
+                <button
+                  className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
+                  data-aos="zoom-in"
+                  data-aos-duration="200"
+                  onClick={() => setIsConfirmed(true)}
+                >
+                  <GiCheckMark /> Confirm
+                </button>
+              </div>
+            )}
+          </div>
+          <RecapGame
+            counterCorrect={counterCorrect}
+            counterQuestion={counterQuestion}
+            questionNumber={questionNumber}
             response={response}
           />
-        )}
-        {markerCoordinates && !isConfirmed && (
-          <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
-            <button
-              className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
-              data-aos="zoom-in"
-              data-aos-duration="200"
-              onClick={() => setIsConfirmed(true)}
-            >
-              <GiCheckMark /> Confirm
-            </button>
-          </div>
-        )}
+        </div>
       </div>
-      <RecapGame
-        counterCorrect={counterCorrect}
-        counterQuestion={counterQuestion}
-        questionNumber={questionNumber}
-        response={response}
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        className="relative z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge bg-cover"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };

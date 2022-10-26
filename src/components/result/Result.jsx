@@ -3,15 +3,17 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { MdReplayCircleFilled, MdHome } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { TbBuilding } from "react-icons/tb";
+import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-function Result({ counterCorrect, questionNumber, gameModes }) {
+function Result({ counterCorrect, questionNumber, allResponses }) {
   useEffect(() => {
     AOS.init();
   }, []);
-
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-10 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -20,44 +22,70 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           <span className="text-green-400">Quiz </span>
           <span className="text-greyblue">done!</span>
         </h1>
-        <p
+        <div
           data-aos="fade-up"
           data-aos-duration="600"
-          className="mx-40 text-2xl bg-white bg-opacity-80 rounded-xl p-10 text-center border-solid border-2 border-greyblue drop-shadow-2xl"
+          className="mx-40 text-2xl bg-white bg-opacity-80 rounded-lg p-10 text-center border-solid border-2 border-greyblue"
         >
-          {`Congratulations, you scored ${counterCorrect} good answers out of 
-          ${questionNumber} questions!`}
-        </p>
-        <div className="flex justify-evenly w-full mt-14">
-          <NavLink
-            to="/play"
-            className="text-2xl flex items-center drop-shadow-2xl"
-          >
-            <button
-              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
-              data-aos="fade-up"
-              data-aos-duration="600"
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
+
+          {allResponses.map((response) => (
+            <div
+              className={`${
+                response.answerResult
+                  ? "bg-green-400  border-green-700"
+                  : "bg-red-400 border-red-700"
+              }
+          mx-40  mt-10 text-2xl bg-opacity-80 rounded-lg p-10 m-5 text-center border-solid border-2`}
             >
-              Replay
-              <MdReplayCircleFilled className="text-4xl ml-2" />
-            </button>
-          </NavLink>
-          <NavLink
-            to="/"
-            className="text-2xl flex items-center drop-shadow-2xl"
-          >
-            <button
-              className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
-              data-aos="fade-up"
-              data-aos-duration="600"
-            >
-              Home
-              <MdHome className="text-4xl ml-2" />
-            </button>
-          </NavLink>
+              <p>
+                <span className="font-bold">{`Question ${response.numQuestion}`}</span>{" "}
+                <span
+                  className={`${
+                    response.answerResult ? "text-green-700" : "text-red-700"
+                  } font-bold`}
+                >{`${response.answerResult ? "Right" : "Wrong"}`}</span>
+              </p>
+              <p className="flex justify-center gap-1">
+                {response.question.includes("Capital") ? (
+                  <TbBuilding />
+                ) : response.question.includes("Currency") ? (
+                  <HiOutlineCurrencyDollar />
+                ) : (
+                  response.question.includes("Language") && (
+                    <IoChatbubbleEllipsesOutline />
+                  )
+                )}
+                {`${response.question}`}
+              </p>
+              <p>{`Country : ${response.goodAnswer}`}</p>
+            </div>
+          ))}
         </div>
+        <NavLink to="/play" className="text-2xl flex items-center">
+          <button
+            className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
+            data-aos="fade-up"
+            data-aos-duration="600"
+          >
+            Replay
+            <MdReplayCircleFilled className="text-4xl ml-2" />
+          </button>
+        </NavLink>
       </div>
-      <div className="bg-[url('./assets/images/blurred-map.jpg')] contrast-75 bg-no-repeat bg-cover height-minus-nav w-screen blur-sm"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
