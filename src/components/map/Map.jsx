@@ -21,7 +21,7 @@ const Map = ({
 
   useEffect(() => {
     if (markerCoordinates !== "") {
-      const defaultZoom = 3.5;
+      const defaultZoom = 2;
       setPosition((pos) => ({
         coordinates: markerCoordinates,
         zoom: pos.zoom < defaultZoom ? defaultZoom : pos.zoom,
@@ -46,7 +46,7 @@ const Map = ({
   return (
     <>
       <ComposableMap
-        className="bg-cyan-900 h-full w-full"
+        className="bg-slate-300 h-full w-full"
         projectionConfig={{
           scale: 120,
           center: [0, 0],
@@ -77,7 +77,7 @@ const Map = ({
                         : "fill-yellow-200"
                       : findDefaultCountryColor(geo.id)
                   } 
-                  stroke-[0.1px] stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
+                  stroke-[0.1px] stroke-slate-300  hover:fill-slate-400 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {
@@ -94,7 +94,9 @@ const Map = ({
                 stroke="black"
                 strokeWidth="1"
                 strokeLinejoin="round"
-                transform="translate(-12, -24)"
+                transform={`translate(${-12 / position.zoom}, ${
+                  -24 / position.zoom
+                }) scale(${1 / position.zoom})`}
               >
                 <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 6.243 6.377 6.903 8 16.398 1.623-9.495 8-10.155 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.342-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
               </g>
