@@ -46,7 +46,7 @@ const Map = ({
   return (
     <>
       <ComposableMap
-        className="bg-cyan-900 h-full w-full"
+        className="bg-slate-300 h-full w-full"
         projectionConfig={{
           scale: 120,
           center: [0, 0],
@@ -77,7 +77,7 @@ const Map = ({
                         : "fill-yellow-200"
                       : findDefaultCountryColor(geo.id)
                   } 
-                  stroke-[0.1px] stroke-slate-900  hover:fill-slate-400 hover:stroke-0`}
+                  stroke-[0.1px] stroke-slate-300  hover:fill-slate-400 hover:stroke-0`}
                   key={geo.rsmKey}
                   geography={geo}
                   onClick={() => {

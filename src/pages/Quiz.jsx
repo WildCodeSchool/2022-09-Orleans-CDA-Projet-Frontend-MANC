@@ -55,6 +55,7 @@ const Quiz = () => {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [counterQuestion, setCounterQuestion] = useState(1);
+  const [allResponses, setAllResponses] = useState([]);
 
   useEffect(() => {
     isConfirmed &&
@@ -72,6 +73,17 @@ const Quiz = () => {
           isCorrect: clickedCountry === question[0].cca3,
         });
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Capital : ${question[0].capital[0]}`,
+              answerResult: clickedCountry === question[0].cca3,
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
       if (number === 1) {
         setAnswer({
@@ -80,8 +92,24 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
-
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Currency : ${
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              }`,
+              answerResult: Object.values(
+                Object.values(countryAnswer)[0]
+              ).includes(
+                Object.values(Object.values(question[0].currencies)[0])[0]
+              ),
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
       if (number === 2) {
         setAnswer({
@@ -91,6 +119,19 @@ const Quiz = () => {
           ),
         });
         setResponse(question[0].name.common);
+        setAllResponses((previous) => {
+          return [
+            ...previous,
+            {
+              numQuestion: counterQuestion,
+              question: `Language : ${Object.values(question[0].languages)[0]}`,
+              answerResult: Object.values(countryAnswer).includes(
+                Object.values(question[0].languages)[0]
+              ),
+              goodAnswer: question[0].name.common + " " + question[0].flag,
+            },
+          ];
+        });
       }
     }
     isConfirmed && setMarkerCoordinates("");
@@ -135,8 +176,8 @@ const Quiz = () => {
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        gameModes={gameModes}
         readableTimer={readableTimer}
+        allResponses={allResponses}
       />
     );
   }
@@ -154,7 +195,7 @@ const Quiz = () => {
         setNumber={setNumber}
         setPreventClickCountry={setPreventClickCountry}
       />
-      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-slate-300 shadow-2xl bg-slate-300">
         <Map
           preventClickCountry={preventClickCountry}
           clickedCountry={clickedCountry}
