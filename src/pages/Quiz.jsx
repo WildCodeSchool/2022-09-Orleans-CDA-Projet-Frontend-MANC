@@ -230,21 +230,20 @@ const Quiz = () => {
             response={response}
           />
         </div>
-
-        <video
-          autoPlay
-          loop
-          muted
-          className="relative z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge bg-cover"
-          poster="/img_video2.png"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
       </div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="relative z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge bg-cover"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
