@@ -11,7 +11,7 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
 
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-10 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -57,7 +57,19 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
           </NavLink>
         </div>
       </div>
-      <div className="bg-[url('./assets/images/blurred-map.jpg')] contrast-75 bg-no-repeat bg-cover height-minus-nav w-screen blur-sm"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        poster="/img_video2.png"
+      >
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/video2new.mp4?alt=media&token=e11f640c-441c-4787-917b-612ccc5cc915"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }

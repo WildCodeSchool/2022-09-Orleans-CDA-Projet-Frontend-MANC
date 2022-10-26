@@ -138,54 +138,71 @@ const Quiz = () => {
   }
 
   return (
-    <div className="height-minus-nav flex justify-center items-center bg-quiz">
-      <Question
-        question={question}
-        setQuestion={setQuestion}
-        isAnswered={answer.isAnswered}
-        questionType={questionType}
-        gameModes={gameModes}
-        number={number}
-        setQuestionType={setQuestionType}
-        setNumber={setNumber}
-        setPreventClickCountry={setPreventClickCountry}
-      />
-      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
-        <Map
-          preventClickCountry={preventClickCountry}
-          clickedCountry={clickedCountry}
-          actionOnClick={setClickedCountry}
-          markerCoordinates={markerCoordinates}
-          setIsConfirmed={setIsConfirmed}
-          correctAnswer={answer.isCorrect}
-          isConfirmed={isConfirmed}
-        />
-        {answer.isAnswered && clickedCountry !== "" && (
-          <Answer
-            answer={answer.isCorrect}
+    <div>
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+        <div className="height-minus-nav flex justify-center items-center w-full">
+          <Question
+            question={question}
+            setQuestion={setQuestion}
+            isAnswered={answer.isAnswered}
             questionType={questionType}
+            gameModes={gameModes}
+            number={number}
+            setQuestionType={setQuestionType}
+            setNumber={setNumber}
+            setPreventClickCountry={setPreventClickCountry}
+          />
+          <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+            <Map
+              preventClickCountry={preventClickCountry}
+              clickedCountry={clickedCountry}
+              actionOnClick={setClickedCountry}
+              markerCoordinates={markerCoordinates}
+              setIsConfirmed={setIsConfirmed}
+              correctAnswer={answer.isCorrect}
+              isConfirmed={isConfirmed}
+            />
+            {answer.isAnswered && clickedCountry !== "" && (
+              <Answer
+                answer={answer.isCorrect}
+                questionType={questionType}
+                response={response}
+              />
+            )}
+            {markerCoordinates && !isConfirmed && (
+              <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
+                <button
+                  className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
+                  data-aos="zoom-in"
+                  data-aos-duration="200"
+                  onClick={() => setIsConfirmed(true)}
+                >
+                  <GiCheckMark /> Confirm
+                </button>
+              </div>
+            )}
+          </div>
+          <RecapGame
+            counterCorrect={counterCorrect}
+            counterQuestion={counterQuestion}
+            questionNumber={questionNumber}
             response={response}
           />
-        )}
-        {markerCoordinates && !isConfirmed && (
-          <div className="absolute left-0 right-0 mx-auto w-fit -top-10">
-            <button
-              className="flex gap-2 items-center text-white text-[25px] font-semibold p-5 bg-green-600 hover:bg-green-700 hover:text-gray-200 border shadow-xl border-top border-solid border-white rounded-xl"
-              data-aos="zoom-in"
-              data-aos-duration="200"
-              onClick={() => setIsConfirmed(true)}
-            >
-              <GiCheckMark /> Confirm
-            </button>
-          </div>
-        )}
+        </div>
       </div>
-      <RecapGame
-        counterCorrect={counterCorrect}
-        counterQuestion={counterQuestion}
-        questionNumber={questionNumber}
-        response={response}
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        className="relative z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge bg-cover"
+        poster="/img_video2.png"
+      >
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/home1reduce.mp4?alt=media&token=ed4bee17-35f1-4d4b-bbf7-80e14eb4a867"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };

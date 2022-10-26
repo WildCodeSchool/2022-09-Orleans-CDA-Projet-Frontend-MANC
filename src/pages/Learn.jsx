@@ -31,16 +31,35 @@ const Learn = () => {
   }, [clickedCountry]);
 
   return (
-    <div className="height-minus-nav flex justify-center items-center bg-quiz">
-      <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
-        <SearchLearn setCountrySearchFound={setCountrySearchFound} />
-        <Map
-          actionOnClick={setClickedCountry}
-          clickedCountry={clickedCountry ? clickedCountry : countrySearchFound}
-          markerCoordinates={markerFoundCoordinate}
-        />
-        {clickedCountry && <Annotation country={clickedCountry} />}
+    <div>
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+        <div className="height-minus-nav flex justify-center items-center w-full">
+          <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
+            <SearchLearn setCountrySearchFound={setCountrySearchFound} />
+            <Map
+              actionOnClick={setClickedCountry}
+              clickedCountry={
+                clickedCountry ? clickedCountry : countrySearchFound
+              }
+              markerCoordinates={markerFoundCoordinate}
+            />
+            {clickedCountry && <Annotation country={clickedCountry} />}
+          </div>
+        </div>
       </div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge object-scale-down"
+        poster="/img_video4.png"
+      >
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/home4new.mp4?alt=media&token=f73fccf0-ddfe-4546-8b51-99158ac1612d"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
