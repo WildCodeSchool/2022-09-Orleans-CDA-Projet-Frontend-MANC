@@ -28,10 +28,12 @@ const Rules = () => {
         <div
           data-aos="fade-in"
           data-aos-duration="400"
-          className="rounded-lg p-6 w-2/4 shadow-2xl bg-white bg-opacity-90"
+          className="rounded-lg p-6 w-2/4 shadow-2xl bg-slate-800  bg-opacity-90"
         >
-          <h1 className="text-center text-6xl px-3 mb-6 mt-2">How to Play?</h1>
-          <p className="px-3 m-2">
+          <h1 className="text-center text-6xl px-3 mb-6 mt-2 text-white">
+            How to Play?
+          </h1>
+          <p className="px-3 m-2 text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -40,9 +42,9 @@ const Rules = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div className="flex justify-around ">
-            <fieldset className="w-1/3 my-10 flex flex-col bg-slate-100 ">
-              <div className="card hover:shadow-2xl shadow-xl flex flex-col  rounded-md">
+          <div className="flex justify-evenly ">
+            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md ">
+              <div className="card hover:shadow-2xl shadow-xl flex flex-col ">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover "></div>
                 <legend className="text-lg text-center p-2 ">
                   Choose your game mode
@@ -88,8 +90,8 @@ const Rules = () => {
                 </div>
               </div>
             </fieldset>
-            <fieldset className="w-1/3 my-10 flex flex-col">
-              <div className="card hover:shadow-2xl shadow-xl rounded-md flex flex-col bg-slate-100">
+            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md">
+              <div className="card hover:shadow-2xl shadow-xl flex flex-col">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./question.png')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg text-center p-2">
                   Number of questions
@@ -133,19 +135,19 @@ const Rules = () => {
                 </div>
               </div>
             </fieldset>
+          </div>{" "}
+          <div
+            className="flex justify-center"
+            data-aos="fade-up"
+            data-aos-duration="400"
+          >
+            <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
+              <button className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center">
+                Play
+                <FaPlay className="ml-2" />
+              </button>
+            </Link>
           </div>
-        </div>
-        <div
-          className="flex justify-center"
-          data-aos="fade-up"
-          data-aos-duration="400"
-        >
-          <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
-            <button className="w-40 justify-center text-2xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded flex items-center">
-              Play
-              <FaPlay className="ml-2" />
-            </button>
-          </Link>
         </div>
       </div>
       <div className="z-10 h-full absolute w-full">
