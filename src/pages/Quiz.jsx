@@ -9,6 +9,7 @@ import countryData from "../assets/countriesData.json";
 import RecapGame from "../components/recapGame/RecapGame";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import QuizTimer from "../components/quizTimer/QuizTimer";
 
 const Quiz = () => {
   const location = useLocation();
@@ -186,6 +187,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
+      <QuizTimer />
     </div>
   );
 };
