@@ -8,7 +8,7 @@ const NavbarLink = ({ isNavOpen, setIsNavOpen }) => {
         className={`mx-auto flex ${
           isNavOpen
             ? "flex-col gap-5 pt-5 lg:flex-row lg:pt-0 lg:items-center"
-            : "gap-8 items-center"
+            : "gap-8 items-center pr-[109px]"
         }`}
       >
         <NavLink

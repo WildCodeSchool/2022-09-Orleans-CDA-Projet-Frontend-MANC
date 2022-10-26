@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white shadow-lg fixed z-50 w-full">
+    <header className="bg-black bg-opacity-50 text-white shadow-lg fixed z-50 w-full">
       <div className="flex justify-between h-20 w-full px-4">
         <NavLink
           to="/"
@@ -23,7 +23,7 @@ const Navbar = () => {
           </span>
           <span className="font-semibold text-3xl text-lightblue">Quest</span>
         </NavLink>
-        <nav className="flex flex-grow ml-[-109px]">
+        <nav className="flex flex-grow">
           <section className="hidden lg:contents font-semibold text-base">
             <NavbarLink isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
           </section>
