@@ -46,7 +46,7 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
                   } font-bold`}
                 >{`${response.answerResult ? "Right" : "Wrong"}`}</span>
               </p>
-              <div className="flex gap-1">
+              <p className="flex justify-center gap-1">
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
                 ) : response.question.includes("Currency") ? (
@@ -57,7 +57,7 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
                   )
                 )}
                 {`${response.question}`}
-              </div>
+              </p>
               <p>{`Country : ${response.goodAnswer}`}</p>
             </div>
           ))}
