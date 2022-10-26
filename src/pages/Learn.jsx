@@ -55,7 +55,7 @@ const Learn = () => {
         poster="/img_video4.png"
       >
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/home4new.mp4?alt=media&token=f73fccf0-ddfe-4546-8b51-99158ac1612d"
+          src="http://37.187.90.23/mapquest/vid/home4new.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.

@@ -50,7 +50,7 @@ function Home() {
         poster="/imgHome.png"
       >
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/home1reduce.mp4?alt=media&token=ed4bee17-35f1-4d4b-bbf7-80e14eb4a867"
+          src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.

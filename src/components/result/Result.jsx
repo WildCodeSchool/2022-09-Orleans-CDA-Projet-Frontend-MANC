@@ -65,7 +65,7 @@ function Result({ counterCorrect, questionNumber, gameModes }) {
         poster="/img_video2.png"
       >
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/projet-manc.appspot.com/o/video2new.mp4?alt=media&token=e11f640c-441c-4787-917b-612ccc5cc915"
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
