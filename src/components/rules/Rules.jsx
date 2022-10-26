@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
@@ -40,15 +40,15 @@ const Rules = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div className="flex justify-around">
-            <fieldset className="w-1/3 my-10 flex flex-col">
-              <div className="card hover:shadow-2xl shadow-xl rounded-md flex flex-col bg-slate-100">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover"></div>
-                <legend className="text-lg text-center p-2">
+          <div className="flex justify-around ">
+            <fieldset className="w-1/3 my-10 flex flex-col bg-slate-100 ">
+              <div className="card hover:shadow-2xl shadow-xl flex flex-col  rounded-md">
+                <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover "></div>
+                <legend className="text-lg text-center p-2 ">
                   Choose your game mode
                 </legend>
-                <div className="flex w-1/2 self-center border-b border-solid border-slate-500"></div>
-                <div className="flex flex-col px-5 justify-between mb-4 mt-4 gap-2">
+                <div className="flex w-1/2 mx-auto border-b border-solid border-slate-500"></div>
+                <div className="flex flex-col px-5 justify-between mb-4 mt-4 gap-2 ">
                   <div className="flex items-center">
                     <input
                       value={0}
@@ -94,7 +94,7 @@ const Rules = () => {
                 <legend className="text-lg text-center p-2">
                   Number of questions
                 </legend>
-                <div className="flex w-1/2 self-center border-b border-solid border-slate-500"></div>
+                <div className="flex w-1/2 mx-auto border-b border-solid border-slate-500"></div>
                 <div className="flex flex-col px-5 justify-between mb-4 mt-4 gap-2">
                   <div className="flex items-center">
                     <input
