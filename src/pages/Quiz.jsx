@@ -9,6 +9,7 @@ import countryData from "../assets/countriesData.json";
 import RecapGame from "../components/recapGame/RecapGame";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import QuizTimer from "../components/quizTimer/QuizTimer";
 
 const Quiz = () => {
   const location = useLocation();
@@ -168,11 +169,14 @@ const Quiz = () => {
     }
   }, [answer]);
 
+  const [readableTimer, setReadableTimer] = useState("");
+
   if (counterQuestion > questionNumber) {
     return (
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
+        readableTimer={readableTimer}
         allResponses={allResponses}
       />
     );
@@ -223,14 +227,18 @@ const Quiz = () => {
               </div>
             )}
           </div>
-          <RecapGame
-            counterCorrect={counterCorrect}
-            counterQuestion={counterQuestion}
-            questionNumber={questionNumber}
-            response={response}
-          />
         </div>
       </div>
+      <RecapGame
+        counterCorrect={counterCorrect}
+        counterQuestion={counterQuestion}
+        questionNumber={questionNumber}
+        response={response}
+      />
+      <QuizTimer
+        readableTimer={readableTimer}
+        setReadableTimer={setReadableTimer}
+      />
       <video
         autoPlay
         loop

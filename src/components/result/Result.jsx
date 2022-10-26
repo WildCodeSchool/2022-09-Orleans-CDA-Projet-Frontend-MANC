@@ -7,7 +7,12 @@ import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-function Result({ counterCorrect, questionNumber, allResponses }) {
+function Result({
+  counterCorrect,
+  questionNumber,
+  allResponses,
+  readableTimer,
+}) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -27,8 +32,7 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
           data-aos-duration="600"
           className="mx-40 text-2xl bg-white bg-opacity-80 rounded-lg p-10 text-center border-solid border-2 border-greyblue"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
-
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer}!`}
           {allResponses.map((response) => (
             <div
               className={`${
