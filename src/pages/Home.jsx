@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div>
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav ">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav pt-10">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -42,19 +42,21 @@ function Home() {
           repellat ipsa ut autem neque vel itaque sunt atque omnis.
         </p>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
-        poster="/imgHome.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      <div className="z-10 h-full absolute w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          poster="/imgHome.png"
+          className="absolute object-fill w-full h-full"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
 }

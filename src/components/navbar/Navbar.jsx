@@ -4,7 +4,7 @@ import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <header className="bg-black text-white shadow-lg">
+    <header className="bg-black text-white shadow-lg fixed z-50 w-full">
       <div className="flex justify-around h-20 w-full px-4">
         <NavLink
           to="/"
