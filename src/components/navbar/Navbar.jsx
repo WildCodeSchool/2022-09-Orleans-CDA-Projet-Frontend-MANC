@@ -23,7 +23,7 @@ const Navbar = () => {
           </span>
           <span className="font-semibold text-3xl text-lightblue">Quest</span>
         </NavLink>
-        <nav className="flex flex-grow ml-[-218px]">
+        <nav className="flex flex-grow ml-[-109px]">
           <section className="hidden lg:contents font-semibold text-base">
             <NavbarLink isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
           </section>
