@@ -30,7 +30,7 @@ const HowToPlay = () => {
 
   return (
     <div>
-      <div className="absolute z-30 flex flex-col gap-4 justify-center items-center height-minus-nav">
+      <div className="absolute z-30 top-[80px] flex flex-col gap-4 justify-center items-center height-minus-nav">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
