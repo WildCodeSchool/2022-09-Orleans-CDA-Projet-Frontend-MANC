@@ -32,7 +32,7 @@ const Learn = () => {
 
   return (
     <div>
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 top-[80px] flex flex-col items-center height-minus-nav w-full">
         <div className="height-minus-nav flex justify-center items-center w-full">
           <div className="h-4/5 w-[90%] p-1 relative flex rounded-lg border-solid border-2 border-cyan-900 shadow-2xl bg-cyan-900">
             <SearchLearn setCountrySearchFound={setCountrySearchFound} />

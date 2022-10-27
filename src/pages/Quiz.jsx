@@ -184,7 +184,7 @@ const Quiz = () => {
 
   return (
     <div>
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 top-[60px] flex flex-col items-center height-minus-nav w-full">
         <div className="height-minus-nav flex justify-center items-center w-full">
           <Question
             question={question}

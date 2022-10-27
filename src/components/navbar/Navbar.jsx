@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-black bg-opacity-50 text-white shadow-lg fixed z-50 w-full">
-      <div className="flex justify-between h-20 w-full px-4">
+      <div className="flex h-20 w-full px-4">
         <NavLink
           to="/"
           className={({ isActive }) =>
