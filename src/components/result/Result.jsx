@@ -18,7 +18,7 @@ function Result({
   }, []);
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full overflow-scroll">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
