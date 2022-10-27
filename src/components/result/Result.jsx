@@ -18,6 +18,21 @@ function Result({
   }, []);
   return (
     <div className="flex justify-items-center">
+      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full overflow-scroll">
         <h1
           data-aos="fade-down"
@@ -75,19 +90,6 @@ function Result({
           </button>
         </NavLink>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="fixed z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
-        poster="/img_video2.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
     </div>
   );
 }

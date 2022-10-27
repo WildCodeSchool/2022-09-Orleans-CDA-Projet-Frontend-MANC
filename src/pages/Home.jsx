@@ -10,6 +10,21 @@ function Home() {
 
   return (
     <div className="flex justify-center">
+      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./imgHome.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="absolute z-30 top-[80px] gap-24 flex flex-col items-center height-minus-nav ">
         <h1 className="text-7xl w-fit bg-slate-800 bg-opacity-90 rounded-md p-8 m-20 flex flex-col shadow-2xl">
           <div>
@@ -59,21 +74,6 @@ function Home() {
             </div>
           </Link>
         </div>
-      </div>
-      <div className="z-10 h-full absolute w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          poster="/imgHome.png"
-          className="absolute object-fill w-full h-full"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   );
