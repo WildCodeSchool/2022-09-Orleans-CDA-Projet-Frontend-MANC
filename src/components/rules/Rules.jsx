@@ -143,16 +143,7 @@ const Rules = () => {
             </fieldset>
           </div>
           <div className="flex justify-center">
-            {!canPlay && (
-              <div
-                className="text-red-500 text-xl"
-                data-aos="fade-in"
-                data-aos-duration="700"
-              >
-                Please select a game mode and a number of questions.
-              </div>
-            )}
-            {canPlay && (
+            {canPlay ? (
               <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
                 <button
                   data-aos="fade-in"
@@ -163,6 +154,14 @@ const Rules = () => {
                   <FaPlay className="ml-2" />
                 </button>
               </Link>
+            ) : (
+              <div
+                className="text-red-500 text-xl"
+                data-aos="fade-in"
+                data-aos-duration="700"
+              >
+                Please select a game mode and a number of questions.
+              </div>
             )}
           </div>
         </div>
