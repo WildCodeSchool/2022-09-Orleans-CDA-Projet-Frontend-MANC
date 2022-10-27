@@ -17,18 +17,19 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
-          className="text-8xl w-fit bg-white bg-opacity-80 rounded-xl p-8 m-20 border-solid border-2 border-greyblue shadow-2xl"
+          className="text-8xl w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
         >
           <span className="text-green-400">Quiz </span>
-          <span className="text-greyblue">done!</span>
+          <span className="text-lightblue">done!</span>
         </h1>
         <div
           data-aos="fade-up"
           data-aos-duration="600"
-          className="mx-40 text-2xl bg-white bg-opacity-80 rounded-lg p-10 text-center border-solid border-2 border-greyblue"
+          className=" mx-10 mb-10 text-2xl text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-8 w-1/3 text-center border-solid border-2 border-slate-800"
         >
           {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
-
+        </div>
+        <div className="overflow-auto text-2xl bg-slate-800 bg-opacity-80 rounded-lg p-2 w-1/3 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response) => (
             <div
               className={`${
@@ -36,7 +37,7 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
                   ? "bg-green-400  border-green-700"
                   : "bg-red-400 border-red-700"
               }
-          mx-40  mt-10 text-2xl bg-opacity-80 rounded-lg p-10 m-5 text-center border-solid border-2`}
+            m-10 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p>
                 <span className="font-bold">{`Question ${response.numQuestion}`}</span>{" "}
@@ -63,13 +64,9 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
           ))}
         </div>
         <NavLink to="/play" className="text-2xl flex items-center">
-          <button
-            className="border border-black bg-lightgreen rounded-lg px-10 py-4 my-10 flex items-center"
-            data-aos="fade-up"
-            data-aos-duration="600"
-          >
-            Replay
-            <MdReplayCircleFilled className="text-4xl ml-2" />
+          <button className="my-10 text-2xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded flex items-center">
+            Play again
+            <MdReplayCircleFilled className="ml-2" />
           </button>
         </NavLink>
       </div>
