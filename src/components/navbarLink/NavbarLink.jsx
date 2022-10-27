@@ -33,9 +33,9 @@ const NavbarLink = ({ isNavOpen, setIsNavOpen }) => {
           onClick={() => setIsNavOpen(false)}
         >
           <li className="flex items-center gap-2">
-            {!isNavOpen && <MdBook className="text-2xl" />}
+            <MdBook className="text-2xl hidden lg:block" />
             <span className="text-2xl">Learn</span>
-            {isNavOpen && <MdBook className="text-2xl" />}
+            <MdBook className="text-2xl block lg:hidden" />
           </li>
         </NavLink>
       </ul>
