@@ -28,7 +28,7 @@ function Home() {
               data-aos="fade-in"
               data-aos-duration="500"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video4.png')] h-32"></div>
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video4.png')] h-32"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
                 Explore new countries
               </p>
@@ -40,7 +40,7 @@ function Home() {
               data-aos="fade-in"
               data-aos-duration="1200"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video3.png')] h-32"></div>
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video3.png')] h-32"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
                 Test your knowledge
               </p>
@@ -52,7 +52,7 @@ function Home() {
               data-aos="fade-in"
               data-aos-duration="1900"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video2.png')] h-32"></div>
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video2.png')] h-32"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
                 Compete
               </p>
