@@ -9,6 +9,7 @@ import countryData from "../assets/countriesData.json";
 import RecapGame from "../components/recapGame/RecapGame";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import QuizTimer from "../components/quizTimer/QuizTimer";
 
 const Quiz = () => {
   const location = useLocation();
@@ -168,11 +169,14 @@ const Quiz = () => {
     }
   }, [answer]);
 
+  const [readableTimer, setReadableTimer] = useState("");
+
   if (counterQuestion > questionNumber) {
     return (
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
+        readableTimer={readableTimer}
         allResponses={allResponses}
       />
     );
@@ -180,7 +184,7 @@ const Quiz = () => {
 
   return (
     <div>
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 top-[60px] flex flex-col items-center height-minus-nav w-full">
         <div className="height-minus-nav flex justify-center items-center w-full">
           <Question
             question={question}
@@ -223,27 +227,34 @@ const Quiz = () => {
               </div>
             )}
           </div>
-          <RecapGame
-            counterCorrect={counterCorrect}
-            counterQuestion={counterQuestion}
-            questionNumber={questionNumber}
-            response={response}
-          />
         </div>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="relative z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge bg-cover"
-        poster="/img_video2.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+
+      <RecapGame
+        counterCorrect={counterCorrect}
+        counterQuestion={counterQuestion}
+        questionNumber={questionNumber}
+        response={response}
+      />
+      <QuizTimer
+        readableTimer={readableTimer}
+        setReadableTimer={setReadableTimer}
+      />
+      <div className="z-10 h-full absolute w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute object-fill w-full h-full"
+          poster="/img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
 };

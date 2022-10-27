@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
-import { MdNotStarted, MdBook, MdList, MdQuiz } from "react-icons/md";
+import { useState } from "react";
+import NavbarLink from "../navbarLink/NavbarLink";
 
 const Navbar = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
-    <header className="bg-black text-white shadow-lg">
-      <div className="flex justify-around h-20 w-full px-4">
+    <header className="bg-black bg-opacity-50 text-white shadow-lg fixed z-50 w-full">
+      <div className="flex h-20 w-full px-4">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -20,44 +23,41 @@ const Navbar = () => {
           </span>
           <span className="font-semibold text-3xl text-lightblue">Quest</span>
         </NavLink>
-        <nav className="contents font-semibold justify-between text-base lg:text-lg">
-          <ul className="mx-auto flex items-center gap-8">
-            <NavLink
-              to="/play"
-              className={({ isActive }) =>
-                isActive ? "text-lightblue" : "hover-underline-animation"
-              }
+        <nav className="flex flex-grow">
+          <section className="hidden lg:contents font-semibold text-base">
+            <NavbarLink isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+          </section>
+          <section className="flex justify-end flex-grow items-center lg:hidden">
+            <div
+              className={`space-y-2 cursor-pointer ${isNavOpen && "hidden"}`}
+              onClick={() => setIsNavOpen((prev) => !prev)}
             >
-              <li className="p-1 flex items-center gap-2">
-                <span className="text-2xl">Play</span>
-                <MdNotStarted className="text-2xl" />
-              </li>
-            </NavLink>
-            <NavLink
-              to="/learn"
-              className={({ isActive }) =>
-                isActive ? "text-lightblue" : "hover-underline-animation"
-              }
+              <span className="block h-0.5 w-8 bg-white"></span>
+              <span className="block h-0.5 w-8 bg-white"></span>
+              <span className="block h-0.5 w-8 bg-white"></span>
+            </div>
+
+            <div
+              className={`space-y-2 cursor-pointer ${!isNavOpen && "hidden"}`}
+              onClick={() => setIsNavOpen(false)}
             >
-              <li className="p-1 flex items-center gap-2">
-                <MdBook className="text-2xl" />
-                <span className="text-2xl">Learn</span>
-              </li>
-            </NavLink>
-          </ul>
-          <div className="flex items-center">
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "p-1 flex items-center gap-2 text-lightblue"
-                  : "p-1 flex items-center gap-2 hover-underline-animation"
-              }
-            >
-              <span className="text-md">About</span>
-              <MdQuiz className="text-2xl" />
-            </NavLink>
-          </div>
+              <svg
+                className="h-8 w-8 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+              <NavbarLink isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+            </div>
+          </section>
         </nav>
       </div>
     </header>

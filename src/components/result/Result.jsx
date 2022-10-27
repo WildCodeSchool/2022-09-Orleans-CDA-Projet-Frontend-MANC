@@ -7,13 +7,18 @@ import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-function Result({ counterCorrect, questionNumber, allResponses }) {
+function Result({
+  counterCorrect,
+  questionNumber,
+  allResponses,
+  readableTimer,
+}) {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full overflow-scroll">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -74,7 +79,7 @@ function Result({ counterCorrect, questionNumber, allResponses }) {
         autoPlay
         loop
         muted
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        className="fixed z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
         poster="/img_video2.png"
       >
         <source
