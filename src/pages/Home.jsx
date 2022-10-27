@@ -65,7 +65,7 @@ function Home() {
           autoPlay
           loop
           muted
-          poster="/imgHome.png"
+          poster="./imgHome.png"
           className="absolute object-fill w-full h-full"
         >
           <source

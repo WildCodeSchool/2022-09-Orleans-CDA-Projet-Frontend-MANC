@@ -50,7 +50,7 @@ function About() {
             loop
             muted
             className="absolute object-fill w-full h-full"
-            poster="/img_video3.png"
+            poster="./img_video3.png"
           >
             <source
               src="http://37.187.90.23/mapquest/vid/video3new.mp4"

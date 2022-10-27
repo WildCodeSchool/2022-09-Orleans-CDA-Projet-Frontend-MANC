@@ -53,7 +53,7 @@ const Learn = () => {
           loop
           muted
           className="absolute object-fill w-full h-full"
-          poster="/img_video4.png"
+          poster="./img_video4.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/home4new.mp4"
