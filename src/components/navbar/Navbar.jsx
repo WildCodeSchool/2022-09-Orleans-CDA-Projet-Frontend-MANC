@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="bg-black bg-opacity-50 text-white shadow-lg fixed z-50 w-full">
+    <header className="bg-black bg-opacity-50 text-white shadow-lg w-full">
       <div className="flex h-20 w-full px-4">
         <NavLink
           to="/"
