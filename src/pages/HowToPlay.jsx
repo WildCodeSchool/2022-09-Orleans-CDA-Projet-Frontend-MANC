@@ -30,7 +30,7 @@ const HowToPlay = () => {
 
   return (
     <div>
-      <div className="absolute z-10 flex flex-col gap-4 justify-center items-center height-minus-nav">
+      <div className="absolute z-30 top-[80px] flex flex-col gap-4 justify-center items-center height-minus-nav">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
@@ -166,19 +166,21 @@ const HowToPlay = () => {
           </div>
         </div>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute -z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
-        poster="/img_video2.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      <div className="z-10 h-full absolute w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute object-fill w-full h-full"
+          poster="/img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
 };
