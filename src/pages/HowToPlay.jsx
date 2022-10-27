@@ -14,6 +14,7 @@ const HowToPlay = () => {
 
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
   const [questionNumber, setQuestionNumber] = useState("10");
+  const [canPlay, setCanPlay] = useState(false);
 
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -21,6 +22,11 @@ const HowToPlay = () => {
     );
     setCheckedState(updatedCheckedState);
   };
+
+  useEffect(() => {
+    const oneOrMoreIsChecked = checkedState.indexOf(true) !== -1;
+    setCanPlay(oneOrMoreIsChecked && parseInt(questionNumber, 10) >= 10);
+  }, [checkedState, questionNumber]);
 
   return (
     <div>
@@ -135,36 +141,44 @@ const HowToPlay = () => {
                 </div>
               </div>
             </fieldset>
-          </div>{" "}
-          <div
-            className="flex justify-center"
-            data-aos="fade-up"
-            data-aos-duration="400"
-          >
-            <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
-              <button className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center">
-                Play
-                <FaPlay className="ml-2" />
-              </button>
-            </Link>
+          </div>
+          <div className="flex justify-center">
+            {canPlay ? (
+              <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
+                <button
+                  data-aos="fade-in"
+                  data-aos-duration="700"
+                  className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center"
+                >
+                  Play
+                  <FaPlay className="ml-2" />
+                </button>
+              </Link>
+            ) : (
+              <div
+                className="text-red-500 text-xl"
+                data-aos="fade-in"
+                data-aos-duration="700"
+              >
+                Please select a game mode and a number of questions.
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <div className="-z-10 h-full absolute w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute object-fill w-full h-full"
-          poster="/img_video2.png"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute -z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        poster="/img_video2.png"
+      >
+        <source
+          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
