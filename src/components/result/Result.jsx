@@ -18,7 +18,7 @@ function Result({
   }, []);
   return (
     <div className="flex justify-items-center">
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full">
+      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full overflow-scroll">
         <h1
           data-aos="fade-down"
           data-aos-duration="600"
@@ -81,7 +81,7 @@ function Result({
         autoPlay
         loop
         muted
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
+        className="fixed z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
         poster="/img_video2.png"
       >
         <source
