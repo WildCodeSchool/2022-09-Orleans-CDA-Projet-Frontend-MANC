@@ -31,8 +31,20 @@ function About() {
             For this project we had to build an application based on an API of
             our choice.
             <br />
-            We choose to use the REST Countries API with the idea of creating a
-            pedagogic website about the world we live in !<br />
+            <div className="flex">
+              We choose to use the{" "}
+              <a
+                className="underline text-blue-500 px-1"
+                target="blank"
+                href="https://restcountries.com/"
+              >
+                {" "}
+                REST Countries API{" "}
+              </a>{" "}
+              with the idea of creating a pedagogic website about the world we
+              live in !
+            </div>
+            <br />
             You can get more info about each member of the crew by scrolling
             down this page.
             <div className="flex justify-around pt-7">
@@ -61,12 +73,14 @@ function About() {
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
                     </p>
-                    <p>
-                      <BsGithub />
-                    </p>
-                    <p>
-                      <BsLinkedin />
-                    </p>
+                    <div className="flex justify-end text-4xl pt-8 px-5">
+                      <a className="underline pr-6" target="blank" href="">
+                        <BsGithub />
+                      </a>
+                      <a className="underline" target="blank" href="">
+                        <BsLinkedin />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -85,12 +99,14 @@ function About() {
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
                     </p>
-                    <p>
-                      <BsGithub />
-                    </p>
-                    <p>
-                      <BsLinkedin />
-                    </p>
+                    <div className="flex justify-end text-4xl pt-8 px-5">
+                      <a className="underline pr-6" target="blank" href="">
+                        <BsGithub />
+                      </a>
+                      <a className="underline" target="blank" href="">
+                        <BsLinkedin />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="flex-no-shrink">
@@ -114,12 +130,14 @@ function About() {
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
                     </p>
-                    <p>
-                      <BsGithub />
-                    </p>
-                    <p>
-                      <BsLinkedin />
-                    </p>
+                    <div className="flex justify-end text-4xl pt-8 px-5">
+                      <a className="underline pr-6" target="blank" href="">
+                        <BsGithub />
+                      </a>
+                      <a className="underline" target="blank" href="">
+                        <BsLinkedin />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -141,26 +159,22 @@ function About() {
                       the basic principal of a callback function. <br />
                       He is available for an internship from the 23 of february.
                     </p>
-                    <p>
-                      <BsGithub />
+                    <div className="flex justify-end text-4xl pt-8 px-5">
                       <a
-                        className="underline"
+                        className="underline pr-6"
                         target="blank"
                         href="https://github.com/codelande"
                       >
-                        https://github.com/codelande
+                        <BsGithub />
                       </a>
-                    </p>
-                    <p>
-                      <BsLinkedin />
                       <a
                         className="underline"
                         target="blank"
                         href="https://www.linkedin.com/in/corentin-delande/"
                       >
-                        https://www.linkedin.com/in/corentin-delande/
+                        <BsLinkedin />
                       </a>
-                    </p>
+                    </div>
                   </div>
                 </div>
                 <div class="flex-no-shrink">
