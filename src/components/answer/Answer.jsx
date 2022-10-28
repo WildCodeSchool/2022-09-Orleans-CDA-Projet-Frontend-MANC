@@ -11,7 +11,7 @@ const Answer = ({ answer, questionType, response }) => {
     <div
       className={`${
         answer ? "bg-green-500" : "bg-red-500"
-      } left-0 right-0 mx-auto w-fit -top-14 absolute flex flex-col border-1 shadow-xl border-top border-solid border-black p-6 rounded-xl`}
+      } left-0 right-0 mx-auto w-fit -top-14 absolute flex flex-col border-1 shadow-xl border-top border-solid border-black p-6 rounded-md`}
       data-aos="zoom-in"
       data-aos-duration="200"
     >

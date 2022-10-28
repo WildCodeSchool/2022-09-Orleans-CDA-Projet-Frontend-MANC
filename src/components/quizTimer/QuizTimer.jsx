@@ -38,7 +38,7 @@ const QuizTimer = ({ readableTimer, setReadableTimer }) => {
 
   return (
     <div className="z-50 absolute top-32 left-0 m-10">
-      <div className="my-10 border-2 w-auto border-solid shadow-2xl p-4 rounded-2xl border-black bg-slate-100">
+      <div className="my-10 w-auto shadow-2xl p-6 rounded-md text-white bg-slate-800">
         <h2 className="text-center w-full text-3xl mb-1 flex gap-1 items-center">
           <AiOutlineFieldTime />
           Elapsed time:
