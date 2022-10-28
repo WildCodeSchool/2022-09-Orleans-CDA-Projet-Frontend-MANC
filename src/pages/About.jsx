@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { BsChevronDoubleDown } from "react-icons/bs";
+import { BsChevronDoubleDown, BsLinkedin, BsGithub } from "react-icons/bs";
 
 function About() {
   useEffect(() => {
@@ -12,7 +12,7 @@ function About() {
     <div>
       <header className="flex items-center justify-center h-screen overflow-hidden">
         <div className="absolute z-30 top-[100px] flex flex-col items-center height-minus-nav ">
-          <h1 className="text-7xl w-fit bg-slate-800 bg-opacity-70 rounded-md p-10 m-20 flex flex-col shadow-2xl">
+          <h1 className="text-7xl w-fitbg-opacity-70 rounded-md p-10 m-20 flex flex-col ">
             <div>
               <span className="text-green-400">About </span>
               <span className="text-lightblue">Us</span>
@@ -37,8 +37,6 @@ function About() {
             down this page.
             <div className="flex justify-around pt-7">
               <BsChevronDoubleDown />
-              <BsChevronDoubleDown />
-              <BsChevronDoubleDown />
             </div>
           </p>
 
@@ -53,15 +51,21 @@ function About() {
                   <img
                     alt=""
                     class="w-64 h-64 block mx-auto"
-                    src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
+                    src="/arthur.png"
                   />
                 </div>
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Card title</h4>
+                    <h4 class="font-medium text-2xl mb-3">Arthur Baudoin</h4>
                     <p class="leading-normal">
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
+                    </p>
+                    <p>
+                      <BsGithub />
+                    </p>
+                    <p>
+                      <BsLinkedin />
                     </p>
                   </div>
                 </div>
@@ -76,19 +80,21 @@ function About() {
               <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Card title</h4>
+                    <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
                     <p class="leading-normal">
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
                     </p>
+                    <p>
+                      <BsGithub />
+                    </p>
+                    <p>
+                      <BsLinkedin />
+                    </p>
                   </div>
                 </div>
                 <div class="flex-no-shrink">
-                  <img
-                    alt=""
-                    class="w-64 h-64 block mx-auto"
-                    src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-                  />
+                  <img alt="" class="w-64 h-64 block mx-auto" src="nono.jpg" />
                 </div>
               </div>
             </div>
@@ -99,18 +105,20 @@ function About() {
             >
               <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-no-shrink">
-                  <img
-                    alt=""
-                    class="w-64 h-64 block mx-auto"
-                    src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-                  />
+                  <img alt="" class="w-64 h-64 block mx-auto" src="max.jpg" />
                 </div>
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Card title</h4>
+                    <h4 class="font-medium text-2xl mb-3">Maximilian Gliem</h4>
                     <p class="leading-normal">
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
+                    </p>
+                    <p>
+                      <BsGithub />
+                    </p>
+                    <p>
+                      <BsLinkedin />
                     </p>
                   </div>
                 </div>
@@ -125,19 +133,38 @@ function About() {
               <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Card title</h4>
-                    <p class="leading-normal">
-                      Magni inventore repellat dignissimos eveniet dolore ex sit
-                      illo adipisci accusamus quos.
+                    <h4 class="font-medium text-2xl mb-3">Corentin Delande</h4>
+                    <p class="leading-normal pb-2">
+                      True agility genius Corentin lead the group threw this
+                      project with an iron fist all along ! <br />
+                      Fun fact, he code the project without even understanding
+                      the basic principal of a callback function. <br />
+                      He is available for an internship from the 23 of february.
+                    </p>
+                    <p>
+                      <BsGithub />
+                      <a
+                        className="underline"
+                        target="blank"
+                        href="https://github.com/codelande"
+                      >
+                        https://github.com/codelande
+                      </a>
+                    </p>
+                    <p>
+                      <BsLinkedin />
+                      <a
+                        className="underline"
+                        target="blank"
+                        href="https://www.linkedin.com/in/corentin-delande/"
+                      >
+                        https://www.linkedin.com/in/corentin-delande/
+                      </a>
                     </p>
                   </div>
                 </div>
                 <div class="flex-no-shrink">
-                  <img
-                    alt=""
-                    class="w-64 h-64 block mx-auto"
-                    src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-                  />
+                  <img alt="" class="w-64 h-64 block mx-auto" src="coco.jpg" />
                 </div>
               </div>
             </div>
