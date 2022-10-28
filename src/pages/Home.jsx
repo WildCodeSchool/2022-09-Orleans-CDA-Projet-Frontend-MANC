@@ -10,13 +10,13 @@ function Home() {
 
   return (
     <div className="flex justify-center">
-      <div className="absolute z-30 top-[80px] gap-24 flex flex-col items-center height-minus-nav ">
-        <h1 className="text-7xl w-fit bg-slate-800 bg-opacity-90 rounded-md p-8 m-20 flex flex-col shadow-2xl">
+      <div className="absolute z-30 top-[80px] gap-24 flex flex-col justify-center items-center align height-minus-nav ">
+        <h1 className="text-8xl w-fit bg-slate-800 bg-opacity-0 rounded-md p-12 flex flex-col ">
           <div>
             <span className="text-green-400">Map</span>
             <span className="text-lightblue">Quest</span>
           </div>
-          <span className="pt-3 text-white text-center text-3xl">
+          <span className="pt-3 text-white font-medium text-center text-4xl">
             Have fun learning!
           </span>
         </h1>
@@ -24,37 +24,25 @@ function Home() {
         <div className="flex gap-20">
           <Link to="/learn">
             <div
-              className="card w-64 hover:shadow-2xl"
+              className="card w-80 hover:shadow-2xl"
               data-aos="fade-in"
               data-aos-duration="500"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video4.png')] h-32"></div>
-              <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video4.png')] h-44"></div>
+              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Explore new countries
               </p>
             </div>
           </Link>
           <Link to="/play">
             <div
-              className="card w-64 hover:shadow-2xl"
+              className="card w-80 hover:shadow-2xl"
               data-aos="fade-in"
               data-aos-duration="1200"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video3.png')] h-32"></div>
-              <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video3.png')] h-44"></div>
+              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Test your knowledge
-              </p>
-            </div>
-          </Link>
-          <Link to="/play">
-            <div
-              className="card w-64 hover:shadow-2xl"
-              data-aos="fade-in"
-              data-aos-duration="1900"
-            >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('./img_video2.png')] h-32"></div>
-              <p className="text-xl bg-slate-800 text-white bg-opacity-90 p-4 text-center rounded-b-md ">
-                Compete
               </p>
             </div>
           </Link>
