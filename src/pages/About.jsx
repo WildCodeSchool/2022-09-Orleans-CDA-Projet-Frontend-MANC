@@ -127,8 +127,12 @@ function About() {
                   <div class="p-6">
                     <h4 class="font-medium text-2xl mb-3">Maximilian Gliem</h4>
                     <p class="leading-normal">
-                      Magni inventore repellat dignissimos eveniet dolore ex sit
-                      illo adipisci accusamus quos.
+                      Very clever, he used every tricks to push most lines on
+                      the project.
+                      <br />
+                      Also code junkie, he can't go to sleep if he hasn't gotten
+                      his drug fix even if he had to socialize in a late party
+                      with colleagues at a pub.
                     </p>
                     <div className="flex justify-end text-4xl pt-8 px-5">
                       <a className="underline pr-6" target="blank" href="">
