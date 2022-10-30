@@ -176,7 +176,7 @@ const Quiz = () => {
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        readableTimer={readableTimer}
+        totalTimer={timer}
         allResponses={allResponses}
       />
     );

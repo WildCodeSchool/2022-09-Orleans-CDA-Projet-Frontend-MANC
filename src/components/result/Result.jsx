@@ -6,13 +6,11 @@ import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import useReadableTimer from "../../hooks/useReadableTimer";
 
-function Result({
-  counterCorrect,
-  questionNumber,
-  allResponses,
-  readableTimer,
-}) {
+function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
+  const readableTimer = useReadableTimer(totalTimer);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -32,7 +30,7 @@ function Result({
           data-aos-duration="600"
           className=" mx-10 mb-10 text-2xl text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-8 w-1/3 text-center border-solid border-2 border-slate-800"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer}!`}
         </div>
         <div className="overflow-auto text-2xl bg-slate-800 bg-opacity-80 rounded-lg p-2 w-1/3 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response) => (
