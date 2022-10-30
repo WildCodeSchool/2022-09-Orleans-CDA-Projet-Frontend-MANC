@@ -69,9 +69,10 @@ const Quiz = () => {
   useEffect(() => {
     if (isConfirmed) {
       let timeSinceLastQuestion = 0;
-      allResponses.length > 0 &&
-        (timeSinceLastQuestion =
-          timer - allResponses[allResponses.length - 1].timeToAnswer);
+      allResponses.length > 0
+        ? (timeSinceLastQuestion =
+            timer - allResponses[allResponses.length - 1].timeToAnswer)
+        : (timeSinceLastQuestion = timer);
       if (number === 0) {
         setAnswer({
           isAnswered: true,

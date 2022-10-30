@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import ReadableTimer from "../../services/ReadableTimer";
 
 function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
   useEffect(() => {
@@ -27,11 +28,14 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
           data-aos-duration="600"
           className=" mx-10 mb-10 text-2xl text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-8 w-1/3 text-center border-solid border-2 border-slate-800"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer}!`}
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${ReadableTimer(
+            totalTimer
+          )}!`}
         </div>
         <div className="overflow-auto text-2xl bg-slate-800 bg-opacity-80 rounded-lg p-2 w-1/3 text-center border-solid border-2 border-slate-800 px-30">
-          {allResponses.map((response) => (
+          {allResponses.map((response, index) => (
             <div
+              key={index}
               className={`${
                 response.answerResult
                   ? "bg-green-400  border-green-700"
@@ -40,7 +44,9 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
             m-10 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p>
-                <span className="font-bold">{`Question ${response.numQuestion} in ${response.readableTimeToAnswer}`}</span>{" "}
+                <span className="font-bold">{`Question ${
+                  response.numQuestion
+                } in ${ReadableTimer(response.timeToAnswer)}`}</span>{" "}
                 <span
                   className={`${
                     response.answerResult ? "text-green-700" : "text-red-700"
