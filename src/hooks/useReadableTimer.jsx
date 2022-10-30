@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const useReadableTimer = (timeInSecondes) => {
   const [readableTimer, setReadableTimer] = useState("");
 
@@ -24,7 +26,7 @@ const useReadableTimer = (timeInSecondes) => {
     }:${seconde >= 10 ? seconde : "0" + seconde}`;
 
     setReadableTimer(readableTimerString);
-  }, [timer]);
+  }, [timeInSecondes]);
 
   return readableTimer;
 };

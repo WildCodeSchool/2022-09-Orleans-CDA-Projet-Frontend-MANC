@@ -169,7 +169,7 @@ const Quiz = () => {
     }
   }, [answer]);
 
-  const [readableTimer, setReadableTimer] = useState("");
+  const [timer, setTimer] = useState(0);
 
   if (counterQuestion > questionNumber) {
     return (
@@ -236,10 +236,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer
-        readableTimer={readableTimer}
-        setReadableTimer={setReadableTimer}
-      />
+      <QuizTimer timer={timer} setTimer={setTimer} />
       <div className="z-10 h-full absolute w-full">
         <video
           autoPlay
