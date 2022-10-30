@@ -6,11 +6,8 @@ import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import useReadableTimer from "../../hooks/useReadableTimer";
 
 function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
-  const readableTimer = useReadableTimer(totalTimer);
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -43,7 +40,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
             m-10 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p>
-                <span className="font-bold">{`Question ${response.numQuestion}`}</span>{" "}
+                <span className="font-bold">{`Question ${response.numQuestion} in ${response.readableTimeToAnswer}`}</span>{" "}
                 <span
                   className={`${
                     response.answerResult ? "text-green-700" : "text-red-700"

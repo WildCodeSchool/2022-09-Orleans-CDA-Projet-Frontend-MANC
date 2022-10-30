@@ -56,6 +56,7 @@ const Quiz = () => {
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [counterQuestion, setCounterQuestion] = useState(1);
   const [allResponses, setAllResponses] = useState([]);
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -67,6 +68,10 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isConfirmed) {
+      let timeSinceLastQuestion = 0;
+      allResponses.length > 0 &&
+        (timeSinceLastQuestion =
+          timer - allResponses[allResponses.length - 1].timeToAnswer);
       if (number === 0) {
         setAnswer({
           isAnswered: true,
@@ -81,6 +86,7 @@ const Quiz = () => {
               question: `Capital : ${question[0].capital[0]}`,
               answerResult: clickedCountry === question[0].cca3,
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              timeToAnswer: timeSinceLastQuestion,
             },
           ];
         });
@@ -107,6 +113,7 @@ const Quiz = () => {
                 Object.values(Object.values(question[0].currencies)[0])[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              timeToAnswer: timeSinceLastQuestion,
             },
           ];
         });
@@ -129,6 +136,7 @@ const Quiz = () => {
                 Object.values(question[0].languages)[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              timeToAnswer: timeSinceLastQuestion,
             },
           ];
         });
@@ -168,8 +176,6 @@ const Quiz = () => {
       setCounterQuestion((prevCounter) => prevCounter + 1);
     }
   }, [answer]);
-
-  const [timer, setTimer] = useState(0);
 
   if (counterQuestion > questionNumber) {
     return (
