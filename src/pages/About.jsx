@@ -135,10 +135,10 @@ function About() {
                       with colleagues at a pub.
                     </p>
                     <div className="flex justify-end text-4xl pt-8 px-5">
-                      <a className="underline pr-6" target="blank" href="">
+                      <a className="underline pr-6" target="blank" href="https://github.com/MGliem">
                         <BsGithub />
                       </a>
-                      <a className="underline" target="blank" href="">
+                      <a className="underline" target="blank" href="https://www.linkedin.com/in/maximilian-gliem-375383255/">
                         <BsLinkedin />
                       </a>
                     </div>
