@@ -16,9 +16,9 @@ const ReadableTimer = (timeInSecondes) => {
 
   seconde = timeLeftAfterOperation;
 
-  const readableTimerString = `${hour >= 10 ? hour : "0" + hour}:${
-    minute >= 10 ? minute : "0" + minute
-  }:${seconde >= 10 ? seconde : "0" + seconde}`;
+  const readableTimerString = `${hour > 0 ? `${hour} h` : ""} ${
+    minute > 0 ? `${minute} min` : ""
+  } ${seconde > 0 ? `${seconde} sec` : "0 sec"}`;
 
   return readableTimerString;
 };
