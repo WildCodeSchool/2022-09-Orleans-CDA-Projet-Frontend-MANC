@@ -157,14 +157,14 @@ const HowToPlay = () => {
               </div>
             </fieldset>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center h-12">
             {canPlay ? (
               <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
                 <button
                   data-aos="fade-in"
                   data-aos-duration="700"
                   data-aos-offset="-200"
-                  className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center"
+                  className=" w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center"
                 >
                   Play
                   <FaPlay className="ml-2" />
