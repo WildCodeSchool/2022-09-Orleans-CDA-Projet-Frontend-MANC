@@ -1,4 +1,4 @@
-var defaults = {},
+const defaults = {},
   one_second = 1000,
   one_minute = one_second * 60,
   one_hour = one_minute * 60,
@@ -7,7 +7,7 @@ var defaults = {},
   face = document.getElementById("lazy");
 
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-var requestAnimationFrame = (function () {
+const requestAnimationFrame = (function () {
   return (
     window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -23,7 +23,7 @@ var requestAnimationFrame = (function () {
 tick();
 
 function tick() {
-  var now = new Date(),
+  const now = new Date(),
     elapsed = now - startDate,
     parts = [];
 

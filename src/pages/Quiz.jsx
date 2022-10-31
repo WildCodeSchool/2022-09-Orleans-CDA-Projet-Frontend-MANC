@@ -238,10 +238,6 @@ const Quiz = () => {
         response={response}
       />
       <Chrono />
-      {/* <QuizTimer
-        readableTimer={readableTimer}
-        setReadableTimer={setReadableTimer}
-      /> */}
       <div className="z-10 h-full absolute w-full">
         <video
           autoPlay
