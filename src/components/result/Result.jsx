@@ -13,7 +13,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
     AOS.init();
   }, []);
   return (
-    <div className="flex justify-items-center items-center">
+    <div className="flex justify-items-center">
       <div className="absolute top-0 -z-10 w-full h-[calc(100vh+150px)] sm:h-screen">
         <video
           autoPlay

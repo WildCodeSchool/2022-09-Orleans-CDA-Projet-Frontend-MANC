@@ -30,11 +30,26 @@ const HowToPlay = () => {
 
   return (
     <div>
-      <div className="absolute z-30 top-[80px] flex flex-col gap-4 justify-center items-center height-minus-nav">
+      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="absolute z-30 top-[200px] flex flex-col gap-4 justify-center items-center">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
-          className="rounded-lg p-6 w-2/4 shadow-2xl bg-slate-800  bg-opacity-90"
+          className="rounded-lg p-6 w-[98%] lg:w-2/4 shadow-2xl bg-slate-800  bg-opacity-90"
         >
           <h1 className="text-center text-6xl px-3 mb-6 mt-2 text-white">
             How to Play?
@@ -48,11 +63,11 @@ const HowToPlay = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div className="flex justify-evenly ">
-            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md ">
+          <div className="flex flex-col items-center lg:items-start md:flex-row justify-evenly ">
+            <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md ">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col ">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover "></div>
-                <legend className="text-lg text-center p-2 ">
+                <legend className="text-lg whitespace-nowrap text-center p-2 ">
                   Choose your game mode
                 </legend>
                 <div className="flex w-1/2 mx-auto border-b border-solid border-slate-500"></div>
@@ -96,10 +111,10 @@ const HowToPlay = () => {
                 </div>
               </div>
             </fieldset>
-            <fieldset className="w-1/3 my-6 flex flex-col bg-white rounded-md">
+            <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col">
                 <div className="image h-36 object-cover rounded-t-md bg-[url('./question.png')] bg-no-repeat bg-cover"></div>
-                <legend className="text-lg text-center p-2">
+                <legend className="text-lg whitespace-nowrap text-center p-2">
                   Number of questions
                 </legend>
                 <div className="flex w-1/2 mx-auto border-b border-solid border-slate-500"></div>
@@ -148,6 +163,7 @@ const HowToPlay = () => {
                 <button
                   data-aos="fade-in"
                   data-aos-duration="700"
+                  data-aos-offset="-200"
                   className="w-40 justify-center text-2xl bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border-b-4 border-green-600 hover:border-green-400 rounded flex items-center"
                 >
                   Play
@@ -156,30 +172,16 @@ const HowToPlay = () => {
               </Link>
             ) : (
               <div
-                className="text-red-500 text-xl"
+                className="text-red-500 text-xl text-center"
                 data-aos="fade-in"
                 data-aos-duration="700"
+                data-aos-offset="-200"
               >
                 Please select a game mode and a number of questions.
               </div>
             )}
           </div>
         </div>
-      </div>
-      <div className="z-10 h-full absolute w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute object-fill w-full h-full"
-          poster="/img_video2.png"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   );
