@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="bg-black bg-opacity-50 text-white shadow-lg fixed z-50 w-full">
+    <header className="bg-opacity-50 text-white w-full">
       <div className="flex h-20 w-full px-4">
         <NavLink
           to="/"
@@ -17,7 +17,7 @@ const Navbar = () => {
               : " opacity-40 flex items-center justify-center"
           }
         >
-          <img className="h-16" src="../../icon.png" alt="" />
+          <img className="h-16" src="./icon.png" alt="" />
           <span className="ml-4 font-semibold text-3xl text-green-400">
             Map
           </span>
