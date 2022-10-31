@@ -66,7 +66,7 @@ const HowToPlay = () => {
           <div className="flex flex-col items-center lg:items-start md:flex-row justify-evenly ">
             <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md ">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col ">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('./gamemode.jpg')] bg-no-repeat bg-cover "></div>
+                <div className="image h-36 object-cover rounded-t-md bg-[url('/gamemode.jpg')] bg-no-repeat bg-cover "></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2 ">
                   Choose your game mode
                 </legend>
@@ -113,7 +113,7 @@ const HowToPlay = () => {
             </fieldset>
             <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md">
               <div className="card hover:shadow-2xl shadow-xl flex flex-col">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('./question.png')] bg-no-repeat bg-cover"></div>
+                <div className="image h-36 object-cover rounded-t-md bg-[url('/question.png')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2">
                   Number of questions
                 </legend>
