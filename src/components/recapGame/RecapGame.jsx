@@ -6,6 +6,8 @@ const RecapGame = ({
   questionNumber,
   response,
   timeToAnswer,
+  responseDone,
+  numberResponseDone,
 }) => {
   return (
     <div className="z-50 absolute top-32 right-0 m-10">
@@ -16,9 +18,16 @@ const RecapGame = ({
           <p>{`You responded in ${readableTimer(timeToAnswer)}`}</p>
         )}
         <p>Score : {score}</p>
-        <p>
-          {response !== "" && "Previous correct answer :"} {response}
-        </p>
+        <p>{responseDone !== "" && `You answered ${responseDone}.`}</p>
+
+        {response !== "" &&
+          (numberResponseDone === 0 ? (
+            <p>{`${response} was the answer!`} </p>
+          ) : (
+            (numberResponseDone === 1 || numberResponseDone === 2) && (
+              <p>{`${response} was a possible answer!`}</p>
+            )
+          ))}
       </div>
     </div>
   );
