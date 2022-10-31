@@ -10,7 +10,7 @@ import Quiz from "./pages/Quiz";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
