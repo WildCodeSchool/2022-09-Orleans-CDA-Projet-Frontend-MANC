@@ -54,7 +54,7 @@ const Quiz = () => {
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [counterCorrect, setCounterCorrect] = useState(0);
-  const [counterQuestion, setCounterQuestion] = useState(1);
+  const [counterQuestion, setCounterQuestion] = useState(7);
   const [allResponses, setAllResponses] = useState([]);
   const [timer, setTimer] = useState(0);
 
@@ -91,6 +91,7 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
             },
           ];
         });
@@ -119,6 +120,7 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
             },
           ];
         });
@@ -143,11 +145,13 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
             },
           ];
         });
       }
     }
+    console.log(allResponses);
     isConfirmed && setMarkerCoordinates("");
   }, [isConfirmed]);
 

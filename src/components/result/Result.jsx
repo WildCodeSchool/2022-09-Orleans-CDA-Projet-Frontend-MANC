@@ -55,8 +55,8 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
               key={index}
               className={`${
                 response.answerResult
-                  ? "bg-green-400  border-green-700"
-                  : "bg-red-400 border-red-700"
+                  ? "bg-green-100  border-green-700"
+                  : "bg-red-100 border-red-700"
               }
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
@@ -70,7 +70,8 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
                   } font-bold`}
                 >{`${response.answerResult ? "Right" : "Wrong"}`}</span>
               </p>
-              <p className="flex justify-center gap-1">
+              <p>{` ${response.questionType.phrase} ${response.questionType.request} ?`}</p>
+              {/* <p className="flex justify-center gap-1">
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
                 ) : response.question.includes("Currency") ? (
@@ -81,7 +82,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
                   )
                 )}
                 {`${response.question}`}
-              </p>
+              </p> */}
               <p>{`Country : ${response.goodAnswer}`}</p>
             </div>
           ))}
