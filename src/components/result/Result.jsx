@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import ReadableTimer from "../../services/ReadableTimer";
+import readableTimer from "../../helpers/readableTimer";
 
 function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
   useEffect(() => {
@@ -28,7 +28,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
           data-aos-duration="600"
           className=" mx-10 mb-10 text-2xl text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-8 w-1/3 text-center border-solid border-2 border-slate-800"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${ReadableTimer(
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer(
             totalTimer
           )}!`}
         </div>
@@ -46,7 +46,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
               <p>
                 <span className="font-bold">{`Question ${
                   response.numQuestion
-                } in ${ReadableTimer(response.timeToAnswer)}`}</span>{" "}
+                } in ${readableTimer(response.timeToAnswer)}`}</span>{" "}
                 <span
                   className={`${
                     response.answerResult ? "text-green-700" : "text-red-700"

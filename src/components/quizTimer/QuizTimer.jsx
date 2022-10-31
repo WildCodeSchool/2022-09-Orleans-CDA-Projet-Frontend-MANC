@@ -1,6 +1,6 @@
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { useEffect } from "react";
-import ReadableTimer from "../../services/ReadableTimer";
+import readableTimer from "../../helpers/readableTimer";
 
 const QuizTimer = ({ timer, setTimer }) => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const QuizTimer = ({ timer, setTimer }) => {
           <AiOutlineFieldTime />
           Elapsed time:
         </h2>
-        <p className="w-fit m-auto text-xl">{ReadableTimer(timer)}</p>
+        <p className="w-fit m-auto text-xl">{readableTimer(timer)}</p>
       </div>
     </div>
   );
