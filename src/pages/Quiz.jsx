@@ -57,6 +57,7 @@ const Quiz = () => {
   const [counterQuestion, setCounterQuestion] = useState(1);
   const [allResponses, setAllResponses] = useState([]);
   const [timer, setTimer] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -183,6 +184,17 @@ const Quiz = () => {
     }
   }, [answer]);
 
+  useEffect(() => {
+    if (allResponses[allResponses.length - 1] && answer.isCorrect) {
+      setScore((prev) =>
+        Math.round(
+          prev +
+            (100 + 100 / allResponses[allResponses.length - 1].timeToAnswer)
+        )
+      );
+    }
+  }, [allResponses]);
+
   if (counterQuestion > questionNumber) {
     return (
       <Result
@@ -258,10 +270,14 @@ const Quiz = () => {
       </div>
 
       <RecapGame
-        counterCorrect={counterCorrect}
+        score={score}
         counterQuestion={counterQuestion}
         questionNumber={questionNumber}
         response={response}
+        timeToAnswer={
+          allResponses[allResponses.length - 1] &&
+          allResponses[allResponses.length - 1].timeToAnswer
+        }
       />
       <QuizTimer timer={timer} setTimer={setTimer} />
     </div>
