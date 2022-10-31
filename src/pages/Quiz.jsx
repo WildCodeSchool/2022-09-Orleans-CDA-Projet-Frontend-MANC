@@ -193,13 +193,16 @@ const Quiz = () => {
 
   useEffect(() => {
     !answer.isAnswered && setClickedCountry("");
+  }, [answer]);
+
+  useEffect(() => {
     if (answer.isCorrect) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
     if (answer.isAnswered) {
       setCounterQuestion((prevCounter) => prevCounter + 1);
     }
-  }, [answer]);
+  }, [question]);
 
   useEffect(() => {
     if (allResponses[allResponses.length - 1] && answer.isCorrect) {
