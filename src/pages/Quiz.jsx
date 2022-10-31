@@ -17,6 +17,8 @@ const Quiz = () => {
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
+  const [responseDone, setResponseDone] = useState("");
+  const [numberResponseDone, setNumberResponseDone] = useState(null);
 
   useEffect(() => {
     AOS.init();
@@ -68,6 +70,12 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isConfirmed) {
+      const clickedCountryData = countryData.find((data) => {
+        return data.id === clickedCountry;
+      });
+      clickedCountryData
+        ? setResponseDone(clickedCountryData.name)
+        : setResponseDone("not found");
       let timeToAnswer = timer;
 
       if (allResponses[allResponses.length - 1]) {
@@ -95,6 +103,7 @@ const Quiz = () => {
             },
           ];
         });
+        setNumberResponseDone(number);
       }
       if (number === 1) {
         setAnswer({
@@ -124,6 +133,7 @@ const Quiz = () => {
             },
           ];
         });
+        setNumberResponseDone(number);
       }
       if (number === 2) {
         setAnswer({
@@ -149,6 +159,7 @@ const Quiz = () => {
             },
           ];
         });
+        setNumberResponseDone(number);
       }
     }
     console.log(allResponses);
@@ -266,6 +277,8 @@ const Quiz = () => {
         counterQuestion={counterQuestion}
         questionNumber={questionNumber}
         response={response}
+        responseDone={responseDone}
+        numberResponseDone={numberResponseDone}
       />
       <QuizTimer timer={timer} setTimer={setTimer} />
     </div>
