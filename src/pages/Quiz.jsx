@@ -298,7 +298,7 @@ const Quiz = () => {
         responseDone={responseDone}
         numberResponseDone={numberResponseDone}
       />
-      <QuizTimer timer={timer} setTimer={setTimer} />
+      <QuizTimer setTimer={setTimer} />
     </div>
   );
 };
