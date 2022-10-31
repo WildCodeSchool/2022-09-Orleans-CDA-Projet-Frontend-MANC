@@ -18,6 +18,7 @@ const Quiz = () => {
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
   const [responseDone, setResponseDone] = useState("");
+  const [numberResponseDone, setNumberResponseDone] = useState(null);
 
   useEffect(() => {
     AOS.init();
@@ -83,7 +84,6 @@ const Quiz = () => {
           isAnswered: true,
           isCorrect: clickedCountry === question[0].cca3,
         });
-        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -96,6 +96,8 @@ const Quiz = () => {
             },
           ];
         });
+        getResponseDone(clickedCountry);
+        setNumberResponseDone(number);
       }
       if (number === 1) {
         setAnswer({
@@ -104,7 +106,6 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
-        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -123,6 +124,8 @@ const Quiz = () => {
             },
           ];
         });
+        getResponseDone(clickedCountry);
+        setNumberResponseDone(number);
       }
       if (number === 2) {
         setAnswer({
@@ -131,7 +134,6 @@ const Quiz = () => {
             Object.values(question[0].languages)[0]
           ),
         });
-        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -146,6 +148,8 @@ const Quiz = () => {
             },
           ];
         });
+        getResponseDone(clickedCountry);
+        setNumberResponseDone(number);
       }
     }
     isConfirmed && setMarkerCoordinates("");
@@ -250,7 +254,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
         responseDone={responseDone}
-        questionType={questionType}
+        numberResponseDone={numberResponseDone}
       />
 
       <QuizTimer

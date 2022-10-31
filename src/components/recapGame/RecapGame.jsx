@@ -4,8 +4,7 @@ const RecapGame = ({
   questionNumber,
   response,
   responseDone,
-  answer,
-  questionType,
+  numberResponseDone,
 }) => {
   return (
     <div className="z-50 absolute top-32 right-0 m-10">
@@ -15,12 +14,14 @@ const RecapGame = ({
         <p>Score : {counterCorrect}</p>
         <p>{responseDone !== "" && `${responseDone} was your response.`}</p>
 
-        {response !== "" && questionType.type === "capital" && (
-          <p>{`${response} was the answer!`} </p>
-        )}
-        {response !== "" && questionType.type !== "capital" && (
-          <p>{`${response} was a possible answer!`}</p>
-        )}
+        {response !== "" &&
+          (numberResponseDone === 0 ? (
+            <p>{`${response} was the answer!`} </p>
+          ) : (
+            (numberResponseDone === 1 || numberResponseDone === 2) && (
+              <p>{`${response} was a possible answer!`}</p>
+            )
+          ))}
       </div>
     </div>
   );
