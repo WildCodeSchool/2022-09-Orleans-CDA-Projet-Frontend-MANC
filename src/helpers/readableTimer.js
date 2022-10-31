@@ -1,4 +1,4 @@
-const ReadableTimer = (timeInSecondes) => {
+const readableTimer = (timeInSecondes) => {
   let timeLeftAfterOperation = timeInSecondes;
   let hour = 0;
   let minute = 0;
@@ -21,4 +21,4 @@ const ReadableTimer = (timeInSecondes) => {
   }`;
 };
 
-export default ReadableTimer;
+export default readableTimer;
