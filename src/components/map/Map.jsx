@@ -1,5 +1,6 @@
 import countries from "../../assets/countriesData.json";
 import "./map.css";
+import { TbFocusCentered } from "react-icons/tb";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -41,6 +42,20 @@ const Map = ({
       return `svg-fill-${foundCountryData.color}`;
     }
     return "fill-white";
+  };
+
+  const handleZoomIn = () => {
+    if (position.zoom >= 4) return;
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
+  };
+
+  const handleZoomOut = () => {
+    if (position.zoom <= 1) return;
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
+  };
+
+  const handleCenter = () => {
+    setPosition({ coordinates: [0, 0], zoom: 1 });
   };
 
   return (
@@ -106,6 +121,36 @@ const Map = ({
           )}
         </ZoomableGroup>
       </ComposableMap>
+      <div className="self-end">
+        <button className="button-round" onClick={handleZoomIn}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="3"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <button className="button-round" onClick={handleCenter}>
+          <TbFocusCentered />
+        </button>
+        <button className="button-round" onClick={handleZoomOut}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="3"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+      </div>
     </>
   );
 };
