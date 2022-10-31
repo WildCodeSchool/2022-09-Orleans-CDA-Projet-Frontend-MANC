@@ -22,7 +22,7 @@ function About() {
             </span>
           </h1>
 
-          <p className="text-2xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
+          <p className="text-xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
             We are a group of 4 students currently training at the Orléans Wild
             Code School!
             <br />
