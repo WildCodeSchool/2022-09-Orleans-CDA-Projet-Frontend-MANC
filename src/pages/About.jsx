@@ -23,16 +23,16 @@ function About() {
           </h1>
 
           <p className="text-2xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
-            We are a group of 4 students actually in formation at the Orléans
-            Wild Code School !<br />
-            This is our first project using REACT.JS and the CSS library
-            Tailwind.
+            We are a group of 4 students currently training at the Orléans Wild
+            Code School!
             <br />
-            For this project we had to build an application based on an API of
-            our choice.
+            This is our first project using React and Tailwind CSS.
+            <br />
+            The goal was to pick an API and build a front-end application
+            consuming it.
             <br />
             <div className="flex">
-              We choose to use the{" "}
+              We chose to use the{" "}
               <a
                 className="underline text-blue-500 px-1"
                 target="blank"
@@ -42,11 +42,11 @@ function About() {
                 REST Countries API{" "}
               </a>{" "}
               with the idea of creating a pedagogic website about the world we
-              live in !
+              live in!
             </div>
             <br />
-            You can get more info about each member of the crew by scrolling
-            down this page.
+            You can get more information about each member of the crew by
+            scrolling down this page.
             <div className="flex justify-around pt-7">
               <BsChevronDoubleDown />
             </div>
@@ -62,22 +62,35 @@ function About() {
                 <div class="flex-no-shrink">
                   <img
                     alt=""
-                    class="w-64 h-64 block mx-auto"
-                    src="/arthur.png"
+                    class="w-64 h-64 block mx-auto object-cover"
+                    src="monkas.jpg"
                   />
                 </div>
                 <div class="flex-1 card-block relative">
-                  <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Arthur Baudoin</h4>
+                  <div class="p-6 h-full">
+                    <h4 class="font-medium text-2xl mb-3">
+                      Arthur Baudoin (Cupcake Lover)
+                    </h4>
                     <p class="leading-normal">
-                      Magni inventore repellat dignissimos eveniet dolore ex sit
-                      illo adipisci accusamus quos.
+                      GeoJSON enjoyer.
+                      <br />
+                      Badge hunter.
+                      <br />
+                      Hasn't ragequit (yet) this year.
                     </p>
-                    <div className="flex justify-end text-4xl pt-8 px-5">
-                      <a className="underline pr-6" target="blank" href="">
+                    <div className="flex h-1/2 justify-end items-end px-2 py-5 text-4xl">
+                      <a
+                        className="underline pr-6"
+                        target="blank"
+                        href="https://github.com/Ysedda"
+                      >
                         <BsGithub />
                       </a>
-                      <a className="underline" target="blank" href="">
+                      <a
+                        className="underline"
+                        target="blank"
+                        href="https://www.linkedin.com/in/arthur-baudoin/"
+                      >
                         <BsLinkedin />
                       </a>
                     </div>
@@ -125,7 +138,9 @@ function About() {
                 </div>
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Maximilian Gliem</h4>
+                    <h4 class="font-medium text-2xl mb-3">
+                      Maximilian Gliem (Emperor Max)
+                    </h4>
                     <p class="leading-normal">
                       Very clever, he used every tricks to push most lines on
                       the project.
@@ -163,7 +178,9 @@ function About() {
               <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-1 card-block relative">
                   <div class="p-6">
-                    <h4 class="font-medium text-2xl mb-3">Corentin Delande</h4>
+                    <h4 class="font-medium text-2xl mb-3">
+                      Corentin (Erwann) Delande
+                    </h4>
                     <p class="leading-normal pb-2">
                       True agility genius Corentin lead the group threw this
                       project with an iron fist all along ! <br />
