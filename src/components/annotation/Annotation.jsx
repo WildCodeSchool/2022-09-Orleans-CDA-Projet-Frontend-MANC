@@ -7,29 +7,22 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Annotation = (country) => {
+  const [countryData, setCountryData] = useState();
+
   useEffect(() => {
     AOS.init();
   }, []);
 
-  const [countryData, setCountryData] = useState();
-  const [countryPopulation, setCountryPopulation] = useState();
-
-  async function getResponse() {
-    const res = await fetch(
-      "https://restcountries.com/v3.1/alpha/" + country.country
-    );
-    const data = await res.json();
-    setCountryData(data[0]);
-  }
-
   useEffect(() => {
+    const getResponse = async () => {
+      const res = await fetch(
+        "https://restcountries.com/v3.1/alpha/" + country.country
+      );
+      const data = await res.json();
+      setCountryData(data[0]);
+    };
     getResponse();
   }, [country]);
-
-  useEffect(() => {
-    countryData &&
-      setCountryPopulation((countryData.population / 1000000).toFixed(1));
-  }, [countryData]);
 
   return (
     <>
@@ -50,21 +43,28 @@ const Annotation = (country) => {
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
           {`Currency: ${
-            countryData && Object.values(countryData.currencies)[0].name
+            countryData && countryData.currencies
+              ? Object.values(countryData.currencies)[0].name
+              : "n/a"
           }`}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
           Languages:
-          {countryData &&
-            Object.values(countryData.languages).map((language, index) => (
-              <span key={index}>{language}</span>
-            ))}
+          {countryData && countryData.languages
+            ? Object.values(countryData.languages).map((language, index) => (
+                <span key={index}>{language}</span>
+              ))
+            : "n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
           {` Population: 
-            ${countryData && countryPopulation} millions`}
+            ${
+              countryData && countryData.population
+                ? `${(countryData.population / 1000000).toFixed(1)} millions`
+                : "n/a"
+            }`}
         </p>
       </div>
     </>
