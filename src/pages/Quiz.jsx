@@ -39,16 +39,6 @@ const Quiz = () => {
     }
   };
 
-  const getResponseDone = (clickedCountry) => {
-    if (clickedCountry !== "") {
-      fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
-        .then((resp) => resp.json())
-        .then((data) => {
-          setResponseDone(data[0].name.common);
-        });
-    }
-  };
-
   const [clickedCountry, setClickedCountry] = useState("");
   const [preventClickCountry, setPreventClickCountry] = useState(false);
 
@@ -79,6 +69,12 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isConfirmed) {
+      const clickedCountryData = countryData.find((data) => {
+        return data.id === clickedCountry;
+      });
+      clickedCountryData
+        ? setResponseDone(clickedCountryData.name)
+        : setResponseDone("not found");
       if (number === 0) {
         setAnswer({
           isAnswered: true,
@@ -96,7 +92,6 @@ const Quiz = () => {
             },
           ];
         });
-        getResponseDone(clickedCountry);
         setNumberResponseDone(number);
       }
       if (number === 1) {
@@ -124,7 +119,6 @@ const Quiz = () => {
             },
           ];
         });
-        getResponseDone(clickedCountry);
         setNumberResponseDone(number);
       }
       if (number === 2) {
@@ -148,7 +142,6 @@ const Quiz = () => {
             },
           ];
         });
-        getResponseDone(clickedCountry);
         setNumberResponseDone(number);
       }
     }
