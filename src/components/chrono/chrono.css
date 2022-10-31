@@ -18,7 +18,7 @@
 }
 
 .timer:after {
-  background: #111 url(https://codepen.io/images/classy_fabric.png);
+  background: #111;
   border-radius: 50%;
   content: "";
   display: block;
