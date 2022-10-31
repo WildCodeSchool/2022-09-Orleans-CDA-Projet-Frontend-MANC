@@ -1,24 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400);
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background: #111 url(https://codepen.io/images/classy_fabric.png);
-  color: #fff;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-}
-
-body {
-  padding: 20px;
-}
-
 .timer-group {
   height: 400px;
   margin: 0 auto;
   position: relative;
   width: 400px;
+}
+
+.taille {
+  transform: scale(0.5);
 }
 
 .timer {
@@ -165,12 +153,12 @@ body {
 
 .face p {
   border-radius: 20px;
-  font-size: 76px;
+  font-size: 70px;
   font-weight: 400;
   position: absolute;
-  top: 17px;
+  top: 90px;
   width: 260px;
-  left: 20px;
+  left: 14px;
 }
 
 @keyframes spin1 {

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import Answer from "../components/answer/Answer";
 import Map from "../components/map/Map";
+import Chrono from "../components/chrono/Chrono";
 import Question from "../components/question/Question";
 import Result from "../components/result/Result";
 import countryData from "../assets/countriesData.json";
@@ -236,10 +237,11 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer
+      <Chrono />
+      {/* <QuizTimer
         readableTimer={readableTimer}
         setReadableTimer={setReadableTimer}
-      />
+      /> */}
       <div className="z-10 h-full absolute w-full">
         <video
           autoPlay
