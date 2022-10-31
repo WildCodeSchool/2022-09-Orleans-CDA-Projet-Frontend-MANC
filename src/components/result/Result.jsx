@@ -17,12 +17,27 @@ function Result({
     AOS.init();
   }, []);
   return (
-    <div className="flex justify-items-center">
-      <div className="absolute z-30 flex flex-col items-center height-minus-nav w-full overflow-scroll">
+    <div className="flex justify-items-center items-center">
+      <div className="absolute top-0 -z-10 w-full h-[calc(100vh+150px)] sm:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="flex flex-col items-center absolute top-[80px] z-10 w-full h-[calc(100vh-80px)] overflow-scroll">
         <h1
-          data-aos="fade-down"
+          data-aos="fade-in"
           data-aos-duration="600"
-          className="text-8xl w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
+          className="text-8xl text-center w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
         >
           <span className="text-green-400">Quiz </span>
           <span className="text-lightblue">done!</span>
@@ -30,11 +45,11 @@ function Result({
         <div
           data-aos="fade-up"
           data-aos-duration="600"
-          className=" mx-10 mb-10 text-2xl text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-8 w-1/3 text-center border-solid border-2 border-slate-800"
+          className=" mb-10 text-2xl w-[95%] md:w-2/3 text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-2 md:px-8 text-center border-solid border-2 border-slate-800"
         >
           {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
         </div>
-        <div className="overflow-auto text-2xl bg-slate-800 bg-opacity-80 rounded-lg p-2 w-1/3 text-center border-solid border-2 border-slate-800 px-30">
+        <div className="overflow-auto min-h-[200px] w-[95%] md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response) => (
             <div
               className={`${
@@ -42,7 +57,7 @@ function Result({
                   ? "bg-green-400  border-green-700"
                   : "bg-red-400 border-red-700"
               }
-            m-10 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
+            my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p>
                 <span className="font-bold">{`Question ${response.numQuestion}`}</span>{" "}
@@ -75,19 +90,6 @@ function Result({
           </button>
         </NavLink>
       </div>
-      <video
-        autoPlay
-        loop
-        muted
-        className="fixed z-10 w-auto min-w-full min-h-full max-w-none bg-blend-color-dodge"
-        poster="/img_video2.png"
-      >
-        <source
-          src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
     </div>
   );
 }
