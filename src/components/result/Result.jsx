@@ -60,7 +60,7 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
               }
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
-              <p className="flex justify-center gap-1 font-bold">
+              <p className="flex justify-center items-center gap-1 font-bold">
                 {`${response.numQuestion}.`}{" "}
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
