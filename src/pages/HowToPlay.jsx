@@ -45,7 +45,7 @@ const HowToPlay = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="absolute z-30 w-full top-[200px] flex flex-col gap-4 justify-center items-center">
+      <div className="z-30 w-full relative top-16 flex flex-col gap-4 justify-center items-center">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
