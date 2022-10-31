@@ -45,7 +45,7 @@ const HowToPlay = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="absolute z-30 top-[200px] flex flex-col gap-4 justify-center items-center">
+      <div className="absolute z-30 w-full top-[200px] flex flex-col gap-4 justify-center items-center">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
@@ -55,18 +55,25 @@ const HowToPlay = () => {
             How to Play?
           </h1>
           <p className="px-3 m-2 text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            You can select up to 3 game modes.
+            <br />
+            Questions are randomly generated according to the game mode(s)
+            you've picked.
+            <br />
+            Your goal is to score a maximum of points out of these 10, 20 or 30
+            questions.
+            <br />
+            Each correct answer will award you 100 points, you can also gain a
+            bonus based on the time it took you to answer!
+            <br />
+          </p>
+          <p className="px-3 mt-6 mb-4 text-white text-center text-lg font-semibold">
+            Best of luck!
           </p>
           <div className="flex flex-col items-center lg:items-start md:flex-row justify-evenly ">
-            <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md ">
-              <div className="card hover:shadow-2xl shadow-xl flex flex-col ">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('/gamemode.jpg')] bg-no-repeat bg-cover "></div>
+            <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md ">
+              <div className="hover:shadow-2xl shadow-xl flex flex-col ">
+                <div className="h-36 object-cover rounded-t-md bg-[url('/gamemode.jpg')] bg-no-repeat bg-cover "></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2 ">
                   Choose your game mode
                 </legend>
@@ -111,9 +118,9 @@ const HowToPlay = () => {
                 </div>
               </div>
             </fieldset>
-            <fieldset className="w-[90%] md:w-1/3 my-6 flex flex-col bg-white rounded-md">
-              <div className="card hover:shadow-2xl shadow-xl flex flex-col">
-                <div className="image h-36 object-cover rounded-t-md bg-[url('/question.png')] bg-no-repeat bg-cover"></div>
+            <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md">
+              <div className="hover:shadow-2xl shadow-xl flex flex-col">
+                <div className="h-36 object-cover rounded-t-md bg-[url('/question.png')] bg-no-repeat bg-cover"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2">
                   Number of questions
                 </legend>
