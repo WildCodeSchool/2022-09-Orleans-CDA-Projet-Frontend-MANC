@@ -3,6 +3,9 @@ const RecapGame = ({
   counterQuestion,
   questionNumber,
   response,
+  responseDone,
+  answer,
+  questionType,
 }) => {
   return (
     <div className="z-50 absolute top-32 right-0 m-10">
@@ -10,9 +13,14 @@ const RecapGame = ({
         <h2 className="text-center w-full text-3xl mb-4">Details</h2>
         <p>{`Question : ${counterQuestion}/${questionNumber}`}</p>
         <p>Score : {counterCorrect}</p>
-        <p>
-          {response !== "" && "Previous correct answer :"} {response}
-        </p>
+        <p>{responseDone !== "" && `${responseDone} was your response.`}</p>
+
+        {response !== "" && questionType.type === "capital" && (
+          <p>{`${response} was the answer!`} </p>
+        )}
+        {response !== "" && questionType.type !== "capital" && (
+          <p>{`${response} was a possible answer!`}</p>
+        )}
       </div>
     </div>
   );

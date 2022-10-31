@@ -17,6 +17,7 @@ const Quiz = () => {
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
+  const [responseDone, setResponseDone] = useState("");
 
   useEffect(() => {
     AOS.init();
@@ -33,6 +34,16 @@ const Quiz = () => {
           if (questionType.type === "languages") {
             setCountryAnswer(data[0].languages);
           }
+        });
+    }
+  };
+
+  const getResponseDone = (clickedCountry) => {
+    if (clickedCountry !== "") {
+      fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          setResponseDone(data[0].name.common);
         });
     }
   };
@@ -72,6 +83,7 @@ const Quiz = () => {
           isAnswered: true,
           isCorrect: clickedCountry === question[0].cca3,
         });
+        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -92,6 +104,7 @@ const Quiz = () => {
             Object.values(Object.values(question[0].currencies)[0])[0]
           ),
         });
+        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -118,6 +131,7 @@ const Quiz = () => {
             Object.values(question[0].languages)[0]
           ),
         });
+        getResponseDone(clickedCountry);
         setResponse(question[0].name.common);
         setAllResponses((previous) => {
           return [
@@ -235,7 +249,10 @@ const Quiz = () => {
         counterQuestion={counterQuestion}
         questionNumber={questionNumber}
         response={response}
+        responseDone={responseDone}
+        questionType={questionType}
       />
+
       <QuizTimer
         readableTimer={readableTimer}
         setReadableTimer={setReadableTimer}
