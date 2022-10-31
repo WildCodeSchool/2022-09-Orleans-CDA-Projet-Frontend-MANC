@@ -59,7 +59,9 @@ const Map = ({
           center={position.coordinates}
           onMoveEnd={handleMoveEnd}
         >
-          <Geographies geography="/mapGeometry.json">
+          <Geographies
+            geography={`${import.meta.env.BASE_URL}mapGeometry.json`}
+          >
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
