@@ -184,6 +184,21 @@ const Quiz = () => {
 
   return (
     <div>
+      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="absolute z-30 top-[60px] flex flex-col items-center height-minus-nav w-full">
         <div className="height-minus-nav flex justify-center items-center w-full">
           <Question
@@ -240,21 +255,6 @@ const Quiz = () => {
         readableTimer={readableTimer}
         setReadableTimer={setReadableTimer}
       />
-      <div className="z-10 h-full absolute w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute object-fill w-full h-full"
-          poster="/img_video2.png"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div>
     </div>
   );
 };
