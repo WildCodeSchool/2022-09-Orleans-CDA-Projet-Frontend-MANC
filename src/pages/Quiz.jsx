@@ -56,6 +56,7 @@ const Quiz = () => {
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [counterQuestion, setCounterQuestion] = useState(1);
   const [allResponses, setAllResponses] = useState([]);
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -67,6 +68,13 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isConfirmed) {
+      let timeToAnswer = timer;
+
+      if (allResponses[allResponses.length - 1]) {
+        timeToAnswer =
+          timer - allResponses[allResponses.length - 1].totalTimeToThisQuestion;
+      }
+
       if (number === 0) {
         setAnswer({
           isAnswered: true,
@@ -81,6 +89,8 @@ const Quiz = () => {
               question: `Capital : ${question[0].capital[0]}`,
               answerResult: clickedCountry === question[0].cca3,
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -107,6 +117,8 @@ const Quiz = () => {
                 Object.values(Object.values(question[0].currencies)[0])[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -129,6 +141,8 @@ const Quiz = () => {
                 Object.values(question[0].languages)[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -169,14 +183,12 @@ const Quiz = () => {
     }
   }, [answer]);
 
-  const [readableTimer, setReadableTimer] = useState("");
-
   if (counterQuestion > questionNumber) {
     return (
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        readableTimer={readableTimer}
+        totalTimer={timer}
         allResponses={allResponses}
       />
     );
@@ -251,10 +263,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer
-        readableTimer={readableTimer}
-        setReadableTimer={setReadableTimer}
-      />
+      <QuizTimer timer={timer} setTimer={setTimer} />
     </div>
   );
 };

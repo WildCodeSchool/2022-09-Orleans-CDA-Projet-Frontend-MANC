@@ -6,13 +6,9 @@ import { NavLink } from "react-router-dom";
 import { TbBuilding } from "react-icons/tb";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import readableTimer from "../../helpers/readableTimer";
 
-function Result({
-  counterCorrect,
-  questionNumber,
-  allResponses,
-  readableTimer,
-}) {
+function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -37,21 +33,26 @@ function Result({
         <h1
           data-aos="fade-in"
           data-aos-duration="600"
+          data-aos-offset="-200"
           className="text-8xl text-center w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
         >
           <span className="text-green-400">Quiz </span>
           <span className="text-lightblue">done!</span>
         </h1>
         <div
-          data-aos="fade-up"
+          data-aos="fade-in"
           data-aos-duration="600"
+          data-aos-offset="-200"
           className=" mb-10 text-2xl w-[95%] md:w-2/3 text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-2 md:px-8 text-center border-solid border-2 border-slate-800"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions !`}
+          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer(
+            totalTimer
+          )}!`}
         </div>
         <div className="overflow-auto min-h-[200px] w-[95%] md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
-          {allResponses.map((response) => (
+          {allResponses.map((response, index) => (
             <div
+              key={index}
               className={`${
                 response.answerResult
                   ? "bg-green-400  border-green-700"
@@ -60,7 +61,9 @@ function Result({
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p>
-                <span className="font-bold">{`Question ${response.numQuestion}`}</span>{" "}
+                <span className="font-bold">{`Question ${
+                  response.numQuestion
+                } in ${readableTimer(response.timeToAnswer)}`}</span>{" "}
                 <span
                   className={`${
                     response.answerResult ? "text-green-700" : "text-red-700"
