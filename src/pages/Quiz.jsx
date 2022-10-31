@@ -216,6 +216,7 @@ const Quiz = () => {
     return (
       <Result
         counterCorrect={counterCorrect}
+        score={score}
         questionNumber={questionNumber}
         totalTimer={timer}
         allResponses={allResponses}
