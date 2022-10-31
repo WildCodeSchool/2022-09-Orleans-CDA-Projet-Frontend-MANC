@@ -164,7 +164,7 @@ const HowToPlay = () => {
               </div>
             </fieldset>
           </div>
-          <div className="flex justify-center items-center h-12">
+          <div className="flex justify-center items-center h-12 m-4">
             {canPlay ? (
               <Link to="/play/quiz" state={{ checkedState, questionNumber }}>
                 <button
