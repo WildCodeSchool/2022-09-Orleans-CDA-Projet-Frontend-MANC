@@ -60,11 +60,11 @@ const HowToPlay = () => {
             Questions are randomly generated according to the game mode(s)
             you've picked.
             <br />
-            Your goal is to score a maximum of points out of these 10, 20 or 30
-            questions.
-            <br />
             Each correct answer will award you 100 points, you can also gain a
             bonus based on the time it took you to answer!
+            <br />
+            Your goal is to score a maximum of points out of these 10, 20 or 30
+            questions.
             <br />
           </p>
           <p className="px-3 mt-6 mb-4 text-white text-center text-lg font-semibold">
