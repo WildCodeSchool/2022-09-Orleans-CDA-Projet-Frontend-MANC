@@ -55,22 +55,13 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
               key={index}
               className={`${
                 response.answerResult
-                  ? "bg-green-400  border-green-700"
-                  : "bg-red-400 border-red-700"
+                  ? "bg-green-100  border-green-800"
+                  : "bg-red-100 border-red-800"
               }
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
-              <p>
-                <span className="font-bold">{`Question ${
-                  response.numQuestion
-                } in ${readableTimer(response.timeToAnswer)}`}</span>{" "}
-                <span
-                  className={`${
-                    response.answerResult ? "text-green-700" : "text-red-700"
-                  } font-bold`}
-                >{`${response.answerResult ? "Right" : "Wrong"}`}</span>
-              </p>
-              <p className="flex justify-center gap-1">
+              <p className="flex justify-center gap-1 font-bold">
+                {`${response.numQuestion}.`}{" "}
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
                 ) : response.question.includes("Currency") ? (
@@ -79,10 +70,44 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
                   response.question.includes("Language") && (
                     <IoChatbubbleEllipsesOutline />
                   )
-                )}
-                {`${response.question}`}
+                )}{" "}
+                {` ${response.questionType.phrase} ${response.questionType.request} ?`}
               </p>
-              <p>{`Country : ${response.goodAnswer}`}</p>
+
+              <p>
+                {response.answerResult ? (
+                  <span className="text-green-800">
+                    {`You answered right `}{" "}
+                    <span className="font-bold">{response.userResponse}</span>{" "}
+                    {` in `}{" "}
+                    <span className="font-bold">
+                      {readableTimer(response.timeToAnswer)}
+                    </span>
+                    {`.`}
+                  </span>
+                ) : (
+                  <span className="text-red-800">
+                    {`You answered wrong `}{" "}
+                    <span className="font-bold">{response.userResponse}</span>{" "}
+                    {` in `}{" "}
+                    <span className="font-bold">
+                      {readableTimer(response.timeToAnswer)}
+                    </span>
+                    {`.`}
+                  </span>
+                )}
+              </p>
+              {response.questionType.type === "capital" ? (
+                <p>
+                  <span className="font-bold">{response.goodAnswer}</span>
+                  {` was the answer!`}{" "}
+                </p>
+              ) : (
+                <p>
+                  <span className="font-bold">{response.goodAnswer}</span>
+                  {` was a possible answer!`}
+                </p>
+              )}
             </div>
           ))}
         </div>

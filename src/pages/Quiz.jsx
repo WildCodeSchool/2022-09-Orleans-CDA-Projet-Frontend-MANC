@@ -99,6 +99,8 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
+              userResponse: clickedCountryData.name,
             },
           ];
         });
@@ -128,6 +130,8 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
+              userResponse: clickedCountryData.name,
             },
           ];
         });
@@ -153,6 +157,8 @@ const Quiz = () => {
               goodAnswer: question[0].name.common + " " + question[0].flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
+              questionType: questionType,
+              userResponse: clickedCountryData.name,
             },
           ];
         });
