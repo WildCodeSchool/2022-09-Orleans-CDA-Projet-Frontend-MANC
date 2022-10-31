@@ -56,6 +56,7 @@ const Quiz = () => {
   const [counterCorrect, setCounterCorrect] = useState(0);
   const [counterQuestion, setCounterQuestion] = useState(1);
   const [allResponses, setAllResponses] = useState([]);
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -67,6 +68,13 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isConfirmed) {
+      let timeToAnswer = timer;
+
+      if (allResponses[allResponses.length - 1]) {
+        timeToAnswer =
+          timer - allResponses[allResponses.length - 1].totalTimeToThisQuestion;
+      }
+
       if (number === 0) {
         setAnswer({
           isAnswered: true,
@@ -81,6 +89,8 @@ const Quiz = () => {
               question: `Capital : ${question[0].capital[0]}`,
               answerResult: clickedCountry === question[0].cca3,
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -107,6 +117,8 @@ const Quiz = () => {
                 Object.values(Object.values(question[0].currencies)[0])[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -129,6 +141,8 @@ const Quiz = () => {
                 Object.values(question[0].languages)[0]
               ),
               goodAnswer: question[0].name.common + " " + question[0].flag,
+              totalTimeToThisQuestion: timer,
+              timeToAnswer: timeToAnswer,
             },
           ];
         });
@@ -169,14 +183,12 @@ const Quiz = () => {
     }
   }, [answer]);
 
-  const [readableTimer, setReadableTimer] = useState("");
-
   if (counterQuestion > questionNumber) {
     return (
       <Result
         counterCorrect={counterCorrect}
         questionNumber={questionNumber}
-        readableTimer={readableTimer}
+        totalTimer={timer}
         allResponses={allResponses}
       />
     );
@@ -184,6 +196,21 @@ const Quiz = () => {
 
   return (
     <div>
+      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video2.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="absolute z-30 top-[60px] flex flex-col items-center height-minus-nav w-full">
         <div className="height-minus-nav flex justify-center items-center w-full">
           <Question
@@ -236,25 +263,7 @@ const Quiz = () => {
         questionNumber={questionNumber}
         response={response}
       />
-      <QuizTimer
-        readableTimer={readableTimer}
-        setReadableTimer={setReadableTimer}
-      />
-      <div className="z-10 h-full absolute w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute object-fill w-full h-full"
-          poster="/img_video2.png"
-        >
-          <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <QuizTimer timer={timer} setTimer={setTimer} />
     </div>
   );
 };

@@ -214,12 +214,12 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="z-10 h-full fixed w-full">
+        <div className="fixed top-0 -z-10 w-full">
           <video
             autoPlay
             loop
             muted
-            className="absolute object-fill w-full h-full"
+            className="object-fill w-full h-full"
             poster="/img_video3.png"
           >
             <source
