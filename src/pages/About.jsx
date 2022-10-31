@@ -58,7 +58,7 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-no-shrink">
                   <img
                     alt=""
@@ -66,8 +66,8 @@ function About() {
                     src="monkas.jpg"
                   />
                 </div>
-                <div class="flex-1 card-block relative">
-                  <div class="p-6 h-full">
+                <div class="flex-1 card-block ">
+                  <div class="p-6 h-full flex flex-col">
                     <h4 class="font-medium text-2xl mb-3">
                       Arthur Baudoin (Cupcake Lover)
                     </h4>
@@ -78,7 +78,7 @@ function About() {
                       <br />
                       Hasn't ragequit (yet) this year.
                     </p>
-                    <div className="flex h-1/2 justify-end items-end px-2 py-5 text-4xl">
+                    <div className="flex grow justify-end items-end text-4xl">
                       <a
                         className="underline pr-6"
                         target="blank"
@@ -104,15 +104,15 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-1 card-block relative">
-                  <div class="p-6">
+              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div class="flex-1 card-block">
+                  <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
                     <p class="leading-normal">
                       Magni inventore repellat dignissimos eveniet dolore ex sit
                       illo adipisci accusamus quos.
                     </p>
-                    <div className="flex justify-end text-4xl pt-8 px-5">
+                    <div className="flex grow justify-start items-end text-4xl">
                       <a className="underline pr-6" target="blank" href="">
                         <BsGithub />
                       </a>
@@ -132,12 +132,12 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-no-shrink">
                   <img alt="" class="w-64 h-64 block mx-auto" src="max.jpg" />
                 </div>
-                <div class="flex-1 card-block relative">
-                  <div class="p-6">
+                <div class="flex-1 card-block">
+                  <div class="p-6 h-full flex flex-col">
                     <h4 class="font-medium text-2xl mb-3">
                       Maximilian Gliem (Emperor Max)
                     </h4>
@@ -149,7 +149,7 @@ function About() {
                       his drug fix even if he had to socialize in a late party
                       with colleagues at a pub.
                     </p>
-                    <div className="flex justify-end text-4xl pt-8 px-5">
+                    <div className="flex grow justify-end items-end text-4xl">
                       <a
                         className="underline pr-6"
                         target="blank"
@@ -175,20 +175,20 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="relative m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-1 card-block relative">
-                  <div class="p-6">
+              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div class="flex-1 card-block">
+                  <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">
                       Corentin (Erwann) Delande
                     </h4>
-                    <p class="leading-normal pb-2">
+                    <p class="leading-normal pb-2 flex-1">
                       True agility genius Corentin lead the group threw this
                       project with an iron fist all along ! <br />
                       Fun fact, he code the project without even understanding
                       the basic principal of a callback function. <br />
                       He is available for an internship from the 23 of february.
                     </p>
-                    <div className="flex justify-end text-4xl pt-8 px-5">
+                    <div className="flex grow justify-start items-end text-4xl">
                       <a
                         className="underline pr-6"
                         target="blank"
