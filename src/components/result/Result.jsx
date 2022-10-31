@@ -8,7 +8,13 @@ import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import readableTimer from "../../helpers/readableTimer";
 
-function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
+function Result({
+  counterCorrect,
+  score,
+  questionNumber,
+  allResponses,
+  totalTimer,
+}) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -45,9 +51,11 @@ function Result({ counterCorrect, questionNumber, allResponses, totalTimer }) {
           data-aos-offset="-200"
           className=" mb-10 text-2xl w-[95%] md:w-2/3 text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-2 md:px-8 text-center border-solid border-2 border-slate-800"
         >
-          {`Congratulations, you scored ${counterCorrect} out of ${questionNumber} questions in ${readableTimer(
+          {`Congratulations, your scored ${score}.`}
+          <br />
+          {`You answered in ${readableTimer(
             totalTimer
-          )}!`}
+          )} and ${counterCorrect} out of ${questionNumber} questions are correct.`}
         </div>
         <div className="overflow-auto min-h-[200px] w-[95%] md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response, index) => (
