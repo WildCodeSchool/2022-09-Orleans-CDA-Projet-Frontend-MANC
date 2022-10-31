@@ -1,8 +1,11 @@
+import readableTimer from "../../helpers/readableTimer";
+
 const RecapGame = ({
-  counterCorrect,
+  score,
   counterQuestion,
   questionNumber,
   response,
+  timeToAnswer,
   responseDone,
   numberResponseDone,
 }) => {
@@ -11,8 +14,11 @@ const RecapGame = ({
       <div className="my-10 w-auto shadow-2xl p-4 rounded-md border-black bg-slate-800 text-white">
         <h2 className="text-center w-full text-3xl mb-4">Details</h2>
         <p>{`Question : ${counterQuestion}/${questionNumber}`}</p>
-        <p>Score : {counterCorrect}</p>
-        <p>{responseDone !== "" && `${responseDone} was your response.`}</p>
+        {timeToAnswer && (
+          <p>{`You responded in ${readableTimer(timeToAnswer)}`}</p>
+        )}
+        <p>Score : {score}</p>
+        <p>{responseDone !== "" && `You answered ${responseDone}.`}</p>
 
         {response !== "" &&
           (numberResponseDone === 0 ? (
