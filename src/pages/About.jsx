@@ -28,8 +28,8 @@ function About() {
             <br />
             This is our first project using React and Tailwind CSS.
             <br />
-            The goal was to pick an API and build a front-end application
-            consuming it.
+            The goal was to pick an API and build a front-end application on top
+            of it.
             <br />
             <div className="flex">
               We chose to use the{" "}
@@ -142,8 +142,8 @@ function About() {
                       Maximilian Gliem (Emperor Max)
                     </h4>
                     <p class="leading-normal">
-                      Very clever, he used every tricks to push most lines on
-                      the project.
+                      Very clever, he used every tricks to be top contributor in
+                      the project repo.
                       <br />
                       Also code junkie, he can't go to sleep if he hasn't gotten
                       his drug fix even if he had to socialize in a late party
@@ -182,11 +182,12 @@ function About() {
                       Corentin (Erwann) Delande
                     </h4>
                     <p class="leading-normal pb-2 flex-1">
-                      True agility genius Corentin lead the group threw this
-                      project with an iron fist all along ! <br />
-                      Fun fact, he code the project without even understanding
-                      the basic principal of a callback function. <br />
-                      He is available for an internship from the 23 of february.
+                      True agility genius Corentin led the group through this
+                      project with an iron fist all along! <br />
+                      Fun fact, he coded the project without even understanding
+                      the basics of a callback function. <br />
+                      He is available for an internship from the 23rd of
+                      february.
                     </p>
                     <div className="flex grow justify-start items-end text-4xl">
                       <a
