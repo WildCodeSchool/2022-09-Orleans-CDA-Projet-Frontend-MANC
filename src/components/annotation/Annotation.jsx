@@ -27,7 +27,9 @@ const Annotation = (country) => {
 
   useEffect(() => {
     countryData &&
-      setCountryPopulation((countryData.population / 1000000).toFixed(1));
+      (countryData.population
+        ? setCountryPopulation((countryData.population / 1000000).toFixed(1))
+        : setCountryPopulation("n/a"));
   }, [countryData]);
 
   return (
@@ -65,12 +67,7 @@ const Annotation = (country) => {
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
-          {` Population: 
-            ${
-              countryData && countryData.population
-                ? `${countryPopulation} millions`
-                : "n/a"
-            }`}
+          {` Population: ${countryPopulation} millions`}
         </p>
       </div>
     </>
