@@ -50,21 +50,28 @@ const Annotation = (country) => {
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineCurrencyDollar />
           {`Currency: ${
-            countryData && Object.values(countryData.currencies)[0].name
+            countryData && countryData.currencies
+              ? Object.values(countryData.currencies)[0].name
+              : "n/a"
           }`}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
           Languages:
-          {countryData &&
-            Object.values(countryData.languages).map((language, index) => (
-              <span key={index}>{language}</span>
-            ))}
+          {countryData && countryData.languages
+            ? Object.values(countryData.languages).map((language, index) => (
+                <span key={index}>{language}</span>
+              ))
+            : "n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
           {` Population: 
-            ${countryData && countryPopulation} millions`}
+            ${
+              countryData && countryData.population
+                ? `${countryPopulation} millions`
+                : "n/a"
+            }`}
         </p>
       </div>
     </>
