@@ -60,11 +60,11 @@ const Annotation = (country) => {
           <IoChatbubbleEllipsesOutline />
           Languages:
           <div className="flex flex-col md:gap-2 md:flex-row">
-          {countryData && countryData.languages
-            ? Object.values(countryData.languages).map((language, index) => (
-                <span key={index}>{language}</span>
-              ))
-            : "n/a"}
+            {countryData && countryData.languages
+              ? Object.values(countryData.languages).map((language, index) => (
+                  <span key={index}>{language}</span>
+                ))
+              : "n/a"}
           </div>
         </p>
         <p className="flex items-center gap-2 text-lg">
