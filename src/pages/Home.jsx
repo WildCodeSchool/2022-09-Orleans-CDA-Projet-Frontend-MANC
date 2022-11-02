@@ -43,7 +43,7 @@ function Home() {
               data-aos="fade-in"
               data-aos-duration="500"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video4.png')] h-44"></div>
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/compass.jpg')] h-44"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Explore new countries
               </p>
@@ -56,7 +56,7 @@ function Home() {
               data-aos-duration="1200"
               data-aos-offset="-10"
             >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video3.png')] h-44"></div>
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/time.jpg')] h-44"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Test your knowledge
               </p>
