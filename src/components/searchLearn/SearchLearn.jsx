@@ -42,7 +42,7 @@ const SearchLearn = ({ setCountrySearchFound }) => {
         <input
           className="border border-solid w-full border-grey-800 rounded-r-md px-2 opacity-90"
           type="name"
-          placeholder="Canada, Paris, etc."
+          placeholder="Country name or capital"
           value={searchLearn}
           onChange={(event) => setSearchLearn(event.target.value)}
         />
