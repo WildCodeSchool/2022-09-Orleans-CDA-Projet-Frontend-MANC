@@ -30,7 +30,7 @@ const HowToPlay = () => {
 
   return (
     <div>
-      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+      <div className="fixed top-0 -z-10 h-full w-full md:h-screen">
         <video
           autoPlay
           loop
@@ -45,11 +45,11 @@ const HowToPlay = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="z-30 w-full relative top-16 flex flex-col gap-4 justify-center items-center">
+      <div className="absolute top-[80px] w-full md:h-[calc(100vh-80px)] flex flex-col justify-center items-center">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
-          className="rounded-lg p-6 w-[98%] lg:w-2/4 shadow-2xl bg-slate-800  bg-opacity-90"
+          className="rounded-lg p-6 w-[98%] my-5 lg:w-2/4 shadow-2xl bg-slate-800 bg-opacity-90 overflow-scroll"
         >
           <h1 className="text-center text-6xl px-3 mb-6 mt-2 text-white">
             How to Play?
@@ -182,7 +182,7 @@ const HowToPlay = () => {
                 className="text-red-500 text-xl text-center"
                 data-aos="fade-in"
                 data-aos-duration="700"
-                data-aos-offset="-200"
+                data-aos-offset="-500"
               >
                 Please select a game mode and a number of questions.
               </div>
