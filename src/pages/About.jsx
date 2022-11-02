@@ -38,7 +38,7 @@ function About() {
               </span>
             </h1>
 
-            <p className="text-xl text-white w-[90vw] md:w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-6 md:m-20 flex flex-col shadow-2xl">
+            <p className="text-xl text-white bg-slate-800 bg-opacity-70 rounded-md p-8 m-4 md:m-20 flex flex-col shadow-2xl">
               We are a group of 4 students currently training at the Orléans
               Wild Code School!
               <br />
@@ -68,14 +68,14 @@ function About() {
               </div>
             </p>
           </div>
-          <div className="container text-white max-w-5xl">
+          <div className="container text-white">
             <div
               class="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
               <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="md:flex-no-shrink">
+                <div class="flex-no-shrink">
                   <img
                     alt="Arthur"
                     class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
@@ -120,11 +120,11 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-1 card-block">
                   <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
-                    <p class="leading-normal">
+                    <p class="leading-normal mb-4 md:mb-0">
                       One of the ten fabled LaTeX enjoyers in the galaxy.
                       <br />
                       On the brink of divorce after saying "Javascript is not
@@ -162,11 +162,11 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-no-shrink">
                   <img
                     alt="Maximilian"
-                    class="w-64 h-64 block mx-auto"
+                    class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="max.jpg"
                   />
                 </div>
@@ -175,7 +175,7 @@ function About() {
                     <h4 class="font-medium text-2xl mb-3">
                       Maximilian Gliem (Emperor Max)
                     </h4>
-                    <p class="leading-normal">
+                    <p class="leading-normal mb-4 md:mb-0">
                       Very clever, he used every tricks to be top contributor in
                       the project repo.
                       <br />
@@ -209,13 +209,13 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-1 card-block">
                   <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">
                       Corentin (Erwann) Delande
                     </h4>
-                    <p class="leading-normal pb-2 flex-1">
+                    <p class="leading-normal pb-2 flex-1 mb-4 md:mb-0">
                       True agility genius Corentin led the group through this
                       project with an iron fist all along! <br />
                       Fun fact, he coded the project without even understanding
@@ -243,8 +243,8 @@ function About() {
                 </div>
                 <div class="flex-no-shrink">
                   <img
-                    alt="Corention"
-                    class="w-64 h-64 block mx-auto"
+                    alt="Corentin"
+                    class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="coco.jpg"
                   />
                 </div>
