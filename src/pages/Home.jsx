@@ -9,8 +9,8 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex justify-center">
-      <div className="absolute top-0 -z-10 h-[1100px] w-full md:h-screen min-h-[700px]">
+    <div className="md:h-[calc(100vh-80px)] flex flex-col items-center overflow-scroll">
+      <div className="fixed top-0 -z-10 h-full w-full">
         <video
           autoPlay
           loop
@@ -25,8 +25,8 @@ function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="absolute z-30 top-[200px] gap-24 flex flex-col justify-center items-center align">
-        <h1 className="text-7xl md:text-8xl w-fit bg-slate-800 bg-opacity-0 rounded-md flex flex-col">
+      <div className="h-full flex flex-col justify-evenly items-center py-5">
+        <h1 className="text-7xl md:text-8xl w-fit mb-10 bg-slate-800 bg-opacity-0 rounded-md flex flex-col">
           <div>
             <span className="text-green-400">Map</span>
             <span className="text-lightblue">Quest</span>
@@ -37,28 +37,29 @@ function Home() {
         </h1>
 
         <div className="flex flex-col md:flex-row gap-20">
-          <Link to="/learn">
-            <div
-              className="card w-80 hover:shadow-2xl"
-              data-aos="fade-in"
-              data-aos-duration="500"
-            >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video4.png')] h-44"></div>
-              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
-                Explore new countries
-              </p>
-            </div>
-          </Link>
           <Link to="/play">
             <div
               className="card w-80 hover:shadow-2xl"
               data-aos="fade-in"
               data-aos-duration="1200"
-              data-aos-offset="-10"
+              data-aos-offset="-500"
             >
               <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video3.png')] h-44"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Test your knowledge
+              </p>
+            </div>
+          </Link>
+          <Link to="/learn">
+            <div
+              className="card w-80 hover:shadow-2xl"
+              data-aos="fade-in"
+              data-aos-duration="500"
+              data-aos-offset="-500"
+            >
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video4.png')] h-44"></div>
+              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
+                Explore new countries
               </p>
             </div>
           </Link>
