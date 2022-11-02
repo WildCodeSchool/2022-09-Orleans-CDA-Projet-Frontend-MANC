@@ -32,7 +32,7 @@ const Learn = () => {
 
   return (
     <div>
-      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+      <div className="fixed top-0 -z-10 h-full w-full">
         <video
           autoPlay
           loop
