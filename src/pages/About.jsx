@@ -23,7 +23,7 @@ function About() {
               </span>
             </h1>
 
-            <p className="text-xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
+            <div className="text-xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
               We are a group of 4 students currently training at the Orléans
               Wild Code School!
               <br />
@@ -33,15 +33,14 @@ function About() {
               top of it.
               <br />
               <div className="flex">
-                We chose to use the{" "}
+                We chose to use the
                 <a
                   className="underline text-blue-500 px-1"
                   target="blank"
                   href="https://restcountries.com/"
                 >
-                  {" "}
-                  REST Countries API{" "}
-                </a>{" "}
+                  REST Countries API
+                </a>
                 with the idea of creating a pedagogic website about the world we
                 live in!
               </div>
@@ -51,28 +50,28 @@ function About() {
               <div className="flex justify-around pt-7">
                 <BsChevronDoubleDown />
               </div>
-            </p>
+            </div>
           </div>
           <div className="container text-white max-w-5xl">
             <div
-              class="mx-auto pb-10"
+              className="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-no-shrink">
+              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div className="flex-no-shrink">
                   <img
                     alt=""
-                    class="w-64 h-64 block mx-auto object-cover"
-                    src="monkas.jpg"
+                    className="w-64 h-64 block mx-auto object-cover"
+                    src="./monkas.jpg"
                   />
                 </div>
-                <div class="flex-1 card-block ">
-                  <div class="p-6 h-full flex flex-col">
-                    <h4 class="font-medium text-2xl mb-3">
+                <div className="flex-1 card-block ">
+                  <div className="p-6 h-full flex flex-col">
+                    <h4 className="font-medium text-2xl mb-3">
                       Arthur Baudoin (Cupcake Lover)
                     </h4>
-                    <p class="leading-normal">
+                    <p className="leading-normal">
                       GeoJSON enjoyer.
                       <br />
                       Badge hunter.
@@ -101,15 +100,17 @@ function About() {
             </div>
 
             <div
-              class="mx-auto pb-10"
+              className="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-1 card-block">
-                  <div class="p-6 flex flex-col h-full">
-                    <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
-                    <p class="leading-normal">
+              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div className="flex-1 card-block">
+                  <div className="p-6 flex flex-col h-full">
+                    <h4 className="font-medium text-2xl mb-3">
+                      Nolwenn Groult
+                    </h4>
+                    <p className="leading-normal">
                       One of the ten fabled LaTeX enjoyers in the galaxy.
                       <br />
                       On the brink of divorce after saying "Javascript is not
@@ -133,26 +134,34 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="nono.jpg" />
+                <div className="flex-no-shrink">
+                  <img
+                    alt=""
+                    className="w-64 h-64 block mx-auto"
+                    src="./nono.jpg"
+                  />
                 </div>
               </div>
             </div>
             <div
-              class="mx-auto pb-10"
+              className="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="max.jpg" />
+              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div className="flex-no-shrink">
+                  <img
+                    alt=""
+                    className="w-64 h-64 block mx-auto"
+                    src="./max.jpg"
+                  />
                 </div>
-                <div class="flex-1 card-block">
-                  <div class="p-6 h-full flex flex-col">
-                    <h4 class="font-medium text-2xl mb-3">
+                <div className="flex-1 card-block">
+                  <div className="p-6 h-full flex flex-col">
+                    <h4 className="font-medium text-2xl mb-3">
                       Maximilian Gliem (Emperor Max)
                     </h4>
-                    <p class="leading-normal">
+                    <p className="leading-normal">
                       Very clever, he used every tricks to be top contributor in
                       the project repo.
                       <br />
@@ -182,17 +191,17 @@ function About() {
             </div>
 
             <div
-              class="mx-auto pb-10"
+              className="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-1 card-block">
-                  <div class="p-6 flex flex-col h-full">
-                    <h4 class="font-medium text-2xl mb-3">
+              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div className="flex-1 card-block">
+                  <div className="p-6 flex flex-col h-full">
+                    <h4 className="font-medium text-2xl mb-3">
                       Corentin (Erwann) Delande
                     </h4>
-                    <p class="leading-normal pb-2 flex-1">
+                    <p className="leading-normal pb-2 flex-1">
                       True agility genius Corentin led the group through this
                       project with an iron fist all along! <br />
                       Fun fact, he coded the project without even understanding
@@ -218,8 +227,12 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="coco.jpg" />
+                <div className="flex-no-shrink">
+                  <img
+                    alt=""
+                    className="w-64 h-64 block mx-auto"
+                    src="./coco.jpg"
+                  />
                 </div>
               </div>
             </div>
@@ -231,7 +244,7 @@ function About() {
             loop
             muted
             className="object-fill w-full h-full"
-            poster="/img_video3.png"
+            poster="./img_video3.png"
           >
             <source
               src="http://37.187.90.23/mapquest/vid/video3new.mp4"
