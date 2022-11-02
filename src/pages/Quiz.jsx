@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import Answer from "../components/answer/Answer";
@@ -13,7 +13,10 @@ import QuizTimer from "../components/quizTimer/QuizTimer";
 
 const Quiz = () => {
   const location = useLocation();
-  const { checkedState: gameModes, questionNumber } = location.state;
+  const navigate = useNavigate();
+  const { checkedState: gameModes, questionNumber } = location.state
+    ? location.state
+    : {};
   const [questionType, setQuestionType] = useState(null);
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
@@ -22,6 +25,12 @@ const Quiz = () => {
 
   useEffect(() => {
     AOS.init();
+  }, []);
+
+  useEffect(() => {
+    if (!location.state) {
+      navigate("/play");
+    }
   }, []);
 
   const getAnswer = (clickedCountry) => {
