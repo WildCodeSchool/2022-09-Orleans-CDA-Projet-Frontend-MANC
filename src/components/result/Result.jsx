@@ -20,7 +20,7 @@ function Result({
   }, []);
   return (
     <div className="flex justify-items-center">
-      <div className="absolute top-0 -z-10 w-full h-[calc(100vh+150px)] sm:h-screen">
+      <div className="fixed top-0 -z-10 h-full w-full md:h-screen">
         <video
           autoPlay
           loop
@@ -40,7 +40,7 @@ function Result({
           data-aos="fade-in"
           data-aos-duration="600"
           data-aos-offset="-200"
-          className="text-8xl text-center w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
+          className="text-7xl md:text-8xl w-fit mb-10 flex flex-center"
         >
           <span className="text-green-400">Quiz </span>
           <span className="text-lightblue">done!</span>
@@ -57,7 +57,7 @@ function Result({
             totalTimer
           )} and ${counterCorrect} out of ${questionNumber} questions are correct.`}
         </div>
-        <div className="overflow-auto min-h-[200px] w-[95%] md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
+        <div className="md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response, index) => (
             <div
               key={index}
@@ -69,7 +69,7 @@ function Result({
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p className="flex justify-center items-center gap-1 font-bold">
-                {`${response.numQuestion}.`}{" "}
+                {`Question ${response.numQuestion}.`}{" "}
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
                 ) : response.question.includes("Currency") ? (
@@ -79,6 +79,8 @@ function Result({
                     <IoChatbubbleEllipsesOutline />
                   )
                 )}{" "}
+              </p>
+              <p className="font-bold">
                 {` ${response.questionType.phrase} ${response.questionType.request} ?`}
               </p>
 

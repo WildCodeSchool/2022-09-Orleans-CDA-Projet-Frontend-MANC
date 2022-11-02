@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import Answer from "../components/answer/Answer";
@@ -13,45 +13,19 @@ import QuizTimer from "../components/quizTimer/QuizTimer";
 
 const Quiz = () => {
   const location = useLocation();
-  const { checkedState: gameModes, questionNumber } = location.state;
+  const navigate = useNavigate();
+  const { checkedState: gameModes, questionNumber } = location.state
+    ? location.state
+    : {};
   const [questionType, setQuestionType] = useState(null);
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
   const [responseDone, setResponseDone] = useState("");
   const [numberResponseDone, setNumberResponseDone] = useState(null);
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  const getAnswer = (clickedCountry) => {
-    if (clickedCountry !== "") {
-      fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
-        .then((resp) => resp.json())
-        .then((data) => {
-          if (questionType.type === "currencies") {
-            setCountryAnswer(data[0].currencies);
-          }
-          if (questionType.type === "languages") {
-            setCountryAnswer(data[0].languages);
-          }
-        });
-    }
-  };
-
   const [clickedCountry, setClickedCountry] = useState("");
   const [preventClickCountry, setPreventClickCountry] = useState(false);
-
-  useEffect(() => {
-    getAnswer(clickedCountry);
-    const clickedCountryData = countryData.find((data) => {
-      return data.id === clickedCountry;
-    });
-    if (clickedCountryData) {
-      setMarkerCoordinates(clickedCountryData.coord);
-    }
-  }, [clickedCountry]);
-
+  const [number, setNumber] = useState(null);
   const [question, setQuestion] = useState("");
   const [markerCoordinates, setMarkerCoordinates] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -60,6 +34,40 @@ const Quiz = () => {
   const [allResponses, setAllResponses] = useState([]);
   const [timer, setTimer] = useState(0);
   const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
+    if (!location.state) {
+      navigate("/play");
+    }
+  }, []);
+
+  useEffect(() => {
+    const getAnswer = (clickedCountry) => {
+      if (clickedCountry !== "") {
+        fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
+          .then((resp) => resp.json())
+          .then((data) => {
+            if (questionType.type === "currencies") {
+              setCountryAnswer(data[0].currencies);
+            }
+            if (questionType.type === "languages") {
+              setCountryAnswer(data[0].languages);
+            }
+          });
+      }
+    };
+    getAnswer(clickedCountry);
+    const clickedCountryData = countryData.find((data) => {
+      return data.id === clickedCountry;
+    });
+    if (clickedCountryData) {
+      setMarkerCoordinates(clickedCountryData.coord);
+    }
+  }, [clickedCountry]);
 
   useEffect(() => {
     isConfirmed &&
@@ -180,8 +188,6 @@ const Quiz = () => {
     }
   }, [response]);
 
-  const [number, setNumber] = useState(null);
-
   useEffect(() => {
     setIsConfirmed(false);
     setPreventClickCountry(false);
@@ -189,16 +195,17 @@ const Quiz = () => {
     setMarkerCoordinates("");
   }, [question]);
 
-  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
-
   useEffect(() => {
-    !answer.isAnswered && setClickedCountry("");
     if (answer.isCorrect) {
       setCounterCorrect((prevCounter) => prevCounter + 1);
     }
     if (answer.isAnswered) {
       setCounterQuestion((prevCounter) => prevCounter + 1);
     }
+  }, [question]);
+
+  useEffect(() => {
+    !answer.isAnswered && setClickedCountry("");
   }, [answer]);
 
   useEffect(() => {
@@ -226,13 +233,13 @@ const Quiz = () => {
 
   return (
     <div>
-      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+      <div className="fixed h-full lg:absolute top-0 -z-10 w-full">
         <video
           autoPlay
           loop
           muted
           className="object-cover w-full h-full"
-          poster="./img_video2.png"
+          poster="/img_video2.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/video2new.mp4"
@@ -287,19 +294,23 @@ const Quiz = () => {
         </div>
       </div>
 
-      <RecapGame
-        score={score}
-        counterQuestion={counterQuestion}
-        questionNumber={questionNumber}
-        response={response}
-        timeToAnswer={
-          allResponses[allResponses.length - 1] &&
-          allResponses[allResponses.length - 1].timeToAnswer
-        }
-        responseDone={responseDone}
-        numberResponseDone={numberResponseDone}
-      />
-      <QuizTimer setTimer={setTimer} />
+      <div className="hidden xl:block">
+        <RecapGame
+          score={score}
+          counterQuestion={counterQuestion}
+          questionNumber={questionNumber}
+          response={response}
+          timeToAnswer={
+            allResponses[allResponses.length - 1] &&
+            allResponses[allResponses.length - 1].timeToAnswer
+          }
+          responseDone={responseDone}
+          numberResponseDone={numberResponseDone}
+        />
+      </div>
+      <div className="hidden xl:block">
+        <QuizTimer setTimer={setTimer} />
+      </div>
     </div>
   );
 };

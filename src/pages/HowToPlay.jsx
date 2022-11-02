@@ -30,13 +30,13 @@ const HowToPlay = () => {
 
   return (
     <div>
-      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+      <div className="fixed top-0 -z-10 h-full w-full md:h-screen">
         <video
           autoPlay
           loop
           muted
           className="object-cover w-full h-full"
-          poster="./img_video2.png"
+          poster="/img_video2.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/video2new.mp4"
@@ -45,11 +45,11 @@ const HowToPlay = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="absolute z-30 w-full top-[200px] flex flex-col gap-4 justify-center items-center">
+      <div className="absolute top-[80px] w-full md:h-[calc(100vh-80px)] flex flex-col justify-center items-center">
         <div
           data-aos="fade-in"
           data-aos-duration="400"
-          className="rounded-lg p-6 w-[98%] lg:w-2/4 shadow-2xl bg-slate-800  bg-opacity-90"
+          className="rounded-lg p-6 w-[98%] my-5 lg:w-2/4 shadow-2xl bg-slate-800 bg-opacity-90 overflow-scroll"
         >
           <h1 className="text-center text-6xl px-3 mb-6 mt-2 text-white">
             How to Play?
@@ -73,7 +73,7 @@ const HowToPlay = () => {
           <div className="flex flex-col items-center lg:items-start md:flex-row justify-evenly ">
             <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md ">
               <div className="hover:shadow-2xl shadow-xl flex flex-col ">
-                <div className="h-36 object-cover rounded-t-md bg-[url('/gamemode.jpg')] bg-no-repeat bg-cover "></div>
+                <div className="h-36 rounded-t-md bg-[url('/gamemode.png')] bg-[#76C2AF] bg-no-repeat bg-contain bg-center"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2 ">
                   Choose your game mode
                 </legend>
@@ -120,7 +120,7 @@ const HowToPlay = () => {
             </fieldset>
             <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md">
               <div className="hover:shadow-2xl shadow-xl flex flex-col">
-                <div className="h-36 object-cover rounded-t-md bg-[url('/question.png')] bg-no-repeat bg-cover"></div>
+                <div className="h-36 rounded-t-md bg-[url('/nbquestions.png')] bg-[#76C2AF] bg-no-repeat bg-contain bg-center"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2">
                   Number of questions
                 </legend>
@@ -182,7 +182,7 @@ const HowToPlay = () => {
                 className="text-red-500 text-xl text-center"
                 data-aos="fade-in"
                 data-aos-duration="700"
-                data-aos-offset="-200"
+                data-aos-offset="-500"
               >
                 Please select a game mode and a number of questions.
               </div>
