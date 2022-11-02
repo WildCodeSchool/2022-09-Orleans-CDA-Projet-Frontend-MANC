@@ -74,8 +74,8 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-no-shrink">
+              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-r-3xl">
+                <div>
                   <img
                     alt="Arthur"
                     class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
@@ -120,7 +120,7 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div class="flex-1 card-block">
                   <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
@@ -148,7 +148,7 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div class="flex-no-shrink">
+                <div>
                   <img
                     alt="Nolwenn"
                     class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
@@ -162,8 +162,8 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-no-shrink">
+              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-r-3xl">
+                <div>
                   <img
                     alt="Maximilian"
                     class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
@@ -209,7 +209,7 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div class="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div class="flex-1 card-block">
                   <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">
@@ -241,7 +241,7 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div class="flex-no-shrink">
+                <div>
                   <img
                     alt="Corentin"
                     class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
