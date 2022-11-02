@@ -36,11 +36,11 @@ const SearchLearn = ({ setCountrySearchFound }) => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex justify-center absolute w-full -bottom-4 text-2xl">
-      <div className="flex items-center opacity-90 border w-fit h-fit border-solid  shadow-2xl  rounded-md border-greyblue bg-greyblue">
-        <MdSearch className="ml-2 mr-2 text-2xl" />
+    <div className="flex w-64 md:w-96 absolute -bottom-4 text-2xl">
+      <div className="flex items-center opacity-90 border w-full h-fit border-solid  shadow-2xl  rounded-md border-greyblue bg-greyblue">
+        <MdSearch className="ml-2 mr-2 text-2xl w-1/8" />
         <input
-          className="border border-solid border-grey-800 rounded-r-md px-2 opacity-90"
+          className="border border-solid w-full border-grey-800 rounded-r-md px-2 opacity-90"
           type="name"
           placeholder="Canada, Paris, etc."
           value={searchLearn}
