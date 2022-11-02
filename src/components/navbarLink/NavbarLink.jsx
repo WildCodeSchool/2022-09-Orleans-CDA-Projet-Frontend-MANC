@@ -12,6 +12,18 @@ const NavbarLink = ({ isNavOpen, setIsNavOpen }) => {
         }`}
       >
         <NavLink
+          to="/learn"
+          className={({ isActive }) =>
+            isActive ? "text-lightblue" : "hover-underline-animation"
+          }
+          onClick={() => setIsNavOpen(false)}
+        >
+          <li className="flex items-center gap-2">
+            <span className="text-2xl">Learn</span>
+            <MdBook className="text-2xl" />
+          </li>
+        </NavLink>
+        <NavLink
           to="/play"
           className={({ isActive }) =>
             isActive
@@ -21,21 +33,9 @@ const NavbarLink = ({ isNavOpen, setIsNavOpen }) => {
           onClick={() => setIsNavOpen(false)}
         >
           <li className="flex items-center gap-2">
+            <MdNotStarted className="text-2xl hidden lg:block" />
             <span className="text-2xl">Play</span>
-            <MdNotStarted className="text-2xl" />
-          </li>
-        </NavLink>
-        <NavLink
-          to="/learn"
-          className={({ isActive }) =>
-            isActive ? "text-lightblue" : "hover-underline-animation"
-          }
-          onClick={() => setIsNavOpen(false)}
-        >
-          <li className="flex items-center gap-2">
-            <MdBook className="text-2xl hidden lg:block" />
-            <span className="text-2xl">Learn</span>
-            <MdBook className="text-2xl block lg:hidden" />
+            <MdNotStarted className="text-2xl block lg:hidden" />
           </li>
         </NavLink>
       </ul>

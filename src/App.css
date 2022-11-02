@@ -8,6 +8,9 @@ h4 {
   -webkit-text-stroke: 0.5px slategray;
 }
 
+#title_navbar {
+  font-family: "Crete round", sans-serif;
+}
 body {
   font-family: "Roboto", sans-serif;
 }

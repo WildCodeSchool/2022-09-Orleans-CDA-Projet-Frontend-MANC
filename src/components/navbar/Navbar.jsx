@@ -10,6 +10,7 @@ const Navbar = () => {
     <header className="bg-opacity-50 text-white w-full">
       <div className="flex h-20 w-full px-4">
         <NavLink
+          id="title_navbar"
           to="/"
           className={({ isActive }) =>
             isActive
