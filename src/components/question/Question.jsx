@@ -71,7 +71,7 @@ function Question({
   return (
     <div className="flex justify-center absolute w-2/3 bottom-8 z-10">
       <div className="flex items-center opacity-95 w-9/12 h-32 shadow-2xl p-4 rounded-md bg-slate-800 text-white">
-        <h2 className="text-center w-full text-3xl">
+        <h2 className="text-center w-full xl:text-3xl">
           {questionType && questionType.phrase}
           <b> {questionType && questionType.request} ?</b>
         </h2>
