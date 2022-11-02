@@ -121,7 +121,7 @@ const Map = ({
           )}
         </ZoomableGroup>
       </ComposableMap>
-      <div className="self-end">
+      <div className=" absolute bottom-2 right-2 self-end">
         <button className="button-round" onClick={handleZoomIn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
