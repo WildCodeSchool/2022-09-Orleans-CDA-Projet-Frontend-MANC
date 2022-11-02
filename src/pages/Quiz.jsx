@@ -18,10 +18,22 @@ const Quiz = () => {
     ? location.state
     : {};
   const [questionType, setQuestionType] = useState(null);
+  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
   const [countryAnswer, setCountryAnswer] = useState(null);
   const [response, setResponse] = useState("");
   const [responseDone, setResponseDone] = useState("");
   const [numberResponseDone, setNumberResponseDone] = useState(null);
+  const [clickedCountry, setClickedCountry] = useState("");
+  const [preventClickCountry, setPreventClickCountry] = useState(false);
+  const [number, setNumber] = useState(null);
+  const [question, setQuestion] = useState("");
+  const [markerCoordinates, setMarkerCoordinates] = useState("");
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [counterCorrect, setCounterCorrect] = useState(0);
+  const [counterQuestion, setCounterQuestion] = useState(1);
+  const [allResponses, setAllResponses] = useState([]);
+  const [timer, setTimer] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     AOS.init();
@@ -33,25 +45,21 @@ const Quiz = () => {
     }
   }, []);
 
-  const getAnswer = (clickedCountry) => {
-    if (clickedCountry !== "") {
-      fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
-        .then((resp) => resp.json())
-        .then((data) => {
-          if (questionType.type === "currencies") {
-            setCountryAnswer(data[0].currencies);
-          }
-          if (questionType.type === "languages") {
-            setCountryAnswer(data[0].languages);
-          }
-        });
-    }
-  };
-
-  const [clickedCountry, setClickedCountry] = useState("");
-  const [preventClickCountry, setPreventClickCountry] = useState(false);
-
   useEffect(() => {
+    const getAnswer = (clickedCountry) => {
+      if (clickedCountry !== "") {
+        fetch(`https://restcountries.com/v3.1/alpha/${clickedCountry}`)
+          .then((resp) => resp.json())
+          .then((data) => {
+            if (questionType.type === "currencies") {
+              setCountryAnswer(data[0].currencies);
+            }
+            if (questionType.type === "languages") {
+              setCountryAnswer(data[0].languages);
+            }
+          });
+      }
+    };
     getAnswer(clickedCountry);
     const clickedCountryData = countryData.find((data) => {
       return data.id === clickedCountry;
@@ -60,15 +68,6 @@ const Quiz = () => {
       setMarkerCoordinates(clickedCountryData.coord);
     }
   }, [clickedCountry]);
-
-  const [question, setQuestion] = useState("");
-  const [markerCoordinates, setMarkerCoordinates] = useState("");
-  const [isConfirmed, setIsConfirmed] = useState(false);
-  const [counterCorrect, setCounterCorrect] = useState(0);
-  const [counterQuestion, setCounterQuestion] = useState(1);
-  const [allResponses, setAllResponses] = useState([]);
-  const [timer, setTimer] = useState(0);
-  const [score, setScore] = useState(0);
 
   useEffect(() => {
     isConfirmed &&
@@ -189,20 +188,12 @@ const Quiz = () => {
     }
   }, [response]);
 
-  const [number, setNumber] = useState(null);
-
   useEffect(() => {
     setIsConfirmed(false);
     setPreventClickCountry(false);
     setAnswer({ isAnswered: false, isCorrect: false });
     setMarkerCoordinates("");
   }, [question]);
-
-  const [answer, setAnswer] = useState({ isAnswered: false, isCorrect: false });
-
-  useEffect(() => {
-    !answer.isAnswered && setClickedCountry("");
-  }, [answer]);
 
   useEffect(() => {
     if (answer.isCorrect) {
@@ -212,6 +203,10 @@ const Quiz = () => {
       setCounterQuestion((prevCounter) => prevCounter + 1);
     }
   }, [question]);
+
+  useEffect(() => {
+    !answer.isAnswered && setClickedCountry("");
+  }, [answer]);
 
   useEffect(() => {
     if (allResponses[allResponses.length - 1] && answer.isCorrect) {
