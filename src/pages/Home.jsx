@@ -16,7 +16,7 @@ function Home() {
           loop
           muted
           className="object-cover w-full h-full"
-          poster="./imgHome.png"
+          poster="/imgHome.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
