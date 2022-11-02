@@ -109,14 +109,24 @@ function About() {
                   <div class="p-6 flex flex-col h-full">
                     <h4 class="font-medium text-2xl mb-3">Nolwenn Groult</h4>
                     <p class="leading-normal">
-                      Magni inventore repellat dignissimos eveniet dolore ex sit
-                      illo adipisci accusamus quos.
+                      One of the ten fabled LaTeX enjoyers in the galaxy.
+                      <br />
+                      On the brink of divorce after saying "Javascript is not
+                      that bad".
                     </p>
                     <div className="flex grow justify-start items-end text-4xl">
-                      <a className="underline pr-6" target="blank" href="">
+                      <a
+                        className="underline pr-6"
+                        target="blank"
+                        href="https://github.com/ngroult"
+                      >
                         <BsGithub />
                       </a>
-                      <a className="underline" target="blank" href="">
+                      <a
+                        className="underline"
+                        target="blank"
+                        href="https://www.linkedin.com/in/nolwenn-groult-23453a134"
+                      >
                         <BsLinkedin />
                       </a>
                     </div>
