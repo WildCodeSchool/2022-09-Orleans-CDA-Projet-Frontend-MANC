@@ -1,5 +1,5 @@
 import { TbBuilding } from "react-icons/tb";
-import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { GrCurrency } from "react-icons/gr";
 import { HiOutlineUsers } from "react-icons/hi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
@@ -36,7 +36,7 @@ const Annotation = (country) => {
       <div
         data-aos="zoom-in"
         data-aos-duration="400"
-        className="absolute -left-16 right-0 -top-16 w-fit bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid m-6"
+        className="absolute md:-left-16 md:right-0 md:-top-16 md:w-fit w-80 -top-16 bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid md:mx-8 md:my-6"
       >
         <h2 className="text-2xl text-center font-semibold mb-4">
           {countryData && countryData.name.common + " " + countryData.flag}
@@ -48,18 +48,20 @@ const Annotation = (country) => {
             : "Capital: n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
-          <HiOutlineCurrencyDollar />
+          <GrCurrency />
           {`Currency: ${
             countryData && Object.values(countryData.currencies)[0].name
           }`}
         </p>
-        <p className="flex items-center gap-2 text-lg">
+        <p className="flex  items-start md:items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
           Languages:
-          {countryData &&
-            Object.values(countryData.languages).map((language, index) => (
-              <span key={index}>{language}</span>
-            ))}
+          <div className="flex flex-col md:gap-2 md:flex-row">
+            {countryData &&
+              Object.values(countryData.languages).map((language, index) => (
+                <span key={index}>{language}</span>
+              ))}
+          </div>
         </p>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
