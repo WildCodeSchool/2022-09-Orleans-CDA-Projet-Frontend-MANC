@@ -73,7 +73,7 @@ const HowToPlay = () => {
           <div className="flex flex-col items-center lg:items-start md:flex-row justify-evenly ">
             <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md ">
               <div className="hover:shadow-2xl shadow-xl flex flex-col ">
-                <div className="h-36 object-cover rounded-t-md bg-[url('/gamemode.jpg')] bg-no-repeat bg-cover "></div>
+                <div className="h-36 rounded-t-md bg-[url('/gamemode.png')] bg-[#76C2AF] bg-no-repeat bg-contain bg-center"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2 ">
                   Choose your game mode
                 </legend>
@@ -120,7 +120,7 @@ const HowToPlay = () => {
             </fieldset>
             <fieldset className="w-[90%] md:w-1/3 my-4 flex flex-col bg-white rounded-md">
               <div className="hover:shadow-2xl shadow-xl flex flex-col">
-                <div className="h-36 object-cover rounded-t-md bg-[url('/question.png')] bg-no-repeat bg-cover"></div>
+                <div className="h-36 rounded-t-md bg-[url('/nbquestions.png')] bg-[#76C2AF] bg-no-repeat bg-contain bg-center"></div>
                 <legend className="text-lg whitespace-nowrap text-center p-2">
                   Number of questions
                 </legend>
