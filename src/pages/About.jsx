@@ -10,10 +10,25 @@ function About() {
 
   return (
     <div>
+      <div className="fixed top-0 -z-10 h-full  w-full ">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video3.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/home3new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <header className="flex items-center justify-center h-screen overflow-hidden">
         <div className="absolute z-30 top-[80px] flex flex-col items-center">
-          <div className="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
-            <h1 className="text-7xl w-fit bg-opacity-70 rounded-md p-10 m-20 flex flex-col ">
+          <div className="flex flex-col justify-center items-center h-100 md:h-[calc(100vh-80px)]">
+            <h1 className=" text-5xl mt-10 md:text-7xl w-fit bg-opacity-70 rounded-md md:p-10 md:m-20 flex flex-col ">
               <div>
                 <span className="text-green-400">About </span>
                 <span className="text-lightblue">Us</span>
@@ -23,7 +38,7 @@ function About() {
               </span>
             </h1>
 
-            <p className="text-xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
+            <p className="text-xl text-white w-[90vw] md:w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-6 md:m-20 flex flex-col shadow-2xl">
               We are a group of 4 students currently training at the Orléans
               Wild Code School!
               <br />
@@ -32,7 +47,7 @@ function About() {
               The goal was to pick an API and build a front-end application on
               top of it.
               <br />
-              <div className="flex">
+              <div className="inline">
                 We chose to use the{" "}
                 <a
                   className="underline text-blue-500 px-1"
@@ -59,20 +74,20 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div class="flex-no-shrink">
+              <div class="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-3xl">
+                <div class="md:flex-no-shrink">
                   <img
-                    alt=""
-                    class="w-64 h-64 block mx-auto object-cover"
+                    alt="Arthur"
+                    class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="monkas.jpg"
                   />
                 </div>
-                <div class="flex-1 card-block ">
+                <div class="flex-1">
                   <div class="p-6 h-full flex flex-col">
                     <h4 class="font-medium text-2xl mb-3">
                       Arthur Baudoin (Cupcake Lover)
                     </h4>
-                    <p class="leading-normal">
+                    <p class="leading-normal mb-4 md:mb-0">
                       GeoJSON enjoyer.
                       <br />
                       Badge hunter.
@@ -134,7 +149,11 @@ function About() {
                   </div>
                 </div>
                 <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="nono.jpg" />
+                  <img
+                    alt="Nolwenn"
+                    class="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
+                    src="nono.jpg"
+                  />
                 </div>
               </div>
             </div>
@@ -145,7 +164,11 @@ function About() {
             >
               <div class="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
                 <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="max.jpg" />
+                  <img
+                    alt="Maximilian"
+                    class="w-64 h-64 block mx-auto"
+                    src="max.jpg"
+                  />
                 </div>
                 <div class="flex-1 card-block">
                   <div class="p-6 h-full flex flex-col">
@@ -219,26 +242,15 @@ function About() {
                   </div>
                 </div>
                 <div class="flex-no-shrink">
-                  <img alt="" class="w-64 h-64 block mx-auto" src="coco.jpg" />
+                  <img
+                    alt="Corention"
+                    class="w-64 h-64 block mx-auto"
+                    src="coco.jpg"
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="fixed top-0 -z-10 w-full">
-          <video
-            autoPlay
-            loop
-            muted
-            className="object-fill w-full h-full"
-            poster="/img_video3.png"
-          >
-            <source
-              src="http://37.187.90.23/mapquest/vid/video3new.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
         </div>
       </header>
     </div>
