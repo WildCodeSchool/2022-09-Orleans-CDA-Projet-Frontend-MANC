@@ -114,7 +114,7 @@
   {
     "id": "BHS",
     "name": "Bahamas",
-    "coord": [-76, 24.25],
+    "coord": [-78, 25.5],
     "difficulty": "medium",
     "color": "teal"
   },
@@ -1276,7 +1276,7 @@
   {
     "id": "NRU",
     "name": "Nauru",
-    "coord": [166.9167, -0.5333],
+    "coord": [167.3, 0.9],
     "difficulty": "medium",
     "color": "teal"
   },
