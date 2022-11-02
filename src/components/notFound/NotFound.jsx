@@ -12,7 +12,7 @@ const NotFound = () => (
     </div>
     <div className="text-white flex flex-col items-start ml-48 mt-48 text-3xl">
       <h1>404 - Not Found!</h1>
-      <h1>Looks like your lost in the universe!</h1>
+      <h1>Looks like you're lost in the universe!</h1>
 
       <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow mt-8">
         <div class="absolute inset-0 w-3 bg-lightblue transition-all duration-[1500ms] ease-out group-hover:w-full"></div>
