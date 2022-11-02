@@ -40,7 +40,7 @@ function Result({
           data-aos="fade-in"
           data-aos-duration="600"
           data-aos-offset="-200"
-          className="text-8xl text-center w-fit bg-slate-800 bg-opacity-80 rounded-xl p-8 m-10 border-solid border-2 border-slate-800 shadow-2xl"
+          className="text-8xl text-center w-fit p-8 m-10"
         >
           <span className="text-green-400">Quiz </span>
           <span className="text-lightblue">done!</span>
@@ -49,7 +49,7 @@ function Result({
           data-aos="fade-in"
           data-aos-duration="600"
           data-aos-offset="-200"
-          className=" mb-10 text-2xl w-[95%] md:w-2/3 text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-2 md:px-8 text-center border-solid border-2 border-slate-800"
+          className=" text-2xl w-[95%] md:w-2/3 text-white bg-slate-800 bg-opacity-80 rounded-lg py-5 px-2 md:px-8 text-center border-solid border-2 border-slate-800"
         >
           {`Congratulations, your scored ${score}.`}
           <br />
