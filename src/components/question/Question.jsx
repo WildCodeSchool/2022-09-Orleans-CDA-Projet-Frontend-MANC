@@ -69,7 +69,7 @@ function Question({
   }, [isAnswered]);
 
   return (
-    <div className="flex justify-center absolute w-2/3 bottom-8 z-10">
+    <div className="flex justify-center absolute w-5/6 lg:w-2/3 bottom-8 z-10">
       <div className="flex items-center opacity-95 w-9/12 h-32 shadow-2xl p-4 rounded-md bg-slate-800 text-white">
         <h2 className="text-center w-full xl:text-3xl">
           {questionType && questionType.phrase}
