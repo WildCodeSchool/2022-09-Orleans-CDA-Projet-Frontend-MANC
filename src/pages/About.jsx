@@ -10,10 +10,25 @@ function About() {
 
   return (
     <div>
+      <div className="fixed top-0 -z-10 h-full  w-full ">
+        <video
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full"
+          poster="./img_video3.png"
+        >
+          <source
+            src="http://37.187.90.23/mapquest/vid/video3new.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <header className="flex items-center justify-center h-screen overflow-hidden">
         <div className="absolute z-30 top-[80px] flex flex-col items-center">
-          <div className="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
-            <h1 className="text-7xl w-fit bg-opacity-70 rounded-md p-10 m-20 flex flex-col ">
+          <div className="flex flex-col justify-center items-center h-100 md:h-[calc(100vh-80px)]">
+            <h1 className=" text-5xl mt-10 md:text-7xl w-fit bg-opacity-70 rounded-md md:p-10 md:m-20 flex flex-col ">
               <div>
                 <span className="text-green-400">About </span>
                 <span className="text-lightblue">Us</span>
@@ -23,7 +38,7 @@ function About() {
               </span>
             </h1>
 
-            <div className="text-xl text-white w-fit bg-slate-800 bg-opacity-70 rounded-md p-8 m-20 flex flex-col shadow-2xl">
+            <div className="text-xl text-white bg-slate-800 bg-opacity-70 rounded-md p-8 m-4 mt-6 md:m-20 flex flex-col shadow-2xl">
               We are a group of 4 students currently training at the Orléans
               Wild Code School!
               <br />
@@ -32,8 +47,8 @@ function About() {
               The goal was to pick an API and build a front-end application on
               top of it.
               <br />
-              <div className="flex">
-                We chose to use the
+              <div className="inline">
+                We chose to use the{" "}
                 <a
                   className="underline text-blue-500 px-1"
                   target="blank"
@@ -52,26 +67,26 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="container text-white max-w-5xl">
+          <div className="container text-white">
             <div
               className="mx-auto pb-10"
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div className="flex-no-shrink">
+              <div className="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-r-3xl">
+                <div>
                   <img
-                    alt=""
-                    className="w-64 h-64 block mx-auto object-cover"
+                    alt="Arthur"
+                    className="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="./monkas.jpg"
                   />
                 </div>
-                <div className="flex-1 card-block ">
+                <div className="flex-1">
                   <div className="p-6 h-full flex flex-col">
                     <h4 className="font-medium text-2xl mb-3">
                       Arthur Baudoin (Cupcake Lover)
                     </h4>
-                    <p className="leading-normal">
+                    <p className="leading-normal mb-4 md:mb-0">
                       GeoJSON enjoyer.
                       <br />
                       Badge hunter.
@@ -104,13 +119,13 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div className="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div className="flex-1 card-block">
                   <div className="p-6 flex flex-col h-full">
                     <h4 className="font-medium text-2xl mb-3">
                       Nolwenn Groult
                     </h4>
-                    <p className="leading-normal">
+                    <p className="leading-normal mb-4 md:mb-0">
                       One of the ten fabled LaTeX enjoyers in the galaxy.
                       <br />
                       On the brink of divorce after saying "Javascript is not
@@ -134,10 +149,10 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-no-shrink">
+                <div>
                   <img
-                    alt=""
-                    className="w-64 h-64 block mx-auto"
+                    alt="Nolwenn"
+                    className="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="./nono.jpg"
                   />
                 </div>
@@ -148,11 +163,11 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
-                <div className="flex-no-shrink">
+              <div className="shadow-lg flex m-4 flex-col md:flex-row bg-slate-800 bg-opacity-80 rounded-r-3xl">
+                <div>
                   <img
-                    alt=""
-                    className="w-64 h-64 block mx-auto"
+                    alt="Maximilian"
+                    className="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="./max.jpg"
                   />
                 </div>
@@ -161,7 +176,7 @@ function About() {
                     <h4 className="font-medium text-2xl mb-3">
                       Maximilian Gliem (Emperor Max)
                     </h4>
-                    <p className="leading-normal">
+                    <p className="leading-normal mb-4 md:mb-0">
                       Very clever, he used every tricks to be top contributor in
                       the project repo.
                       <br />
@@ -195,13 +210,13 @@ function About() {
               data-aos="fade-in"
               data-aos-duration="1500"
             >
-              <div className="m-0 shadow-lg flex bg-slate-800 bg-opacity-80 rounded-3xl">
+              <div className="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div className="flex-1 card-block">
                   <div className="p-6 flex flex-col h-full">
                     <h4 className="font-medium text-2xl mb-3">
                       Corentin (Erwann) Delande
                     </h4>
-                    <p className="leading-normal pb-2 flex-1">
+                    <p className="leading-normal pb-2 flex-1 mb-4 md:mb-0">
                       True agility genius Corentin led the group through this
                       project with an iron fist all along! <br />
                       Fun fact, he coded the project without even understanding
@@ -227,31 +242,16 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-no-shrink">
+                <div>
                   <img
-                    alt=""
-                    className="w-64 h-64 block mx-auto"
+                    alt="Corentin"
+                    className="w-64 h-64 pt-6 md:p-0 block mx-auto object-cover"
                     src="./coco.jpg"
                   />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="fixed top-0 -z-10 w-full">
-          <video
-            autoPlay
-            loop
-            muted
-            className="object-fill w-full h-full"
-            poster="./img_video3.png"
-          >
-            <source
-              src="http://37.187.90.23/mapquest/vid/video3new.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
         </div>
       </header>
     </div>
