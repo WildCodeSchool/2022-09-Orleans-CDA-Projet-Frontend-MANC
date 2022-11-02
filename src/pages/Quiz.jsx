@@ -238,13 +238,13 @@ const Quiz = () => {
 
   return (
     <div>
-      <div className="absolute top-0 -z-10 h-[1500px] sm:h-[1400px] w-full md:h-screen">
+      <div className="fixed h-full lg:absolute top-0 -z-10 w-full">
         <video
           autoPlay
           loop
           muted
           className="object-cover w-full h-full"
-          poster="./img_video2.png"
+          poster="/img_video2.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/video2new.mp4"
@@ -299,19 +299,23 @@ const Quiz = () => {
         </div>
       </div>
 
-      <RecapGame
-        score={score}
-        counterQuestion={counterQuestion}
-        questionNumber={questionNumber}
-        response={response}
-        timeToAnswer={
-          allResponses[allResponses.length - 1] &&
-          allResponses[allResponses.length - 1].timeToAnswer
-        }
-        responseDone={responseDone}
-        numberResponseDone={numberResponseDone}
-      />
-      <QuizTimer setTimer={setTimer} />
+      <div className="hidden xl:block">
+        <RecapGame
+          score={score}
+          counterQuestion={counterQuestion}
+          questionNumber={questionNumber}
+          response={response}
+          timeToAnswer={
+            allResponses[allResponses.length - 1] &&
+            allResponses[allResponses.length - 1].timeToAnswer
+          }
+          responseDone={responseDone}
+          numberResponseDone={numberResponseDone}
+        />
+      </div>
+      <div className="hidden xl:block">
+        <QuizTimer setTimer={setTimer} />
+      </div>
     </div>
   );
 };
