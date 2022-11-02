@@ -37,19 +37,6 @@ function Home() {
         </h1>
 
         <div className="flex flex-col md:flex-row gap-20">
-          <Link to="/play">
-            <div
-              className="card w-80 hover:shadow-2xl"
-              data-aos="fade-in"
-              data-aos-duration="1200"
-              data-aos-offset="-500"
-            >
-              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video3.png')] h-44"></div>
-              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
-                Test your knowledge
-              </p>
-            </div>
-          </Link>
           <Link to="/learn">
             <div
               className="card w-80 hover:shadow-2xl"
@@ -60,6 +47,19 @@ function Home() {
               <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video4.png')] h-44"></div>
               <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
                 Explore new countries
+              </p>
+            </div>
+          </Link>
+          <Link to="/play">
+            <div
+              className="card w-80 hover:shadow-2xl"
+              data-aos="fade-in"
+              data-aos-duration="1200"
+              data-aos-offset="-500"
+            >
+              <div className=" bg-norepeat rounded-t-md bg-cover bg-[url('/img_video3.png')] h-44"></div>
+              <p className="text-xl bg-slate-800 text-white bg-opacity-80 p-4 text-center rounded-b-md ">
+                Test your knowledge
               </p>
             </div>
           </Link>
