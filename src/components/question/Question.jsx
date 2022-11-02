@@ -50,7 +50,7 @@ function Question({
         },
         {
           type: "languages",
-          phrase: "Which country has for primary language :",
+          phrase: "Which country has for language :",
           request: Object.values(question[0].languages)[0],
         },
       ];
