@@ -6,29 +6,19 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Annotation = (country) => {
+const Annotation = ({ countryData }) => {
   useEffect(() => {
     AOS.init();
   }, []);
 
-  const [countryData, setCountryData] = useState();
   const [countryPopulation, setCountryPopulation] = useState();
-
-  useEffect(() => {
-    const getResponse = async () => {
-      const res = await fetch(
-        "https://restcountries.com/v3.1/alpha/" + country.country
-      );
-      const data = await res.json();
-      setCountryData(data[0]);
-    };
-    getResponse();
-  }, [country]);
 
   useEffect(() => {
     countryData &&
       (countryData.population
-        ? setCountryPopulation((countryData.population / 1000000).toFixed(1))
+        ? countryData.population > 1000000
+          ? setCountryPopulation((countryData.population / 1000000).toFixed(1))
+          : setCountryPopulation(countryData.population)
         : setCountryPopulation("n/a"));
   }, [countryData]);
 
@@ -56,7 +46,7 @@ const Annotation = (country) => {
               : "n/a"
           }`}
         </p>
-        <p className="flex  items-start md:items-center gap-2 text-lg">
+        <div className="flex items-start md:items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
           Languages:
           <div className="flex flex-col md:gap-2 md:flex-row">
@@ -66,10 +56,12 @@ const Annotation = (country) => {
                 ))
               : "n/a"}
           </div>
-        </p>
+        </div>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
-          {` Population: ${countryPopulation} millions`}
+          {`Population: ${countryPopulation} ${
+            countryData.population > 1000000 ? "millions" : "inhabitants"
+          } `}
         </p>
       </div>
     </>

@@ -11,33 +11,38 @@ const NavbarLink = ({ isNavOpen, setIsNavOpen }) => {
             : "gap-8 items-center pr-[109px]"
         }`}
       >
-        <NavLink
-          to="/learn"
-          className={({ isActive }) =>
-            isActive ? "text-lightblue" : "hover-underline-animation"
-          }
-          onClick={() => setIsNavOpen(false)}
-        >
-          <li className="flex items-center gap-2">
-            <span className="text-2xl">Learn</span>
-            <MdBook className="text-2xl" />
-          </li>
-        </NavLink>
-        <NavLink
-          to="/play"
-          className={({ isActive }) =>
-            isActive
-              ? "text-lightblue w-fit"
-              : "hover-underline-animation w-fit"
-          }
-          onClick={() => setIsNavOpen(false)}
-        >
-          <li className="flex items-center gap-2">
-            <MdNotStarted className="text-2xl hidden lg:block" />
-            <span className="text-2xl">Play</span>
-            <MdNotStarted className="text-2xl block lg:hidden" />
-          </li>
-        </NavLink>
+        <li className="flex items-center gap-2 text-2xl">
+          <NavLink
+            to="/learn"
+            className={({ isActive }) =>
+              isActive ? "text-lightblue" : "hover-underline-animation"
+            }
+            onClick={() => setIsNavOpen(false)}
+          >
+            <div className="flex items-center gap-2">
+              Learn
+              <MdBook className="text-2xl" />
+            </div>
+          </NavLink>
+        </li>
+
+        <li className="flex items-center gap-2 text-2xl">
+          <NavLink
+            to="/play"
+            className={({ isActive }) =>
+              isActive
+                ? "text-lightblue w-fit"
+                : "hover-underline-animation w-fit"
+            }
+            onClick={() => setIsNavOpen(false)}
+          >
+            <div className="flex items-center gap-2">
+              <MdNotStarted className="text-2xl hidden lg:block" />
+              Play
+              <MdNotStarted className="text-2xl block lg:hidden" />
+            </div>
+          </NavLink>
+        </li>
       </ul>
       <div className={`${isNavOpen && "py-5"} flex items-center`}>
         <NavLink

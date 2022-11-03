@@ -8,9 +8,12 @@ const Learn = () => {
   const [clickedCountry, setClickedCountry] = useState("");
   const [countrySearchFound, setCountrySearchFound] = useState("");
   const [markerFoundCoordinate, setMarkerFoundCoordinate] = useState("");
+  const [countryData, setCountryData] = useState();
 
   useEffect(() => {
-    setClickedCountry(countrySearchFound);
+    countrySearchFound
+      ? setClickedCountry(countrySearchFound)
+      : setCountryData();
   }, [countrySearchFound]);
 
   useEffect(() => {
@@ -19,6 +22,15 @@ const Learn = () => {
 
   useEffect(() => {
     if (clickedCountry) {
+      const getResponse = async () => {
+        const res = await fetch(
+          "https://restcountries.com/v3.1/alpha/" + clickedCountry
+        );
+        const data = await res.json();
+        setCountryData(data[0]);
+      };
+      getResponse();
+
       const foundCountryData = countries.find(
         (data) => data.id === clickedCountry
       );
@@ -57,7 +69,7 @@ const Learn = () => {
               }
               markerCoordinates={markerFoundCoordinate}
             />
-            {clickedCountry && <Annotation country={clickedCountry} />}
+            {countryData && <Annotation countryData={countryData} />}
             <SearchLearn setCountrySearchFound={setCountrySearchFound} />
           </div>
         </div>

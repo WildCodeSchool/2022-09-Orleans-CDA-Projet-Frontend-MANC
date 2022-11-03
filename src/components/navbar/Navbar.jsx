@@ -15,7 +15,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "flex items-center justify-center"
-              : " opacity-40 flex items-center justify-center"
+              : "opacity-40 flex items-center justify-center"
           }
         >
           <img className="h-16" src="./icon.png" alt="" />

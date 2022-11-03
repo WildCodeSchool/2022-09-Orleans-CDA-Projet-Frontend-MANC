@@ -69,7 +69,7 @@ function Result({
             my-10 mx-5 text-2xl bg-opacity-60 rounded-lg p-5 text-center border-solid border-2`}
             >
               <p className="flex justify-center items-center gap-1 font-bold">
-                {`Question ${response.numQuestion}.`}{" "}
+                {`Question ${response.numQuestion}.`}
                 {response.question.includes("Capital") ? (
                   <TbBuilding />
                 ) : response.question.includes("Currency") ? (
@@ -78,7 +78,7 @@ function Result({
                   response.question.includes("Language") && (
                     <IoChatbubbleEllipsesOutline />
                   )
-                )}{" "}
+                )}
               </p>
               <p className="font-bold">
                 {` ${response.questionType.phrase} ${response.questionType.request} ?`}
@@ -87,9 +87,9 @@ function Result({
               <p>
                 {response.answerResult ? (
                   <span className="text-green-800">
-                    {`You answered right `}{" "}
-                    <span className="font-bold">{response.userResponse}</span>{" "}
-                    {` in `}{" "}
+                    {`You answered right `}
+                    <span className="font-bold">{response.userResponse}</span>
+                    {` in `}
                     <span className="font-bold">
                       {readableTimer(response.timeToAnswer)}
                     </span>
@@ -97,9 +97,9 @@ function Result({
                   </span>
                 ) : (
                   <span className="text-red-800">
-                    {`You answered wrong `}{" "}
-                    <span className="font-bold">{response.userResponse}</span>{" "}
-                    {` in `}{" "}
+                    {`You answered wrong `}
+                    <span className="font-bold">{response.userResponse}</span>
+                    {` in `}
                     <span className="font-bold">
                       {readableTimer(response.timeToAnswer)}
                     </span>
@@ -110,7 +110,7 @@ function Result({
               {response.questionType.type === "capital" ? (
                 <p>
                   <span className="font-bold">{response.goodAnswer}</span>
-                  {` was the answer!`}{" "}
+                  {` was the answer!`}
                 </p>
               ) : (
                 <p>

@@ -20,7 +20,7 @@ const Answer = ({ answer, questionType, response }) => {
       </h1>
       {questionType.type === "capital" ? (
         <p className="text-lg text-white font-semibold">
-          {response} was the answer!{" "}
+          {response} was the answer!
         </p>
       ) : (
         <p className="text-lg text-white font-semibold">

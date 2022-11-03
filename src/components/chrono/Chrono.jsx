@@ -47,7 +47,7 @@ const Chrono = () => {
   }, []);
 
   return (
-    <div className="z-50 absolute  -left-20">
+    <div className="z-50 absolute -left-20">
       <div className="p-4">
         <div className="text-white taille">
           <div className="timer-group">
