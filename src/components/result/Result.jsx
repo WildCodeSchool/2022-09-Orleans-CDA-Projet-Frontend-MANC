@@ -35,7 +35,7 @@ function Result({
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="flex flex-col items-center absolute top-[80px] z-10 w-full h-[calc(100vh-80px)] overflow-scroll">
+      <div className="flex flex-col items-center absolute top-[80px] z-10 w-full h-[calc(100vh-80px)]">
         <h1
           data-aos="fade-in"
           data-aos-duration="600"
@@ -57,7 +57,7 @@ function Result({
             totalTimer
           )} and ${counterCorrect} out of ${questionNumber} questions are correct.`}
         </div>
-        <div className="md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
+        <div className="md:w-2/3 text-2xl m-2 overflow-auto bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
           {allResponses.map((response, index) => (
             <div
               key={index}
