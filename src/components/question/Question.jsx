@@ -20,10 +20,10 @@ function Question({
         if (timeout) {
           setPreventClickCountry(true);
           setTimeout(() => {
-            setQuestion(data);
+            setQuestion(data[0]);
           }, 2000);
         } else {
-          setQuestion(data);
+          setQuestion(data[0]);
         }
       });
   };
@@ -41,17 +41,17 @@ function Question({
         {
           type: "capital",
           phrase: "Which country has for capital:",
-          request: question[0].capital[0],
+          request: question.capital[0],
         },
         {
           type: "currencies",
           phrase: "Which country has for money:",
-          request: Object.values(question[0].currencies)[0].name,
+          request: Object.values(question.currencies)[0].name,
         },
         {
           type: "languages",
           phrase: "Which country has for language:",
-          request: Object.values(question[0].languages)[0],
+          request: Object.values(question.languages)[0],
         },
       ];
 
@@ -72,8 +72,8 @@ function Question({
     <div className="flex justify-center absolute w-5/6 lg:w-2/3 bottom-8 z-10">
       <div className="flex items-center opacity-95 w-9/12 h-32 shadow-2xl p-4 rounded-md bg-slate-800 text-white">
         <h2 className="text-center w-full xl:text-3xl">
-          {questionType && questionType.phrase}
-          <b> {questionType && questionType.request} ?</b>
+          {questionType?.phrase}
+          <b> {questionType?.request} ?</b>
         </h2>
       </div>
     </div>
