@@ -34,7 +34,7 @@ function About() {
                 <span className="text-lightblue">Us</span>
               </div>
               <span className="pt-3 text-white text-center text-3xl">
-                Who are we ?
+                Who are we?
               </span>
             </h1>
 
@@ -48,7 +48,7 @@ function About() {
               top of it.
               <br />
               <div className="inline">
-                We chose to use the{" "}
+                We chose to use the
                 <a
                   className="underline text-blue-500 px-1"
                   target="blank"
@@ -83,9 +83,9 @@ function About() {
                 </div>
                 <div className="flex-1">
                   <div className="p-6 h-full flex flex-col">
-                    <h4 className="font-medium text-2xl mb-3">
+                    <h2 className="font-medium text-2xl mb-3">
                       Arthur Baudoin (Cupcake Lover)
-                    </h4>
+                    </h2>
                     <p className="leading-normal mb-4 md:mb-0">
                       GeoJSON enjoyer.
                       <br />
@@ -122,9 +122,9 @@ function About() {
               <div className="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div className="flex-1 card-block">
                   <div className="p-6 flex flex-col h-full">
-                    <h4 className="font-medium text-2xl mb-3">
+                    <h2 className="font-medium text-2xl mb-3">
                       Nolwenn Groult
-                    </h4>
+                    </h2>
                     <p className="leading-normal mb-4 md:mb-0">
                       One of the ten fabled LaTeX enjoyers in the galaxy.
                       <br />
@@ -173,9 +173,9 @@ function About() {
                 </div>
                 <div className="flex-1 card-block">
                   <div className="p-6 h-full flex flex-col">
-                    <h4 className="font-medium text-2xl mb-3">
+                    <h2 className="font-medium text-2xl mb-3">
                       Maximilian Gliem (Emperor Max)
-                    </h4>
+                    </h2>
                     <p className="leading-normal mb-4 md:mb-0">
                       Very clever, he used every tricks to be top contributor in
                       the project repo.
@@ -213,9 +213,9 @@ function About() {
               <div className="shadow-lg flex m-4 md:flex-row flex-col-reverse bg-slate-800 bg-opacity-80 rounded-l-3xl">
                 <div className="flex-1 card-block">
                   <div className="p-6 flex flex-col h-full">
-                    <h4 className="font-medium text-2xl mb-3">
+                    <h2 className="font-medium text-2xl mb-3">
                       Corentin (Erwann) Delande
-                    </h4>
+                    </h2>
                     <p className="leading-normal pb-2 flex-1 mb-4 md:mb-0">
                       True agility genius Corentin led the group through this
                       project with an iron fist all along! <br />
