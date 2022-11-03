@@ -28,7 +28,7 @@ function About() {
       <header className="flex items-center justify-center h-screen overflow-hidden">
         <div className="absolute z-30 top-[80px] flex flex-col items-center">
           <div className="flex flex-col justify-center items-center h-100 md:h-[calc(100vh-80px)]">
-            <h1 className=" text-5xl mt-10 md:text-7xl w-fit bg-opacity-70 rounded-md md:p-10 md:m-20 flex flex-col ">
+            <h1 className="lead-title text-5xl mt-10 md:text-7xl w-fit bg-opacity-70 rounded-md md:p-10 md:m-20 flex flex-col ">
               <div>
                 <span className="text-green-400">About </span>
                 <span className="text-lightblue">Us</span>

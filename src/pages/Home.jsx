@@ -26,7 +26,7 @@ function Home() {
         </video>
       </div>
       <div className="h-full flex flex-col justify-evenly items-center py-5">
-        <h1 className="text-7xl md:text-8xl w-fit mb-10 bg-slate-800 bg-opacity-0 rounded-md flex flex-col">
+        <h1 className="lead-title text-7xl md:text-8xl w-fit mb-10 bg-slate-800 bg-opacity-0 rounded-md flex flex-col">
           <div>
             <span className="text-green-400">Map</span>
             <span className="text-lightblue">Quest</span>
