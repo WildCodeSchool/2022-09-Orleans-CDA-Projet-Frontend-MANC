@@ -11,7 +11,9 @@ const Learn = () => {
   const [countryData, setCountryData] = useState();
 
   useEffect(() => {
-    setClickedCountry(countrySearchFound);
+    countrySearchFound
+      ? setClickedCountry(countrySearchFound)
+      : setCountryData();
   }, [countrySearchFound]);
 
   useEffect(() => {
