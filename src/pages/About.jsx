@@ -34,7 +34,7 @@ function About() {
                 <span className="text-lightblue">Us</span>
               </div>
               <span className="pt-3 text-white text-center text-3xl">
-                Who are we ?
+                Who are we?
               </span>
             </h1>
 
@@ -48,7 +48,7 @@ function About() {
               top of it.
               <br />
               <div className="inline">
-                We chose to use the{" "}
+                We chose to use the
                 <a
                   className="underline text-blue-500 px-1"
                   target="blank"
