@@ -19,7 +19,7 @@ function Home() {
           poster="./imgHome.png"
         >
           <source
-            src="http://37.187.90.23/mapquest/vid/home1reduce.mp4"
+            src="https://destale-oracle.ddns.net/mapquest/vid/home1reduce.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.

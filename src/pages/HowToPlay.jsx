@@ -39,7 +39,7 @@ const HowToPlay = () => {
           poster="./img_video2.png"
         >
           <source
-            src="http://37.187.90.23/mapquest/vid/video2new.mp4"
+            src="https://destale-oracle.ddns.net/mapquest/vid/video2new.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
