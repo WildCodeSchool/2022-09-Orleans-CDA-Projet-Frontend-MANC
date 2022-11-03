@@ -309,7 +309,7 @@ const Quiz = () => {
         />
       </div>
       <div className="hidden xl:block">
-        <QuizTimer setTimer={setTimer} />
+        <QuizTimer timer={timer} setTimer={setTimer} />
       </div>
     </div>
   );

@@ -1,50 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./chrono.css";
 
-const Chrono = () => {
+const Chrono = ({ timer }) => {
+  const [timeString, setTimeString] = useState("00:00:00");
+
   useEffect(() => {
-    const defaults = {},
-      one_second = 1000,
-      one_minute = one_second * 60,
-      one_hour = one_minute * 60,
-      one_day = one_hour * 24,
-      startDate = new Date(),
-      face = document.getElementById("lazy");
+    let timeLeftAfterOperation = timer;
+    let hour = 0;
+    let minute = 0;
+    let seconde = 0;
 
-    const requestAnimationFrame = (function () {
-      return (
-        window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        function (callback) {
-          window.setTimeout(callback, 1000 / 60);
-        }
-      );
-    })();
-
-    tick();
-
-    function tick() {
-      const now = new Date(),
-        elapsed = now - startDate,
-        parts = [];
-
-      parts[0] = "" + Math.floor(elapsed / one_hour);
-      parts[1] = "" + Math.floor((elapsed % one_hour) / one_minute);
-      parts[2] =
-        "" + Math.floor(((elapsed % one_hour) % one_minute) / one_second);
-
-      parts[0] = parts[0].length == 1 ? "0" + parts[0] : parts[0];
-      parts[1] = parts[1].length == 1 ? "0" + parts[1] : parts[1];
-      parts[2] = parts[2].length == 1 ? "0" + parts[2] : parts[2];
-
-      face.innerText = parts.join(":");
-
-      requestAnimationFrame(tick);
+    if (timer >= 3600) {
+      hour = Math.floor(timer / 3600);
+      timeLeftAfterOperation = timeLeftAfterOperation % (3600 * hour);
     }
-  }, []);
+
+    if (timeLeftAfterOperation >= 60) {
+      minute = Math.floor(timeLeftAfterOperation / 60);
+      timeLeftAfterOperation = timeLeftAfterOperation % (60 * minute);
+    }
+
+    seconde = timeLeftAfterOperation;
+
+    setTimeString(
+      `${hour > 10 ? `${hour}` : `0${hour}`}:${
+        minute > 10 ? `${minute}` : `0${minute}`
+      }:${seconde > 10 ? `${seconde}` : `0${seconde}`}`
+    );
+  }, [timer]);
 
   return (
     <div className="z-50 absolute  -left-20">
@@ -76,7 +59,7 @@ const Chrono = () => {
               </div>
             </div>
             <div className="face">
-              <p id="lazy">00:00:00</p>
+              <p>{timeString}</p>
             </div>
           </div>
         </div>

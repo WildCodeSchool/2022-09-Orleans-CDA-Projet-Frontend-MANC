@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Chrono from "../chrono/Chrono";
 
-const QuizTimer = ({ setTimer }) => {
+const QuizTimer = ({ timer, setTimer }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prev) => prev + 1);
@@ -11,7 +11,7 @@ const QuizTimer = ({ setTimer }) => {
 
   return (
     <div>
-      <Chrono />
+      <Chrono timer={timer} />
     </div>
   );
 };
