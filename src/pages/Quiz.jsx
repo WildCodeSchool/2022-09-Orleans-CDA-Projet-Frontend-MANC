@@ -73,7 +73,7 @@ const Quiz = () => {
     isConfirmed &&
       setAnswer({
         isAnswered: true,
-        isCorrect: clickedCountry === question[0].cca3,
+        isCorrect: clickedCountry === question.cca3,
       });
   }, [isConfirmed]);
 
@@ -98,17 +98,17 @@ const Quiz = () => {
       if (number === 0) {
         setAnswer({
           isAnswered: true,
-          isCorrect: clickedCountry === question[0].cca3,
+          isCorrect: clickedCountry === question.cca3,
         });
-        setResponse(question[0].name.common);
+        setResponse(question.name.common);
         setAllResponses((previous) => {
           return [
             ...previous,
             {
               numQuestion: counterQuestion,
-              question: `Capital : ${question[0].capital[0]}`,
-              answerResult: clickedCountry === question[0].cca3,
-              goodAnswer: question[0].name.common + " " + question[0].flag,
+              question: `Capital : ${question.capital[0]}`,
+              answerResult: clickedCountry === question.cca3,
+              goodAnswer: question.name.common + " " + question.flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
               questionType: questionType,
@@ -122,24 +122,24 @@ const Quiz = () => {
         setAnswer({
           isAnswered: true,
           isCorrect: Object.values(Object.values(countryAnswer)[0]).includes(
-            Object.values(Object.values(question[0].currencies)[0])[0]
+            Object.values(Object.values(question.currencies)[0])[0]
           ),
         });
-        setResponse(question[0].name.common);
+        setResponse(question.name.common);
         setAllResponses((previous) => {
           return [
             ...previous,
             {
               numQuestion: counterQuestion,
               question: `Currency : ${
-                Object.values(Object.values(question[0].currencies)[0])[0]
+                Object.values(Object.values(question.currencies)[0])[0]
               }`,
               answerResult: Object.values(
                 Object.values(countryAnswer)[0]
               ).includes(
-                Object.values(Object.values(question[0].currencies)[0])[0]
+                Object.values(Object.values(question.currencies)[0])[0]
               ),
-              goodAnswer: question[0].name.common + " " + question[0].flag,
+              goodAnswer: question.name.common + " " + question.flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
               questionType: questionType,
@@ -153,20 +153,20 @@ const Quiz = () => {
         setAnswer({
           isAnswered: true,
           isCorrect: Object.values(countryAnswer).includes(
-            Object.values(question[0].languages)[0]
+            Object.values(question.languages)[0]
           ),
         });
-        setResponse(question[0].name.common);
+        setResponse(question.name.common);
         setAllResponses((previous) => {
           return [
             ...previous,
             {
               numQuestion: counterQuestion,
-              question: `Language : ${Object.values(question[0].languages)[0]}`,
+              question: `Language : ${Object.values(question.languages)[0]}`,
               answerResult: Object.values(countryAnswer).includes(
-                Object.values(question[0].languages)[0]
+                Object.values(question.languages)[0]
               ),
-              goodAnswer: question[0].name.common + " " + question[0].flag,
+              goodAnswer: question.name.common + " " + question.flag,
               totalTimeToThisQuestion: timer,
               timeToAnswer: timeToAnswer,
               questionType: questionType,

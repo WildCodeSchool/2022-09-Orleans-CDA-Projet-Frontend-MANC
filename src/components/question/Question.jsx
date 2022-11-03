@@ -20,10 +20,10 @@ function Question({
         if (timeout) {
           setPreventClickCountry(true);
           setTimeout(() => {
-            setQuestion(data);
+            setQuestion(data[0]);
           }, 2000);
         } else {
-          setQuestion(data);
+          setQuestion(data[0]);
         }
       });
   };
@@ -41,17 +41,17 @@ function Question({
         {
           type: "capital",
           phrase: "Which country has for capital:",
-          request: question[0].capital[0],
+          request: question.capital[0],
         },
         {
           type: "currencies",
           phrase: "Which country has for money:",
-          request: Object.values(question[0].currencies)[0].name,
+          request: Object.values(question.currencies)[0].name,
         },
         {
           type: "languages",
           phrase: "Which country has for language:",
-          request: Object.values(question[0].languages)[0],
+          request: Object.values(question.languages)[0],
         },
       ];
 
