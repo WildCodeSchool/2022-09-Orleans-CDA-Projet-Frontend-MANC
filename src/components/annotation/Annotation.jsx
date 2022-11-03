@@ -14,12 +14,13 @@ const Annotation = ({ countryData }) => {
   const [countryPopulation, setCountryPopulation] = useState();
 
   useEffect(() => {
-    countryData &&
-      (countryData.population
-        ? countryData.population > 1000000
-          ? setCountryPopulation((countryData.population / 1000000).toFixed(1))
-          : setCountryPopulation(countryData.population)
-        : setCountryPopulation("n/a"));
+    if (!countryData?.population) {
+      setCountryPopulation("n/a");
+    } else if (countryData?.population < 1000000) {
+      setCountryPopulation(countryData.population);
+    } else if (countryData?.population >= 1000000) {
+      setCountryPopulation((countryData.population / 1000000).toFixed(1));
+    }
   }, [countryData]);
 
   return (
