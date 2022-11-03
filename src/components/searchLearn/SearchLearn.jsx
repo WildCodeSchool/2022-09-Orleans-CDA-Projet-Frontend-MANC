@@ -38,7 +38,7 @@ const SearchLearn = ({ setCountrySearchFound }) => {
 
   return (
     <div className="flex w-full md:w-96 absolute -bottom-9 md:-bottom-4 text-2xl">
-      <div className="flex items-center opacity-90 border w-full h-fit border-solid  shadow-2xl  rounded-md border-greyblue bg-greyblue">
+      <div className="flex items-center opacity-90 border w-full h-fit border-solid shadow-2xl rounded-md border-greyblue bg-greyblue">
         <MdSearch className="ml-2 mr-2 text-2xl w-1/8" />
         <input
           className="border border-solid w-full border-grey-800 rounded-r-md px-2 opacity-90"
