@@ -85,11 +85,14 @@ const Quiz = () => {
       clickedCountryData
         ? setResponseDone(clickedCountryData.name)
         : setResponseDone("not found");
+
       let timeToAnswer = timer;
 
       if (allResponses[allResponses.length - 1]) {
         timeToAnswer =
-          timer - allResponses[allResponses.length - 1].totalTimeToThisQuestion;
+          timer -
+          allResponses[allResponses.length - 1].totalTimeToThisQuestion -
+          2;
       }
 
       if (number === 0) {
