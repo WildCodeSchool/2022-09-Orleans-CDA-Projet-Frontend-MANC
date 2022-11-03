@@ -18,7 +18,7 @@ const Navbar = () => {
               : "opacity-40 flex items-center justify-center"
           }
         >
-          <img className="h-16" src="/icon.png" alt="" />
+          <img className="h-16" src="./icon.png" alt="" />
           <span className="ml-4 font-semibold text-3xl text-green-400">
             Map
           </span>

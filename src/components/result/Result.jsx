@@ -26,7 +26,7 @@ function Result({
           loop
           muted
           className="object-cover w-full h-full"
-          poster="/img_video2.png"
+          poster="./../img_video2.png"
         >
           <source
             src="http://37.187.90.23/mapquest/vid/video2new.mp4"
