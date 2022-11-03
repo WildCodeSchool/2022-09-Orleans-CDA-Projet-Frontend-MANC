@@ -30,18 +30,19 @@ const Annotation = ({ countryData }) => {
         className="absolute md:-left-16 md:right-0 md:-top-16 md:w-fit w-80 -top-16 bg-white flex flex-col justify-center p-6 shadow-lg gap-2 rounded-md border border-greyblue border-solid md:mx-8 md:my-6"
       >
         <h2 className="text-2xl text-center font-semibold mb-4">
-          {countryData && countryData.name.common + " " + countryData.flag}
+          {countryData?.name?.common &&
+            countryData.name.common + " " + countryData.flag}
         </h2>
         <p className="flex items-center gap-2 text-lg">
           <TbBuilding />
-          {countryData && countryData.capital
+          {countryData?.capital
             ? `Capital: ${countryData.capital[0]}`
             : "Capital: n/a"}
         </p>
         <p className="flex items-center gap-2 text-lg">
           <GrCurrency />
           {`Currency: ${
-            countryData && countryData.currencies
+            countryData?.currencies
               ? Object.values(countryData.currencies)[0].name
               : "n/a"
           }`}
@@ -50,7 +51,7 @@ const Annotation = ({ countryData }) => {
           <IoChatbubbleEllipsesOutline />
           Languages:
           <div className="flex flex-col md:gap-2 md:flex-row">
-            {countryData && countryData.languages
+            {countryData?.languages
               ? Object.values(countryData.languages).map((language, index) => (
                   <span key={index}>{language}</span>
                 ))
@@ -60,7 +61,11 @@ const Annotation = ({ countryData }) => {
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
           {`Population: ${countryPopulation} ${
-            countryData.population > 1000000 ? "millions" : "inhabitants"
+            countryData?.population > 1000000
+              ? "millions"
+              : countryData?.population
+              ? "inhabitants"
+              : ""
           } `}
         </p>
       </div>
