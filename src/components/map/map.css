@@ -1,0 +1,32 @@
+.svg-fill-orange {
+  fill: #3498db;
+}
+.svg-fill-teal {
+  fill: #85c1e9;
+}
+.svg-fill-lime {
+  fill: #283747;
+}
+.svg-fill-indigo {
+  fill: #2874a6;
+}
+.svg-fill-pink {
+  fill: #17202a;
+}
+.svg-fill-purple {
+  fill: #154360;
+}
+
+.button-round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-block-start: 10px;
+  height: 2rem;
+  width: 2rem;
+  background: rgb(34 197 94);
+  color: #fff;
+  border-radius: 100%;
+  border: 0;
+}

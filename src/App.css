@@ -1,6 +1,26 @@
-.absolute-center-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&display=swap");
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Crete round", sans-serif;
+  -webkit-text-stroke: 0.5px slategray;
+}
+
+#title_navbar {
+  font-family: "Crete round", sans-serif;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.height-minus-nav {
+  height: calc(100vh - 80px);
+}
+
+.bg-quiz {
+  background-image: url("/blurry-white-blue.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
