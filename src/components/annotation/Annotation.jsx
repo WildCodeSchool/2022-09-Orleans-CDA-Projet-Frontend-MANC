@@ -56,7 +56,7 @@ const Annotation = (country) => {
               : "n/a"
           }`}
         </p>
-        <p className="flex  items-start md:items-center gap-2 text-lg">
+        <div className="flex items-start md:items-center gap-2 text-lg">
           <IoChatbubbleEllipsesOutline />
           Languages:
           <div className="flex flex-col md:gap-2 md:flex-row">
@@ -66,7 +66,7 @@ const Annotation = (country) => {
                 ))
               : "n/a"}
           </div>
-        </p>
+        </div>
         <p className="flex items-center gap-2 text-lg">
           <HiOutlineUsers />
           {` Population: ${countryPopulation} millions`}
