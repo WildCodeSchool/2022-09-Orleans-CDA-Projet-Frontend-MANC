@@ -9,7 +9,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="md:h-[calc(100vh-80px)] flex flex-col items-center overflow-scroll">
+    <div className="md:h-[calc(100vh-80px)] flex flex-col items-center overflow-auto">
       <div className="fixed top-0 -z-10 h-full w-full">
         <video
           autoPlay

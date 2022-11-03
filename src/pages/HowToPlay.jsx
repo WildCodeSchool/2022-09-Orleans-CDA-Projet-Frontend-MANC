@@ -49,7 +49,7 @@ const HowToPlay = () => {
         <div
           data-aos="fade-in"
           data-aos-duration="400"
-          className="rounded-lg p-6 w-[98%] my-5 lg:w-2/4 shadow-2xl bg-slate-800 bg-opacity-90 overflow-scroll"
+          className="rounded-lg p-6 w-[98%] my-5 lg:w-2/4 shadow-2xl bg-slate-800 bg-opacity-90 overflow-auto"
         >
           <h1 className="text-center text-6xl px-3 mb-6 mt-2 text-white">
             How to Play?

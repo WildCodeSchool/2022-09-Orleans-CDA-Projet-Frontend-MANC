@@ -57,7 +57,7 @@ function Result({
             totalTimer
           )} and ${counterCorrect} out of ${questionNumber} questions are correct.`}
         </div>
-        <div className="md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30">
+        <div className="md:w-2/3 text-2xl m-2 bg-slate-800 bg-opacity-80 rounded-lg md:px-8 text-center border-solid border-2 border-slate-800 px-30 overflow-auto">
           {allResponses.map((response, index) => (
             <div
               key={index}
