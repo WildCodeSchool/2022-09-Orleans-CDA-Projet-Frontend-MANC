@@ -6,24 +6,12 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Annotation = (country) => {
+const Annotation = ({ countryData }) => {
   useEffect(() => {
     AOS.init();
   }, []);
 
-  const [countryData, setCountryData] = useState();
   const [countryPopulation, setCountryPopulation] = useState();
-
-  useEffect(() => {
-    const getResponse = async () => {
-      const res = await fetch(
-        "https://restcountries.com/v3.1/alpha/" + country.country
-      );
-      const data = await res.json();
-      setCountryData(data[0]);
-    };
-    getResponse();
-  }, [country]);
 
   useEffect(() => {
     countryData &&
