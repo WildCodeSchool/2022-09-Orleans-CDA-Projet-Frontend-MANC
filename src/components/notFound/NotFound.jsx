@@ -5,7 +5,7 @@ const NotFound = () => (
   <div>
     <div className="absolute top-0 -z-10 w-full h-screen">
       <img
-        src="/blackhole.jpg"
+        src={`${import.meta.env.BASE_URL}/blackhole.jpg`}
         alt="a black hole from space"
         className="object-cover w-full h-full"
       />
